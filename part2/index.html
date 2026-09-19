@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>四神組織診断 診断結果の読み解き ── 青龍 × 白虎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/part2.css">
+</head>
+<body>
+<!--
+  四神組織診断 診断結果 Part2（LINE登録後に開く読み解きページ）
+  デザイン: ラヴィゴット村田さん 2026-09-17 版（スマホ 375 幅）。PC では列を中央に置く。
+  文言は 青龍×白虎 の例。差し替え箇所は data-slot（README.md）。
+  鬼頭さん 9/18 の2点（転換カードの罫の太さ／矛盾冒頭の枠の地色）は :root の --vs-line と --frame-bg で調整できる。
+-->
+<div class="page">
+
+  <header class="site-header">
+    <div class="site-header__logo" data-slot="logo">企業ロゴ</div>
+    <button class="site-header__menu" type="button" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- ═══ READING 01 診断結果の読み解き ═══ -->
+  <section class="sec sec--hero">
+    <p class="kicker">READING <i></i> 01</p>
+    <h1 class="h2 h2--hero">診断結果の読み解き</h1>
+    <p class="hero__sub">御社の診断結果は、こうでした。</p>
+    <div class="dual">
+      <div class="dual__card dual__card--main"><span class="dual__label">利き神</span><span class="dual__name" data-slot="dominant.name">青龍</span></div>
+      <div class="dual__card dual__card--shadow"><span class="dual__label">影神</span><span class="dual__name" data-slot="shadow.name">白虎</span></div>
+    </div>
+    <div class="comp" data-slot="composition">
+      <p class="comp__title">御社の四神構成</p>
+      <ul class="comp__list">
+        <li class="comp__row comp__row--seiryu" data-pct="42"><span class="comp__label">- 青龍<b>42%</b></span><span class="comp__bar"><i style="width:42%"></i></span></li>
+        <li class="comp__row comp__row--suzaku" data-pct="28"><span class="comp__label">- 朱雀<b>28%</b></span><span class="comp__bar"><i style="width:28%"></i></span></li>
+        <li class="comp__row comp__row--genbu" data-pct="18"><span class="comp__label">- 玄武<b>18%</b></span><span class="comp__bar"><i style="width:18%"></i></span></li>
+        <li class="comp__row comp__row--byakko" data-pct="12"><span class="comp__label">- 白虎<b>12%</b></span><span class="comp__bar"><i style="width:12%"></i></span></li>
+      </ul>
+    </div>
+    <p class="body" data-slot="reading01.intro">青龍は、まだ誰も見えていない未来を確信し、新しい世界を創ろうとする力です。<br>白虎は、勝てる領域を見極め、絞り、やり切る力です。<br>ここからは、この2つの力が御社の組織のどこで噛み合い、どこで詰まるのかを、読み解いていきます。</p>
+  </section>
+
+  <!-- ═══ READING 02 青龍型組織がぶつかる壁 ═══ -->
+  <section class="sec sec--wall">
+    <p class="kicker">READING <i></i> 02</p>
+    <h2 class="h2">青龍型組織が<br>ぶつかる壁</h2>
+    <span class="rule"></span>
+    <p class="body">青龍は、御社をここまで伸ばしてきた力です。</p>
+    <ul class="chips">
+      <li>新しい商品。</li><li>新しい市場。</li><li>新しい採用。</li><li>新しい提携。</li><li>新しい案件。</li>
+    </ul>
+    <p class="body">まだ誰も見えていない未来に賭ける。<br>だから、会社は前に進んできました。</p>
+    <p class="body">その一方で、青龍が強く出すぎると、次々に広がる一方で、絞ってやり切る力が追いつかなくなります。</p>
+    <div class="box">
+      <p class="box__head">青龍が強い会社で、起きていること</p>
+      <ul class="checks">
+        <li>新しい案件が、同時にいくつも走っている</li>
+        <li>どれも社長案件になりがち</li>
+        <li>現場は、優先順位が分からない</li>
+        <li>成果になる前に、熱が冷める</li>
+      </ul>
+    </div>
+    <div class="stmt">
+      <p class="stmt__text">問題は、アイデアが<br>多いことではありません。<br><em>全部を、同じ重さで<br>扱ってしまうこと</em>です。</p>
+    </div>
+  </section>
+
+  <!-- ═══ CASE 03 案件・プロジェクト ═══ -->
+  <section class="sec sec--case sec--case3">
+    <p class="kicker kicker--case">CASE <i></i> 03<span class="kicker__sep">｜</span>案件・プロジェクト</p>
+    <h2 class="h2 h2--big">全部やる。<br>だから、全部が<br>中途半端になる。</h2>
+    <span class="rule"></span>
+    <div class="ba ba--before">
+      <div class="ba__head"><span class="ba__tag">BEFORE</span><span class="ba__title">青龍だけで走ると</span></div>
+      <div class="ba__body">
+        <ul class="checks">
+          <li>重要案件が5つある</li>
+          <li>どれも可能性がある</li>
+          <li>全部、経営会議で話す</li>
+          <li>全部、予算が欲しい</li>
+          <li>全部、現場に指示が飛ぶ</li>
+          <li>結果、全部が中途半端になる</li>
+        </ul>
+      </div>
+    </div>
+    <p class="body">白虎は、アイデアを減らす存在では、ありません。</p>
+    <div class="ba ba--after">
+      <div class="ba__head"><span class="ba__tag">AFTER</span><span class="ba__title">白虎が入ると</span></div>
+      <div class="ba__body ba__body--ranks">
+        <div class="rank rank--a">
+          <div class="rank__head"><span class="rank__badge">A</span><span class="rank__title">最優先で勝ち切る案件</span></div>
+          <ul class="checks checks--light">
+            <li>経営会議で扱う</li><li>予算をつける</li><li>マイルストーンを置く</li><li>ゴールを明確にする</li>
+          </ul>
+        </div>
+        <div class="rank rank--b">
+          <div class="rank__head"><span class="rank__badge">B</span><span class="rank__title">まだ検証段階の案件</span></div>
+          <ul class="checks checks--light">
+            <li>月1回だけ報告</li><li>大きな予算はまだつけない</li><li>検証項目だけ決める</li>
+          </ul>
+        </div>
+        <div class="rank rank--c">
+          <div class="rank__head"><span class="rank__badge">C</span><span class="rank__title">ネタとして温める案件</span></div>
+          <ul class="checks checks--light">
+            <li>経営会議では扱わない</li><li>担当者が情報収集・ヒアリングを続ける</li><li>可能性を消さずに、軽く持つ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="body">全部やめる必要はありません。<br>でも、全部を同じ重さで扱ってはいけません。</p>
+    <div class="stmt">
+      <p class="stmt__text">青龍は可能性を広げる。<br>白虎は、<em>経営資源の重みづけ</em><br>をする。</p>
+    </div>
+    <p class="body">この2つが噛み合うと、挑戦を止めずに、成果へ向かえるようになります。</p>
+    <p class="bridge">案件だけではありません。<br>採用でも、同じことが起きます。</p>
+  </section>
+
+  <!-- ═══ CASE 04 採用 ═══ -->
+  <section class="sec sec--case sec--case4">
+    <p class="kicker kicker--case">CASE <i></i> 04<span class="kicker__sep">｜</span>採用</p>
+    <h2 class="h2 h2--big">「いい人だから採る」<br>が、一番高くつく。</h2>
+    <span class="rule"></span>
+    <div class="ba ba--before">
+      <div class="ba__head"><span class="ba__tag">BEFORE</span><span class="ba__title">青龍だけで採用すると</span></div>
+      <div class="ba__body">
+        <ul class="checks">
+          <li>いい人に出会う</li><li>とりあえず採用する</li><li>何を任せるかは後で考える</li><li>役割も、成果基準も曖昧になる</li><li>本人も力を出し切れず、退職する</li><li>またゼロから採用する</li>
+        </ul>
+        <p class="ba__note">これでは、採用コストがいくらあっても足りません。</p>
+      </div>
+    </div>
+    <div class="ba ba--after">
+      <div class="ba__head"><span class="ba__tag">AFTER</span><span class="ba__title">白虎の視点が入ると</span></div>
+      <div class="ba__body">
+        <ul class="checks">
+          <li>まず、強化したい組織機能を決める</li><li>本当に採用が必要か考える</li><li>外部プロか、外注か、社内教育か、採用か</li><li>採用するなら、役割と成果基準を明確にする</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vs">
+      <p class="vs__from">いい人だから採る。<br>ではなく、</p>
+      <p class="vs__to">この役割が必要だから採る。</p>
+    </div>
+    <p class="body">白虎で「誰を採るか」は変わります。でも、その人の<b class="c-navy">成果を会社に残す</b>には、もう一つ、<b class="c-navy">玄武の力</b>が必要です。</p>
+    <div class="ba ba--third">
+      <div class="ba__head"><span class="ba__title">さらに玄武の視点が入ると</span></div>
+      <div class="ba__body">
+        <ul class="checks">
+          <li>その人が成果を出す</li><li>やり方を仕組みにする</li><li>次の人が引き継げる</li><li>人が辞めても会社に残る</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stmt">
+      <p class="stmt__text">青龍だけなら、人が辞めれば<br>ゼロに戻る。<br>白虎が入ると、本当に必要な<br>人だけを採れる。<br>玄武が入ると、その人の成果が、<br><em>会社の再現性</em>として残る。</p>
+    </div>
+    <p class="bridge">案件でも、採用でも、<br>同じことが起きていました。</p>
+  </section>
+
+  <!-- ═══ READING 05 矛盾 ═══ -->
+  <section class="sec sec--paradox">
+    <p class="kicker">READING <i></i> 05</p>
+    <p class="lead">挑戦は増やしたい。でも、経営資源は<br>絞らなければならない。</p>
+    <p class="lead">人の可能性は信じたい。でも、役割と成果<br>基準は明確にしなければならない。</p>
+    <p class="lead">どちらも正しい。だから、選べない。</p>
+    <p class="frame">組織には、<br>必ず矛盾があります。</p>
+    <p class="body body--center">そして多くの会社は、<br>どちらかを選び、もう片方を失います。<br>片方を強めると、もう片方が崩れる。</p>
+    <div class="pairs">
+      <div class="pair"><div class="pair__card"><b>仕組み</b><span>会社は整う</span></div><i class="pair__arrow"></i><div class="pair__card"><b>自由</b><span>挑戦が生まれる</span></div></div>
+      <div class="pair"><div class="pair__card"><b>人</b><span>働きやすくなる</span></div><i class="pair__arrow"></i><div class="pair__card"><b>成果</b><span>数字は伸びる</span></div></div>
+    </div>
+    <p class="pairs__close">片方を強めると、もう片方が崩れる</p>
+    <div class="band">
+      <p class="band__text">強い会社は、矛盾をなくした<br>会社ではありません。<br>それを、力に変えた会社です。</p>
+      <p class="band__copy">矛盾が、力になる。</p>
+      <p class="band__def">四神経営とは、<br>組織の矛盾を統合する<br>経営です。</p>
+    </div>
+  </section>
+
+  <!-- ═══ READING 06 完全組織 ═══ -->
+  <section class="sec sec--cycle">
+    <p class="kicker">READING <i></i> 06</p>
+    <h2 class="h2 h2--big">組織が強くなるのは、<br>4つの力が<br>噛み合ったときです。</h2>
+    <span class="rule"></span>
+    <div class="cycle" aria-label="青龍→朱雀→白虎→玄武→青龍の循環">
+      <svg class="cycle__arrows" viewBox="0 0 345 316" aria-hidden="true">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs>
+        <path d="M220.5 50.2 A118 118 0 0 1 280.3 110.0" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#ah)"/> <path d="M280.3 206.0 A118 118 0 0 1 220.5 265.8" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#ah)"/> <path d="M124.5 265.8 A118 118 0 0 1 64.7 206.0" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#ah)"/> <path d="M64.7 110.0 A118 118 0 0 1 124.5 50.2" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#ah)"/> 
+      </svg>
+      <div class="cycle__node cycle__node--seiryu"><span class="cycle__img"><img src="img/cyc_seiryu.png" alt=""><b>青龍</b></span><span class="cycle__cap">まだない未来を、<br>生み出す</span></div>
+      <div class="cycle__node cycle__node--suzaku"><span class="cycle__img"><img src="img/cyc_suzaku.png" alt=""><b>朱雀</b></span><span class="cycle__cap">構想を共有し、<br>人を巻き込む</span></div>
+      <div class="cycle__node cycle__node--byakko"><span class="cycle__img"><img src="img/cyc_byakko.png" alt=""><b>白虎</b></span><span class="cycle__cap">勝ち筋を見極め、<br>成果にする</span></div>
+      <div class="cycle__node cycle__node--genbu"><span class="cycle__img"><img src="img/cyc_genbu.png" alt=""><b>玄武</b></span><span class="cycle__cap">成果を再現できる<br>仕組みにする</span></div>
+    </div>
+    <p class="body">社長一人が描くだけでは、会社は変わりません。</p>
+    <p class="body">4つの力がそろって初めて──四神経営では、この状態を「完全組織」と呼びます。</p>
+  </section>
+
+  <!-- ═══ NEXT ═══ -->
+  <section class="sec sec--next">
+    <p class="kicker">NEXT</p>
+    <h2 class="h2 h2--big">ここから先は、<br>会社ごとに<br>答えが違います。</h2>
+    <span class="rule"></span>
+    <p class="body" data-slot="next.takeaway">ここまでで、御社の現在地は見えました。このページで持ち帰れるのは、<b>青龍の強み（挑戦・スピード）を止めずに、白虎の「絞る・決める」力を取り入れ、挑戦を成果へつなげる</b>という見方です。</p>
+    <p class="body">ただ、組織は診断しただけでは変わりません。次に必要なのは、この見方を御社の答えに落とし込むこと──たとえば、こうした問いに答えていくことです。</p>
+    <ul class="questions" data-slot="next.questions">
+      <li>どの案件をAランクにするのか</li>
+      <li>誰が白虎の役割を担うのか</li>
+      <li>社長の構想を、どう幹部に共有し巻き込むのか</li>
+      <li>成果をどう再現性として残すのか</li>
+    </ul>
+    <p class="body">これらは会社ごとに答えが違うため、このページでは決めきれません。青龍<span data-slot="composition.dominantPct">40%</span>・白虎<span data-slot="composition.shadowPct">12%</span>の御社なら、どこから手をつけるか。</p>
+    <p class="body">四神経営 実践セミナーは、この診断結果を手がかりに、御社ではどのような統合を目指すべきか、その方向性まで考える時間です。90分で、矛盾を統合し、4つの力が循環する「完全組織」のつくり方を、実際の企業事例を交えてお話しします。</p>
+    <div class="profile">
+      <div class="profile__head">
+        <img class="profile__photo" src="img/nakagawa.jpg" alt="中川 洋一">
+        <div class="profile__meta"><span class="profile__role">四神経営 開発・監修</span><span class="profile__name">中川 洋一</span><span class="profile__title">株式会社B.essence 代表取締役</span></div>
+      </div>
+      <p class="profile__text">この診断結果は、入口にすぎません。<br>セミナーでは、御社の強みと詰まりを<br>「次の一手」に変える考え方をお伝えします。</p>
+    </div>
+    <a class="cta" href="#" data-slot="cta.url">四神経営 実践セミナーの<br>詳細を見る<i></i></a>
+    <p class="cta__note">セミナーにご参加の方には、御社専用の完全版<br>診断レポートをお渡しします。</p>
+  </section>
+
+  <footer class="site-footer"><p>&copy; B.essence. All Rights Reserved.</p></footer>
+</div>
+</body>
+</html>
