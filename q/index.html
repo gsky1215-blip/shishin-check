@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>四神組織診断 ── 設問（16問）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/q.css">
+</head>
+<body>
+<!--
+  四神組織診断 設問ページ（16問）
+  デザイン: ラヴィゴット村田さん XD（2026-07-23 提出版・PC）。スマホは同じ1列をそのまま縮める。
+  設問文は確定版（診断ツールMoc V4/06_shishin_tool.html の DATA と同一）。改行は村田さんデザインの位置（設問7〜11はデザインが無いので意味の切れ目）。
+  診断ロジックは実装側（祖父江さん）で接続する。ここでは選択の見た目・進捗バー・ページ送りだけ動く。
+  data-qid で設問を、data-value（1〜5）で回答を取れる。
+-->
+<div class="page">
+
+  <header class="site-header">
+    <div class="site-header__logo" data-slot="logo">企業ロゴ</div>
+  </header>
+
+  <!-- ═══ 上部（診断の説明） ═══ -->
+  <section class="intro">
+    <div class="intro__inner">
+      <div class="intro__text">
+        <h1 class="intro__title">四神組織診断</h1>
+        <p class="intro__lead">御社の組織が、何を強みに伸びるのか。<br>どこに偏りがあり、何を補うと次に進めるのか。<br>その全体像を整理する診断です。</p>
+        <ul class="pills">
+          <li>約3分</li>
+          <li>全16問</li>
+        </ul>
+      </div>
+      <div class="intro__art" aria-hidden="true">
+        <div class="diamond" role="img" aria-label="四神（青龍・朱雀・白虎・玄武）">
+          <i class="dia__tile dia__tile--n"></i><i class="dia__tile dia__tile--e"></i><i class="dia__tile dia__tile--s"></i><i class="dia__tile dia__tile--w"></i>
+          <i class="dia__x dia__x--a"></i><i class="dia__x dia__x--b"></i>
+          <img class="dia__gods" src="img/fv_diamond.png" alt=""><i class="dia__shade"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 進捗 ═══ -->
+  <div class="progress" id="progress">
+    <div class="progress__track"><div class="progress__fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="progress__pct" id="progress-pct">0%</div>
+  </div>
+
+  <!-- ═══ 設問カード（6問／5問／5問の3ページ） ═══ -->
+  <form class="quiz" id="quiz" novalidate>
+    <div class="quiz__page is-active" data-page="1">
+      <div class="q" data-qid="Q1"><span class="q__num">問 1 / 16</span><p class="q__text">新しい取り組みは、十分に検討する前でも<br>「まずやってみよう」と会社として着手することが多い</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q2"><span class="q__num">問 2 / 16</span><p class="q__text">意思決定の前に、メンバーの納得感を<br>確認する場を設けることが多い</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q3"><span class="q__num">問 3 / 16</span><p class="q__text">面白さや、やりやすさよりも、成果が出るかどうかを基準に<br>社内で判断されることが多い</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q4"><span class="q__num">問 4 / 16</span><p class="q__text">業務が仕組みやルールで回せるように、<br>社内で整備されている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q5"><span class="q__num">問 5 / 16</span><p class="q__text">成果が確実でなくても、社内で<br>「面白そう」「可能性がありそう」と判断されたものは、<br>実行に移されることが多い</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q6"><span class="q__num">問 6 / 16</span><p class="q__text">チームの雰囲気や人間関係を考慮して、<br>社内で判断が変わることがある</p><div class="scale" role="radiogroup"></div></div>
+      <div class="nav"><button type="button" class="btn btn--next" data-next>次へ<i></i></button></div>
+    </div>
+    <div class="quiz__page" data-page="2">
+      <div class="q" data-qid="Q7"><span class="q__num">問 7 / 16</span><p class="q__text">成果を出すためであれば、<br>やり方や人員の見直しに社内で踏み切ることがある</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q8"><span class="q__num">問 8 / 16</span><p class="q__text">決めたやり方や手順を、<br>ぶれずに継続して積み上げることが習慣になっている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q9"><span class="q__num">問 9 / 16</span><p class="q__text">新しい方法やトレンドが、<br>実際の業務に取り入れられることが多い</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q10"><span class="q__num">問 10 / 16</span><p class="q__text">メンバーの挑戦や成長に対して、<br>機会や役割を与えて後押しすることが多い</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q11"><span class="q__num">問 11 / 16</span><p class="q__text">入社後、メンバーには高い水準が求められ、<br>それに向けた指導が行われている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="nav"><button type="button" class="btn btn--back" data-back><i></i>戻る</button><button type="button" class="btn btn--next" data-next>次へ<i></i></button></div>
+    </div>
+    <div class="quiz__page" data-page="3">
+      <div class="q" data-qid="Q12"><span class="q__num">問 12 / 16</span><p class="q__text">新しい施策を増やすよりも、<br>既存の仕組みの改善・最適化にリソースが割かれている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q13"><span class="q__num">問 13 / 16</span><p class="q__text">業界初の取り組みや、誰もやっていないアイデアが<br>社内で実際に検討のテーブルに上がりやすい</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q14"><span class="q__num">問 14 / 16</span><p class="q__text">効率や収益性が多少落ちる場合でも、人が気持ちよく働ける<br>状態を優先して、環境や役割が調整されている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q15"><span class="q__num">問 15 / 16</span><p class="q__text">短期的な面白さに流されず、<br>長期的に成果につながる選択が優先されている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="q" data-qid="Q16"><span class="q__num">問 16 / 16</span><p class="q__text">個人の頑張りに頼るよりも、<br>仕組みで成果が出る状態をつくることが優先されている</p><div class="scale" role="radiogroup"></div></div>
+      <div class="nav"><button type="button" class="btn btn--back" data-back><i></i>戻る</button><button type="submit" class="btn btn--submit" data-submit>診断結果を見る<i></i></button></div>
+    </div>
+  </form>
+
+  <footer class="site-footer">
+    
+  </footer>
+</div>
+
+<script>
+(function () {
+  // 5段階の円を各設問に生成（1=当てはまらない … 5=当てはまる）
+  var labels = { 1: '当てはまらない', 3: 'どちらとも<br>いえない', 5: '当てはまる' };
+  document.querySelectorAll('.q').forEach(function (q) {
+    var qid = q.getAttribute('data-qid'); var scale = q.querySelector('.scale'); var html = '';
+    for (var v = 1; v <= 5; v++) {
+      html += '<label class="scale__item scale__item--' + v + '">' +
+        '<input type="radio" name="' + qid + '" value="' + v + '" data-value="' + v + '">' +
+        '<span class="scale__circle"></span>' +
+        (labels[v] ? '<span class="scale__label">' + labels[v] + '</span>' : '') +
+        '</label>';
+    }
+    scale.innerHTML = html;
+  });
+
+  var total = 16;
+  function answered() { return document.querySelectorAll('.q input:checked').length; }
+  function updateProgress() {
+    var n = answered(); var pct = Math.round(n / total * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-pct').textContent = pct + '%';
+  }
+  document.getElementById('quiz').addEventListener('change', updateProgress);
+
+  // ページ送り（未回答があれば最初の未回答へスクロールして知らせる）
+  function showPage(n) {
+    document.querySelectorAll('.quiz__page').forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-page') == n); });
+    var top = document.getElementById('progress').getBoundingClientRect().top + window.scrollY - 16;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+  function firstUnanswered(page) {
+    var qs = page.querySelectorAll('.q');
+    for (var i = 0; i < qs.length; i++) if (!qs[i].querySelector('input:checked')) return qs[i];
+    return null;
+  }
+  document.querySelectorAll('[data-next]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var page = b.closest('.quiz__page'); var u = firstUnanswered(page);
+      if (u) { u.classList.add('is-missing'); u.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(function () { u.classList.remove('is-missing'); }, 1600); return; }
+      showPage(+page.getAttribute('data-page') + 1);
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(function (b) {
+    b.addEventListener('click', function () { showPage(+b.closest('.quiz__page').getAttribute('data-page') - 1); });
+  });
+  document.getElementById('quiz').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var page = document.querySelector('.quiz__page[data-page="3"]'); var u = firstUnanswered(page);
+    if (u) { u.classList.add('is-missing'); u.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(function () { u.classList.remove('is-missing'); }, 1600); return; }
+    // 実装側: ここで回答（name=Q1..Q16, value=1..5）を診断ロジックへ渡す
+    var answers = {}; document.querySelectorAll('.q input:checked').forEach(function (i) { answers[i.name] = +i.value; });
+    document.dispatchEvent(new CustomEvent('shishin:submit', { detail: answers }));
+  });
+})();
+</script>
+</body>
+</html>
