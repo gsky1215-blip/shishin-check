@@ -78,7 +78,7 @@ em { font-style: normal; }
 .ba__title { display: block; font-size: 18px; font-weight: 700; line-height: 28px; letter-spacing: .08em; }
 .ba--third .ba__head { padding: 26px 10px 24px; }
 .ba__body { padding: 25px 22px 12px; background: #fff; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 8px 8px; }
-.ba__note { margin-top: 13px; font-size: 15px; line-height: 28px; letter-spacing: .02em; }
+.ba__note { margin-top: 13px; font-size: 15px; font-weight: 500; line-height: 28px; letter-spacing: .02em; }
 .ba--before .ba__body { padding-bottom: 12px; }
 .ba--after .ba__body { padding: 27px 22px 30px; }
 .ba--third .ba__body { padding: 20px 22px 25px; }
@@ -224,7 +224,7 @@ em { font-style: normal; }
 .profile__role { display: block; font-size: 14px; font-weight: 700; line-height: 22px; letter-spacing: .06em; color: var(--navy); }
 .profile__name { display: block; margin-top: 2px; font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 30px; letter-spacing: .2em; color: var(--ink-2); }
 .profile__title { display: block; margin-top: 4px; font-size: 13.5px; font-weight: 500; line-height: 22px; letter-spacing: 0; white-space: nowrap; color: var(--ink); }
-.profile__text { margin-top: 20px; font-size: 15px; line-height: 30px; letter-spacing: .02em; color: var(--ink); }
+.profile__text { margin-top: 20px; font-size: 15px; font-weight: 500; line-height: 30px; letter-spacing: .02em; color: var(--ink); }
 .cta { position: relative; display: block; height: 80px; margin-top: 40px; padding: 12px 40px 0 20px; border-radius: 8px; background: linear-gradient(180deg, #4b68a8 0%, #38418d 65%, #2e3080 100%); box-shadow: 0 4px 10px rgba(30,40,100,.3), inset 0 1px 0 rgba(255,255,255,.15); font-size: 18px; font-weight: 700; line-height: 28px; letter-spacing: .04em; text-align: center; color: #fff; }
 .cta i { position: absolute; right: 22px; top: 50%; width: 0; height: 0; margin-top: -11px; border-style: solid; border-width: 11px 0 11px 13px; border-color: transparent transparent transparent #fff; }
 .cta__note { margin-top: 13px; font-size: 13px; line-height: 25px; letter-spacing: .04em; color: var(--ink); }
