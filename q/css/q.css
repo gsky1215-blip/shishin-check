@@ -22,10 +22,8 @@ button { font: inherit; cursor: pointer; }
 .page { position: relative; min-height: 100vh; padding-bottom: 240px; }
 
 /* ---------- ヘッダー ---------- */
-.site-header__logo {
-  position: absolute; top: 28px; left: 50%; transform: translateX(-535px);
-  font-size: 16px; line-height: 22px; letter-spacing: .1em; color: #8d8d8f;
-}
+.site-header__logo { position: absolute; top: 28px; left: 50%; transform: translateX(-535px); }
+.site-header__logo img { height: 30px; width: auto; display: block; }
 
 /* ---------- 上部 ---------- */
 .intro { position: relative; height: 585px; }
@@ -112,7 +110,8 @@ button { font: inherit; cursor: pointer; }
    ========================================================================== */
 @media (max-width: 767px) {
   .page { padding-bottom: 60px; }
-  .site-header__logo { left: 24px; transform: none; top: 24px; font-size: 14px; }
+  .site-header__logo { left: 24px; transform: none; top: 22px; }
+  .site-header__logo img { height: 24px; }
   .intro { height: auto; padding: 84px 24px 0; }
   .intro__inner { width: auto; height: auto; }
   .intro__text { position: static; width: auto; }
