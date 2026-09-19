@@ -147,7 +147,7 @@ em { font-style: normal; }
 .hero__desc {
   margin-top: 30px;
   text-align: left;
-  font-size: 16px; font-weight: 400; line-height: 31px;
+  font-size: 16px; font-weight: 500; line-height: 31px;
   color: var(--ink);
 }
 
@@ -212,9 +212,9 @@ em { font-style: normal; }
 }
 .card--headed > *:not(.card__title) { margin-left: 18px; margin-right: 18px; }
 
-/* 中核本文。9/3 の最終調整①: 補足より一段強く（太くはしない） */
+/* 中核本文。9/3 の最終調整①: 補足より一段強く。9/19 洋一さん「線が細くて迫力がない」→ 500 に */
 .card__lead {
-  font-size: 16px; font-weight: 400; line-height: 30px; color: #3A3A3A;
+  font-size: 16px; font-weight: 500; line-height: 30px; color: var(--ink);
   margin-bottom: 24px;
 }
 
@@ -280,7 +280,7 @@ em { font-style: normal; }
   letter-spacing: .1em; color: var(--ink-2); white-space: nowrap;
   margin-bottom: 22px;
 }
-.question__p { font-size: 16px; font-weight: 400; line-height: 28px; color: var(--ink); }
+.question__p { font-size: 16px; font-weight: 500; line-height: 28px; color: var(--ink); }
 .question__p + .question__p { margin-top: 28px; }
 .question__p--loose { font-size: 16px; line-height: 28px; }
 .question__big {
@@ -306,7 +306,7 @@ em { font-style: normal; }
 .shadow-intro__h--2 { margin-top: 44px; font-size: 24px; letter-spacing: .02em; margin-left: -6px; margin-right: -6px; }
 .shadow-intro__p {
   margin-top: 24px;
-  font-size: 16px; font-weight: 400; line-height: 34px; letter-spacing: .04em;
+  font-size: 16px; font-weight: 500; line-height: 34px; letter-spacing: .04em;
   color: rgba(255,255,255,.88);
 }
 .shadow-intro__p strong { color: #fff; }
@@ -351,8 +351,8 @@ em { font-style: normal; }
 
 /* ---------- 9. 影神の説明 ---------- */
 .shadow-explain { background: #fff; padding: 40px 22px 46px; }
-.shadow-explain__center { text-align: center; font-size: 16px; font-weight: 400; line-height: 30px; color: var(--ink); }
-.shadow-explain__p { margin-top: 24px; font-size: 16px; font-weight: 400; line-height: 30px; color: var(--ink); }
+.shadow-explain__center { text-align: center; font-size: 16px; font-weight: 500; line-height: 30px; color: var(--ink); }
+.shadow-explain__p { margin-top: 24px; font-size: 16px; font-weight: 500; line-height: 30px; color: var(--ink); }
 .shadow-explain__p--strong { margin-top: 0; font-weight: 700; font-size: 16px; color: var(--ink); }
 
 /* 枠つきの箇条書き（黒枠） */
@@ -395,7 +395,7 @@ em { font-style: normal; }
   letter-spacing: .02em; text-align: left; color: var(--ink); white-space: nowrap;
   margin-bottom: 26px;
 }
-.next__p { font-size: 16px; font-weight: 400; line-height: 28px; color: var(--ink); }
+.next__p { font-size: 16px; font-weight: 500; line-height: 28px; color: var(--ink); }
 .next__p + .next__p { margin-top: 28px; }
 .next__lead { margin-top: 30px; font-size: 17px; font-weight: 700; line-height: 1.7; color: var(--ink); text-align: left; letter-spacing: 0; white-space: nowrap; }
 .next .box-list { margin-top: 18px; }
