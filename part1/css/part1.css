@@ -1,0 +1,489 @@
+/* ==========================================================================
+   四神診断 診断結果 Part1 ── スマホ基準（375px）／PCは列を中央に置く
+   デザイン: ラヴィゴット村田さん 最終版（2026-09-03）。数値は XD スペック＋PDF実測。
+   ========================================================================== */
+
+:root {
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --sans:  "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --num:   "Montserrat", var(--sans);
+
+  --ink: #2E2E2E;
+  --ink-2: #131311;
+  --navy: #2C2C7E;
+  --red: #B72E2E;
+  --green: #314737;
+  --gold: #C8922A;
+  --gold-text: #FFD700;
+  --blue: #4B73B7;
+  --blue-light: #7EA4E5;
+  --gray: #5A616E;
+  --line: #DDDDDD;
+  --paper: #EFEDE8;
+  --paper-2: #EFEDE7;
+  --card-blue: #FBFBFD;
+  --card-blue-line: #C9D6EE;
+  --card-red: #FDF4F4;
+  --card-red-line: #C94A3F;
+  --dark: #313645;
+  --line-green: #02B902; /* 村田さんデザインの実測値。LINE公式の #06C755 より明るい */
+
+  --col: 375px;
+  --gutter: 30px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: #F4F4F6;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 2;
+  font-feature-settings: "palt" 0;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+strong { font-weight: 700; }
+em { font-style: normal; }
+
+/* 列。スマホでは画面いっぱい、PCでは中央に置く */
+.page {
+  width: 100%;
+  max-width: var(--col);
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+@media (min-width: 600px) {
+  :root { --col: 480px; --gutter: 40px; }
+  body { background: #E9EAEF; }
+  .page { box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 8px 40px rgba(20,30,60,.10); }
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: absolute; top: 31px; left: 0; right: 0;
+  height: 46px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--gutter);
+}
+.site-header__logo {
+  width: 137px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  background: #EEF0F7;
+  font-family: "Yu Gothic", var(--sans);
+  font-size: 16px; line-height: 1; color: #848484;
+  letter-spacing: .08em;
+}
+.site-header__menu {
+  width: 30px; height: 22px; padding: 0; border: 0; background: none;
+  display: flex; flex-direction: column; justify-content: space-between;
+  cursor: pointer;
+}
+.site-header__menu span { display: block; height: 2px; background: #2E2E2E; }
+
+/* ---------- 1. 結果FV ---------- */
+.hero {
+  padding: 103px var(--gutter) 30px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 80% 45% at 50% 30%, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 70%),
+    linear-gradient(180deg, #F6F8FD 0%, #EAF0FB 22%, #D9E4F7 45%, #C6D6F1 65%, #B5C9EC 82%, #A9C0E8 100%);
+}
+.hero__title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 66px;
+  letter-spacing: .157em;
+  text-indent: .157em;
+  color: var(--ink);
+}
+.hero__subtitle {
+  margin-top: 6px;
+  font-size: 18px; font-weight: 500; line-height: 1.5;
+  letter-spacing: .1em; text-indent: .1em;
+  color: var(--ink);
+}
+.hero__figure {
+  width: 315px; height: 315px;
+  margin: 22px auto 0;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  border: 10px solid #fff;
+  box-shadow: 0 0 0 2px #C9D6EE, 0 10px 30px rgba(44,44,126,.18);
+}
+.hero__figure img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
+.hero__label {
+  margin-top: 66px;
+  font-family: var(--serif);
+  font-weight: 500; font-size: 20px; line-height: 1.5;
+  letter-spacing: .08em; color: var(--ink-2);
+}
+.hero__name {
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-weight: 700; font-size: 56px; line-height: 1.2;
+  letter-spacing: .1em; text-indent: .1em;
+  color: var(--navy);
+}
+.hero__type {
+  margin-top: 40px;
+  font-size: 19px; font-weight: 700; line-height: 1.5;
+  letter-spacing: 0; color: var(--ink-2); white-space: nowrap;
+}
+.hero__keywords {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 8px;
+  margin-top: 22px;
+}
+.hero__keywords li {
+  min-width: 72px; padding: 0 16px;
+  height: 38px; line-height: 36px;
+  border: 1px solid var(--navy); border-radius: 19px;
+  font-size: 16px; font-weight: 500; letter-spacing: .04em;
+  color: var(--navy); background: #fff;
+}
+.hero__keywords li.is-primary { background: var(--navy); color: #fff; font-weight: 700; }
+.hero__desc {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 16px; font-weight: 400; line-height: 31px;
+  color: var(--ink);
+}
+
+/* ---------- 2. 四神構成比 ---------- */
+.composition { padding: 26px var(--gutter) 46px; background: linear-gradient(180deg, #A9C0E8 0%, #FFFFFF 26%); }
+.composition__card {
+  border: 1px solid #333; background: #fff;
+  padding: 22px 24px 24px;
+}
+.composition__title {
+  font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.5;
+  letter-spacing: .1em; text-indent: .1em; text-align: center; color: var(--ink);
+  padding-bottom: 12px; border-bottom: 1px solid #9A9A9A;
+}
+.composition__list { margin-top: 14px; }
+.composition__row + .composition__row { margin-top: 13px; }
+.composition__head {
+  display: flex; align-items: baseline; gap: 16px;
+  font-size: 18px; font-weight: 500; line-height: 25px; letter-spacing: .02em;
+}
+.composition__track { margin-top: 3px; height: 8px; border-radius: 4px; background: #DDD; overflow: hidden; }
+.composition__bar { height: 100%; border-radius: 4px; }
+.composition__row--seiryu .composition__head { color: var(--navy); }
+.composition__row--seiryu .composition__bar { background: var(--navy); }
+.composition__row--suzaku .composition__head { color: var(--red); }
+.composition__row--suzaku .composition__bar { background: var(--red); }
+.composition__row--genbu .composition__head { color: var(--green); }
+.composition__row--genbu .composition__bar { background: var(--green); }
+.composition__row--byakko .composition__head { color: var(--gold); }
+.composition__row--byakko .composition__bar { background: var(--gold); }
+
+/* ---------- カード共通（ベージュの面の上の白いカード） ---------- */
+.traits, .actions, .strengths { background: var(--paper); padding: 0 12px; }
+.traits { padding-top: 44px; }
+.actions { padding-top: 40px; }
+.strengths { padding-top: 40px; padding-bottom: 0; }
+
+.card {
+  background: #fff;
+  border: 1px solid #DEDEDE;
+  border-radius: 10px;
+  padding: 58px 18px 40px;
+}
+.card__title {
+  font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.55;
+  letter-spacing: .14em; text-align: center; color: var(--ink);
+}
+.card__title em { color: var(--navy); }
+.card__title em.is-blue { color: var(--blue); }
+.card__title em.is-red { color: var(--red); }
+.card__title--two-line { padding-bottom: 22px; position: relative; margin-bottom: 26px; }
+.card__title--two-line::after {
+  content: ""; position: absolute; left: 50%; bottom: 0;
+  width: 100px; height: 1px; background: #B5B5B5; transform: translateX(-50%);
+}
+.card--headed { padding: 0 0 40px; overflow: hidden; }
+.card--headed .card__title {
+  background: #F6F6F6;
+  padding: 44px 18px 40px;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 26px;
+}
+.card--headed > *:not(.card__title) { margin-left: 18px; margin-right: 18px; }
+
+/* 中核本文。9/3 の最終調整①: 補足より一段強く（太くはしない） */
+.card__lead {
+  font-size: 16px; font-weight: 400; line-height: 30px; color: #3A3A3A;
+  margin-bottom: 24px;
+}
+
+/* チェックリスト */
+.checklist li {
+  position: relative; padding-left: 30px;
+  font-size: 16px; font-weight: 400; line-height: 24px; color: var(--ink);
+}
+.checklist li + li { margin-top: 7px; }
+.checklist li::before {
+  content: ""; position: absolute; left: 0; top: 3px;
+  width: 18px; height: 18px;
+  background-repeat: no-repeat; background-size: 18px 18px;
+}
+.checklist--blue li::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M2 3.5h9M2 3.5v12.5h13V8' fill='none' stroke='%237EA4E5' stroke-width='1.6'/><path d='M5.5 8.5l3.2 3.2L16.5 3.5' fill='none' stroke='%237EA4E5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+.checklist--red li::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M2 3.5h9M2 3.5v12.5h13V8' fill='none' stroke='%23C94A3F' stroke-width='1.6'/><path d='M5.5 8.5l3.2 3.2L16.5 3.5' fill='none' stroke='%23C94A3F' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+
+/* 具体的な行動 */
+.action-list li { display: flex; gap: 14px; align-items: flex-start; }
+.action-list li + li { margin-top: 22px; }
+.action-list__num {
+  flex: 0 0 auto;
+  font-family: var(--num); font-weight: 600; font-size: 20px; line-height: 1.5;
+  color: #8B8FD6; letter-spacing: .04em; padding-top: 1px;
+}
+.action-list__body strong { display: block; font-size: 18px; font-weight: 700; line-height: 27px; color: var(--ink); }
+.action-list__body span { display: block; margin-top: 4px; font-size: 16px; font-weight: 400; line-height: 27px; color: #5A5A5A; }
+
+/* 強み・弱み */
+.sw { border: 1px solid; border-radius: 2px; padding: 18px 14px 20px; }
+.sw + .sw { margin-top: 16px; }
+.sw--strength { background: var(--card-blue); border-color: var(--card-blue-line); }
+.sw--weakness { background: var(--card-red); border-color: var(--card-red-line); }
+.sw__title {
+  font-size: 18px; font-weight: 700; line-height: 27px; color: var(--ink);
+  padding-left: 3.6em; text-indent: -3.6em;
+  margin-bottom: 14px;
+}
+.sw__label { display: inline-block; width: 3.6em; text-indent: 0; font-size: 16px; font-weight: 700; letter-spacing: .02em; }
+.sw--strength .sw__label { color: var(--blue-light); }
+.sw--weakness .sw__label { color: var(--red); }
+.sw-bridge {
+  margin: 30px 0 26px;
+  text-align: center;
+  font-size: 20px; font-weight: 700; line-height: 34px; color: var(--ink);
+}
+.sw-bridge mark { background: linear-gradient(transparent 62%, #c3d5f2 62%); color: inherit; padding: 0 2px; } /* 下線型・青寄り（洋一さん 9/18） */
+
+/* つなぎの縦線 */
+.connector { width: 1px; height: 30px; margin: 30px auto 0; background: #9A9A9A; }
+.connector--short { height: 52px; margin: 26px auto 26px; }
+
+/* ---------- 6. 問い ---------- */
+.question {
+  position: relative;
+  background: var(--paper-2);
+  padding: 66px var(--gutter) 54px;
+  text-align: center;
+}
+.question::before { content: ""; position: absolute; left: 50%; top: 0; width: 1px; height: 30px; background: #9A9A9A; }
+.question__lead {
+  font-family: var(--serif); font-weight: 500; font-size: 18px; line-height: 1.8;
+  letter-spacing: .1em; color: var(--ink-2); white-space: nowrap;
+  margin-bottom: 22px;
+}
+.question__p { font-size: 16px; font-weight: 400; line-height: 28px; color: var(--ink); }
+.question__p + .question__p { margin-top: 28px; }
+.question__p--loose { font-size: 16px; line-height: 28px; }
+.question__big {
+  margin-top: 36px;
+  font-size: 28px; font-weight: 700; line-height: 35px; letter-spacing: .06em;
+  color: var(--ink);
+}
+
+/* ---------- 7. 影神の宣言（紺のグラデーション） ---------- */
+.shadow-intro {
+  position: relative;
+  background: linear-gradient(180deg, #8C9AB5 0%, #6D7FA6 35%, #5B6E9C 70%, #4A5C8E 100%);
+  padding: 70px 26px 30px;
+  text-align: center;
+  color: #fff;
+}
+.shadow-intro::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 56px; background: linear-gradient(180deg, #EFEDE7 0%, rgba(239,237,231,0) 100%); pointer-events: none; }
+.shadow-intro > * { position: relative; }
+.shadow-intro__h {
+  font-size: 25px; font-weight: 700; line-height: 1.6; letter-spacing: .06em;
+  color: #fff;
+}
+.shadow-intro__h--2 { margin-top: 44px; font-size: 24px; letter-spacing: .02em; margin-left: -6px; margin-right: -6px; }
+.shadow-intro__p {
+  margin-top: 24px;
+  font-size: 16px; font-weight: 400; line-height: 34px; letter-spacing: .04em;
+  color: rgba(255,255,255,.88);
+}
+.shadow-intro__p strong { color: #fff; }
+.shadow-intro__p--body { margin-top: 28px; text-align: center; line-height: 30px; letter-spacing: .02em; }
+
+/* ---------- 8. 今回の診断結果（濃紺）。9/3 の最終調整②: 下側は白へ直接つなぐ ---------- */
+.shadow-result {
+  position: relative;
+  background: var(--dark);
+  padding: 50px 26px 54px;
+  text-align: center;
+  color: #fff;
+}
+.shadow-result::before {
+  /* 上の紺セクションとの境界グラデーション（維持） */
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 70px;
+  background: linear-gradient(180deg, #4A5C8E 0%, rgba(74,92,142,0) 100%);
+  pointer-events: none;
+}
+.shadow-result::after {
+  /* 中央のかすかな光 */
+  content: ""; position: absolute; left: 50%; top: 46%; width: 220px; height: 220px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(120,140,200,.28) 0%, rgba(120,140,200,0) 70%);
+  pointer-events: none;
+}
+.shadow-result > * { position: relative; z-index: 1; }
+.shadow-result__label {
+  font-family: var(--serif); font-weight: 500; font-size: 20px; line-height: 1.5;
+  letter-spacing: .12em; color: #fff;
+}
+.shadow-result__h { margin-top: 30px; font-size: 22px; font-weight: 700; line-height: 1.5; letter-spacing: .1em; color: #fff; }
+.shadow-result__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+.shadow-result__text { text-align: left; }
+.shadow-result__name {
+  font-family: var(--serif); font-weight: 700; font-size: 32px; line-height: 1.3;
+  letter-spacing: .14em; color: var(--gold-text);
+}
+.shadow-result__sub { margin-top: 6px; font-size: 18px; font-weight: 500; line-height: 1.6; letter-spacing: .04em; color: #EFEFEF; }
+.shadow-result__img { width: 130px; height: 130px; border-radius: 12px; flex: 0 0 auto; overflow: hidden; background: #fff; }
+.shadow-result__img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 9. 影神の説明 ---------- */
+.shadow-explain { background: #fff; padding: 40px 22px 46px; }
+.shadow-explain__center { text-align: center; font-size: 16px; font-weight: 400; line-height: 30px; color: var(--ink); }
+.shadow-explain__p { margin-top: 24px; font-size: 16px; font-weight: 400; line-height: 30px; color: var(--ink); }
+.shadow-explain__p--strong { margin-top: 0; font-weight: 700; font-size: 16px; color: var(--ink); }
+
+/* 枠つきの箇条書き（黒枠） */
+.box-list { margin-top: 26px; border: 1px solid #333; background: #fff; padding: 24px 22px 22px 22px; }
+.box-list li { position: relative; padding-left: 42px; font-size: 16px; font-weight: 700; line-height: 25px; color: var(--ink-2); }
+.box-list li + li { margin-top: 15px; }
+.box-list li::before {
+  content: ""; position: absolute; left: 4px; top: 2px; width: 20px; height: 20px;
+  background-repeat: no-repeat; background-size: 20px 20px;
+}
+.box-list--dark li::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M2 3.5h10M2 3.5v14.5h15V9' fill='none' stroke='%232E2E2E' stroke-width='2'/><path d='M6 9.5l3.5 3.5L18.5 4' fill='none' stroke='%232E2E2E' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+.box-list--blue li::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M2 3.5h10M2 3.5v14.5h15V9' fill='none' stroke='%237EA4E5' stroke-width='2'/><path d='M6 9.5l3.5 3.5L18.5 4' fill='none' stroke='%237EA4E5' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+
+/* 白虎の資質タグ */
+.tag-list { margin-top: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.tag-list li { background: #EFEFEF; padding: 9px 16px; font-size: 16px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+
+/* LINE ボタン */
+.btn-line {
+  display: flex; align-items: center; justify-content: center; position: relative;
+  min-height: 78px; padding: 12px 48px 12px 14px;
+  background: var(--line-green); border-radius: 6px;
+  color: #fff; font-size: 19px; font-weight: 700; line-height: 1.5; letter-spacing: .02em; white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+.btn-line__arrow {
+  position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+  width: 0; height: 0; border-style: solid; border-width: 11px 0 11px 14px;
+  border-color: transparent transparent transparent #fff;
+}
+
+/* ---------- 10. このページで分かるのは ---------- */
+.next {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F3F2EF 14%, #F5F4F1 100%);
+  padding: 62px var(--gutter) 56px;
+}
+.next__h {
+  font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1.6;
+  letter-spacing: .02em; text-align: left; color: var(--ink); white-space: nowrap;
+  margin-bottom: 26px;
+}
+.next__p { font-size: 16px; font-weight: 400; line-height: 28px; color: var(--ink); }
+.next__p + .next__p { margin-top: 28px; }
+.next__lead { margin-top: 30px; font-size: 17px; font-weight: 700; line-height: 1.7; color: var(--ink); text-align: left; letter-spacing: 0; white-space: nowrap; }
+.next .box-list { margin-top: 18px; }
+.next__center { margin: 34px 0 30px; text-align: center; font-size: 16px; font-weight: 700; line-height: 30px; color: var(--ink); }
+.next__note { margin-top: 16px; text-align: center; font-size: 14px; font-weight: 500; line-height: 26px; color: var(--ink); }
+
+/* ---------- フッター ---------- */
+.site-footer { background: #F3F3F3; padding: 44px var(--gutter) 46px; text-align: center; color: var(--gray); }
+.site-footer__h { font-size: 20px; font-weight: 700; line-height: 1.5; letter-spacing: .1em; color: var(--gray); margin-bottom: 26px; }
+.site-footer__dl { text-align: left; font-size: 16px; font-weight: 500; line-height: 27px; }
+.site-footer__dl > div { display: flex; gap: 10px; }
+.site-footer__dl > div + div { margin-top: 9px; }
+.site-footer__dl dt { flex: 0 0 auto; letter-spacing: .1em; }
+.site-footer__link { display: inline-block; margin-top: 30px; color: #270EFF; text-decoration: underline; font-size: 16px; font-weight: 500; line-height: 1.5; }
+.copyright { background: #fff; padding: 24px var(--gutter) 40px; text-align: center; font-family: "DIN 2014", "Barlow", var(--sans); font-size: 14px; line-height: 1.5; color: #707070; letter-spacing: .02em; }
+
+/* 320px（小さいスマホ）の逃げ */
+@media (max-width: 340px) {
+  :root { --gutter: 22px; }
+  .hero__title { font-size: 40px; }
+  .hero__type { font-size: 16px; }
+  .hero__keywords { gap: 8px 6px; }
+  .hero__keywords li { min-width: 62px; padding: 0 12px; font-size: 15px; }
+  .question__lead { font-size: 16px; }
+  .next__lead { font-size: 15px; }
+  .shadow-intro__h--2 { font-size: 21px; }
+  .hero__figure { width: 260px; height: 260px; }
+  .hero__name { font-size: 50px; }
+  .card__title { font-size: 26px; }
+  .question__big { font-size: 25px; }
+  .shadow-intro__h { font-size: 22px; }
+  .shadow-result__img { width: 110px; height: 110px; }
+  .next__h { font-size: 22px; }
+  .btn-line { font-size: 17px; padding-right: 42px; }
+}
+
+/* 影神の箱＋説明を1枚のカードに（元モックの「黒い頭＋白い胴体」。9/3 の調整②「一続きのまとまりとして見せる」の実体） */
+.shadow-card { margin: 0 12px; border-radius: 12px; overflow: hidden; border: 1px solid #DCDDE3; background: #fff; box-shadow: 0 6px 20px rgba(30,35,55,.10); }
+.shadow-card .shadow-result { border-radius: 0; }
+.shadow-card .shadow-result::before { display: none; }
+.shadow-intro { padding-bottom: 48px; }
+.shadow-card + .next { padding-top: 56px; }
+.page > .shadow-card { position: relative; z-index: 1; margin-top: 0; }
+.shadow-intro { padding-bottom: 60px; }
+.shadow-card { margin-top: -20px; }
+
+/* 強み①②／弱み①②は対で同じ高さに揃える（2026-09-18 洋一さん指摘。文の長さがパターンで違っても箱の高さは揃う） */
+.sw-pair { display: grid; grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 16px; }
+.sw-pair .sw + .sw { margin-top: 0; }
+
+/* ---------- 影神の帯: 元モックの形（黒い帯＋左に金の「虎」、右に小さいイラスト）に差し替え（2026-09-18） ---------- */
+.shadow-result { display: flex; align-items: center; gap: 14px; padding: 26px 22px 26px 26px; background: #1A1614; text-align: left; }
+.shadow-result::before, .shadow-result::after { display: none; }
+.shadow-result > * { position: static; }
+.shadow-result__icon { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 9px; background: rgba(240,192,96,.16); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 500; color: #F0C060; }
+.shadow-result__text { flex: 1 1 auto; min-width: 0; text-align: left; }
+.shadow-result__label { font-family: var(--sans); font-size: 17px; font-weight: 700; line-height: 1.5; letter-spacing: .05em; color: #fff; }
+.shadow-result__h { display: none; }
+.shadow-result__name { margin-top: 4px; font-family: var(--sans); font-size: 17px; font-weight: 700; line-height: 1.5; letter-spacing: .05em; color: #F0C060; }
+.shadow-result__dash { color: #fff; font-weight: 400; letter-spacing: 0; }
+.shadow-result__sub { margin-top: 4px; font-size: 12px; font-weight: 400; line-height: 1.6; letter-spacing: .1em; color: rgba(255,255,255,.55); }
+.shadow-result__img { flex: 0 0 auto; width: 60px; height: 60px; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,.06); }
+.shadow-result__img img { width: 100%; height: 100%; object-fit: cover; transform: none; }
+.shadow-card { margin: 0 12px; margin-top: 0; border-radius: 16px; border: 1px solid #E5E0D8; box-shadow: none; }
+.shadow-intro { padding-bottom: 56px; }
+.shadow-explain { padding-top: 30px; }
+.shadow-explain__center { text-align: left; }
+.shadow-explain__center br { display: none; }
+.shadow-explain__p--strong { color: var(--ink); }
+
+/* ---------- LINE ボタン: 実機幅で2行に折れて矢印に重なる → 折り返しを許し、矢印の分を右に空ける ---------- */
+.btn-line { white-space: normal; padding: 12px 56px 12px 18px; font-size: 19px; line-height: 1.45; }
+.btn-line__arrow { right: 20px; }
+@media (max-width: 340px) { .btn-line { font-size: 17px; padding-right: 48px; } }
+.btn-line .nw { white-space: nowrap; }
+.btn-line { font-size: 18px; padding: 12px 50px 12px 14px; }
+@media (max-width: 400px) { .btn-line { font-size: 17px; } }
+@media (max-width: 340px) { .btn-line { font-size: 15.5px; padding-right: 44px; } }
+
+/* 青の場面と影神カードの間に生成りの地を入れる（元モックの形。2026-09-18 洋一さん指摘） */
+.page > .shadow-card { margin: 0 12px; }
+.shadow-band-bg { background: var(--paper); padding: 40px 0 44px; }
+.shadow-band-bg .shadow-card { margin: 0 12px; }
+.shadow-intro { padding-bottom: 60px; }
+.shadow-card + .next, .shadow-band-bg + .next { padding-top: 56px; }
