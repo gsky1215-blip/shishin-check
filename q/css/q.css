@@ -60,6 +60,11 @@ button { font: inherit; cursor: pointer; }
 .quiz__page.is-active { display: block; }
 .q { padding: 0 0 21px; border-bottom: 1px solid #8a8a8a; margin-bottom: 62px; }
 .q:last-of-type { border-bottom: 1px solid #8a8a8a; margin-bottom: 40px; }
+/* モック（診断ツール）と同じ動き: 今答える設問だけくっきり、回答済みとこれからの設問は薄く。これからの設問は先に押せない */
+.q { transition: opacity .4s ease; }
+.q.is-answered { opacity: .55; }
+.q.is-upcoming { opacity: .55; pointer-events: none; }
+.q.is-active { opacity: 1; }
 .q.is-missing { animation: qflash 1.6s; }
 @keyframes qflash { 0%, 100% { background: transparent; } 20% { background: rgba(94,74,133,.10); } }
 .q__num { display: inline-block; height: 40px; padding: 0 16px; background: #DDE3F1; font-size: 17px; font-weight: 700; line-height: 40px; letter-spacing: .06em; color: var(--ink-2); }
