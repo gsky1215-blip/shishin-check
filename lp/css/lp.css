@@ -23,7 +23,8 @@ a { color: inherit; text-decoration: none; }
 mark { background: linear-gradient(transparent 62%, var(--mark) 62%); color: inherit; }
 b { font-weight: 700; }
 .page { position: relative; overflow: hidden; }
-.sp, .sp-br { display: none; } /* スマホ専用の改行 */
+.sp, .sp-br { display: none; } /* スマホ専用の改行・文言 */
+.pc { display: inline; }
 /* 背景の飾り線: 村田さん正本と同じ「束になった曲線」を SVG で描く。どちらも左上から右下へ流れる */
 .deco { position: absolute; width: 900px; height: 1050px; background: url("../img/deco_arcs.svg") no-repeat center / contain; pointer-events: none; z-index: 2; }
 .top { position: relative; overflow: hidden; background: var(--grad); }
@@ -54,7 +55,8 @@ b { font-weight: 700; }
 /* ---------- ファーストビュー ---------- */
 .fv { position: relative; height: 700px; background: var(--grad); }
 .fv__inner { position: relative; width: 1051px; height: 100%; margin: 0 auto; left: 33px; }
-.fv__logo { position: absolute; left: -31px; top: 36px; font-size: 16px; line-height: 22px; letter-spacing: .1em; color: #8d8d8f; }
+.fv__logo { position: absolute; left: -31px; top: 34px; }
+.fv__logo img { height: 30px; width: auto; }
 .fv__text { position: absolute; left: 0; top: 125px; width: 560px; text-align: left; }
 .fv__label { display: inline-block; height: 33px; padding: 0 12px; border: 1px solid var(--ink); font-size: 14px; font-weight: 700; line-height: 31px; letter-spacing: .04em; color: var(--ink-2); }
 .fv__title { margin-top: 16px; font-family: var(--serif); font-weight: 600; font-size: 33px; line-height: 47px; letter-spacing: .03em; color: var(--ink-2); white-space: nowrap; }
@@ -63,7 +65,7 @@ b { font-weight: 700; }
 .fv .cta { margin-top: 33px; }
 .fv .cta__btn { margin: 0; }
 /* ひし形: 白いタイル4枚（回転した正方形）＋X字の細線＋四神の絵（大きなひし形で切り抜き）。中心は inner 基準 (631,341) */
-.fv__art { position: absolute; left: 812px; top: 328px; width: 0; height: 0; }
+.fv__art { position: absolute; left: 812px; top: 203px; width: 0; height: 0; }
 .fv__tile { position: absolute; width: 175px; height: 175px; margin: -87.5px 0 0 -87.5px; background: #faf6f7; transform: rotate(45deg); }
 .fv__tile--n { left: 0; top: -125px; } .fv__tile--e { left: 125px; top: 0; } .fv__tile--s { left: 0; top: 125px; } .fv__tile--w { left: -125px; top: 0; }
 .fv__x { position: absolute; left: -240px; top: -1px; width: 480px; height: 2px; background: rgba(255,255,255,.95); }
@@ -226,6 +228,7 @@ b { font-weight: 700; }
   /* スマホの改行は「PCの改行＋スマホ専用の改行」で行を決める（ブラウザ任せにしない）。四神カードの説明だけは流す */
   .gods__desc br, .gods__caveat br { display: none; }
   .sp { display: inline; }
+  .pc { display: none; }
   /* スマホでは村田さんのPC用の広い字間をやめ、本文をふつうの字間・一段太くする（洋一さん 9/19） */
   .body, .lead, .recommend__body, .fv__lead, .gods__desc, .gods__caveat, .symptoms__but { letter-spacing: .02em; }
   .body, .recommend__body, .fv__lead { font-weight: 500; }
@@ -237,20 +240,24 @@ b { font-weight: 700; }
   .cta__btn i { right: 18px; border-width: 9px 0 9px 11px; margin-top: -9px; }
   .cta__note { font-size: 12px; }
 
-  .fv { height: auto; padding: 0 24px 40px; }
+  .fv { height: auto; padding: 0 24px 28px; }
   /* FV: ひし形を見出しの上に置く（洋一さん 9/19「文字がごちゃごちゃ」→ 先に絵で目を止める） */
-  .fv__inner { width: auto; left: 0; height: auto; padding-top: 70px; display: flex; flex-direction: column; }
-  .fv__logo { top: 24px; }
-  .fv__text { order: 2; }
-  .fv__art { order: 1; }
-  .fv__logo { left: 0; top: 24px; font-size: 14px; }
+  .fv__inner { width: auto; left: 0; height: auto; padding-top: 78px; }
+  .fv__text { display: flex; flex-direction: column; }
+  .fv__label { align-self: flex-start; order: 1; }
+  .fv__title { order: 2; }
+  .fv__lead { order: 4; }
+  .fv .cta { order: 5; }
+  .fv__art { order: 3; }
+  .fv__logo { left: 0; top: 22px; }
+  .fv__logo img { height: 24px; }
   .fv__text { position: static; width: auto; }
   .fv__label { font-size: 12px; height: 28px; line-height: 26px; padding: 0 10px; }
-  .fv__title { margin-top: 16px; font-size: 20px; line-height: 35px; letter-spacing: 0; white-space: normal; }
-  .fv__lead { margin-top: 22px; font-size: 14.5px; line-height: 27px; white-space: normal; }
-  .fv .cta { display: block; margin-top: 30px; }
+  .fv__title { margin-top: 12px; font-size: 20px; line-height: 34px; letter-spacing: 0; white-space: normal; }
+  .fv__lead { margin-top: 0; font-size: 15px; line-height: 27px; white-space: normal; text-align: center; }
+  .fv .cta { display: block; margin-top: 22px; }
   .fv .cta__btn { margin: 0 auto; }
-  .fv__art { position: relative; left: 50%; top: 0; width: 0; height: 0; margin: 150px 0 150px; transform: scale(.55); z-index: 2; }
+  .fv__art { position: relative; left: 50%; top: 0; width: 0; height: 0; margin: 160px 0 150px; transform: scale(.56); z-index: 2; }
   .fv__gods { clip-path: polygon(256.5px 42px, 503px 288.8px, 256.5px 535.6px, 10px 288.8px); }
 
   .sec--reason { padding-top: 56px; }
