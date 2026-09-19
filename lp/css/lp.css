@@ -23,7 +23,7 @@ a { color: inherit; text-decoration: none; }
 mark { background: linear-gradient(transparent 62%, var(--mark) 62%); color: inherit; }
 b { font-weight: 700; }
 .page { position: relative; overflow: hidden; }
-.sp-br { display: none; }
+.sp, .sp-br { display: none; } /* スマホ専用の改行 */
 /* 背景の飾り線: 村田さん正本と同じ「束になった曲線」を SVG で描く。どちらも左上から右下へ流れる */
 .deco { position: absolute; width: 900px; height: 1050px; background: url("../img/deco_arcs.svg") no-repeat center / contain; pointer-events: none; z-index: 2; }
 .top { position: relative; overflow: hidden; background: var(--grad); }
@@ -89,13 +89,13 @@ b { font-weight: 700; }
 .sec--forces { padding-top: 110px; }
 .sec--forces .h3 { margin-top: 39px; }
 .sec--forces .body { margin-top: 20px; }
-.c-kakushin { color: #2c2c7e; } .c-kyoso { color: #b72e2e; } .c-seika { color: #8f8f96; } .c-kozo { color: #314737; }
+.c-kakushin { color: #2c2c7e; } .c-kyoso { color: #b72e2e; } .c-seika { color: #7a6f9b; } .c-kozo { color: #314737; }
 .gods { display: grid; grid-template-columns: 372px 372px; gap: 47px 42px; width: 786px; margin: 67px auto 0; }
 .gods__card { position: relative; width: 372px; padding: 29px 47px 0; border-radius: 4px; text-align: left; }
 .gods__card::before { content: ""; position: absolute; left: 0; top: 0; width: 94px; height: 5px; }
 .gods__card--seiryu { background: #e3f2f5; } .gods__card--seiryu::before { background: #2c2c7e; } .gods__card--seiryu .gods__title { color: #2c2c7e; }
 .gods__card--suzaku { background: #f6eaea; } .gods__card--suzaku::before { background: #b72e2e; } .gods__card--suzaku .gods__title { color: #b72e2e; }
-.gods__card--byakko { background: #e3e8f2; } .gods__card--byakko::before { background: #a798d4; } .gods__card--byakko .gods__title { color: #898989; }
+.gods__card--byakko { background: #e3e8f2; } .gods__card--byakko::before { background: #a798d4; } .gods__card--byakko .gods__title { color: #7a6f9b; } /* 白虎: 灰色は読めないので紫グレー（洋一さん 9/19） */
 .gods__card--genbu  { background: #e4f5ec; } .gods__card--genbu::before  { background: #314737; } .gods__card--genbu .gods__title  { color: #1d2a22; }
 .gods__img { width: 202px; height: 200px; margin: 0 auto; background: #fff; display: flex; align-items: center; justify-content: center; }
 .gods__img img { max-width: 100%; max-height: 100%; object-fit: contain; }
@@ -218,12 +218,17 @@ b { font-weight: 700; }
    ========================================================================== */
 @media (max-width: 767px) {
   body { font-size: 15px; }
-  .h2 { font-size: 24px; line-height: 36px; letter-spacing: .06em; }
+  .h2 { font-size: 24px; line-height: 36px; letter-spacing: .04em; }
   .h3 { font-size: 17px; line-height: 27px; }
   .h3--lines { font-size: 16px; line-height: 27px; }
   .lead { font-size: 15px; line-height: 27px; }
-  .body { font-size: 14px; line-height: 26px; }
-  .body br, .lead br, .h3 br, .fv__lead br, .gods__desc br, .gods__caveat br, .recommend__body br, .closing__sub br { display: none; }
+  .body { font-size: 15px; line-height: 27px; }
+  /* スマホの改行は「PCの改行＋スマホ専用の改行」で行を決める（ブラウザ任せにしない）。四神カードの説明だけは流す */
+  .gods__desc br, .gods__caveat br { display: none; }
+  .sp { display: inline; }
+  /* スマホでは村田さんのPC用の広い字間をやめ、本文をふつうの字間・一段太くする（洋一さん 9/19） */
+  .body, .lead, .recommend__body, .fv__lead, .gods__desc, .gods__caveat, .symptoms__but { letter-spacing: .02em; }
+  .body, .recommend__body, .fv__lead { font-weight: 500; }
   .sec { padding-left: 24px; padding-right: 24px; }
 
   .cta__btn { width: 100%; max-width: 327px; height: 72px; padding-top: 10px; }
@@ -233,18 +238,22 @@ b { font-weight: 700; }
   .cta__note { font-size: 12px; }
 
   .fv { height: auto; padding: 0 24px 40px; }
-  .fv__inner { width: auto; left: 0; height: auto; padding-top: 90px; }
+  /* FV: ひし形を見出しの上に置く（洋一さん 9/19「文字がごちゃごちゃ」→ 先に絵で目を止める） */
+  .fv__inner { width: auto; left: 0; height: auto; padding-top: 70px; display: flex; flex-direction: column; }
+  .fv__logo { top: 24px; }
+  .fv__text { order: 2; }
+  .fv__art { order: 1; }
   .fv__logo { left: 0; top: 24px; font-size: 14px; }
   .fv__text { position: static; width: auto; }
   .fv__label { font-size: 12px; height: 28px; line-height: 26px; padding: 0 10px; }
-  .fv__title { margin-top: 14px; font-size: 20px; line-height: 34px; letter-spacing: .02em; white-space: normal; }
-  .fv__lead { margin-top: 16px; font-size: 14px; line-height: 25px; white-space: normal; }
-  .fv .cta { display: block; margin-top: 26px; }
+  .fv__title { margin-top: 16px; font-size: 20px; line-height: 35px; letter-spacing: 0; white-space: normal; }
+  .fv__lead { margin-top: 22px; font-size: 14.5px; line-height: 27px; white-space: normal; }
+  .fv .cta { display: block; margin-top: 30px; }
   .fv .cta__btn { margin: 0 auto; }
-  .fv__art { position: relative; left: 50%; top: 0; width: 0; height: 0; margin: 200px 0 210px; transform: scale(.6); z-index: 2; }
+  .fv__art { position: relative; left: 50%; top: 0; width: 0; height: 0; margin: 150px 0 150px; transform: scale(.55); z-index: 2; }
   .fv__gods { clip-path: polygon(256.5px 42px, 503px 288.8px, 256.5px 535.6px, 10px 288.8px); }
 
-  .sec--reason { padding-top: 130px; }
+  .sec--reason { padding-top: 56px; }
   .sec--reason .lead { margin-top: 20px; }
   .symptoms { flex-direction: column; align-items: center; gap: 12px; margin-top: 24px; }
   .symptoms li { width: 100%; max-width: 327px; height: auto; }
@@ -266,7 +275,6 @@ b { font-weight: 700; }
   .band { margin-top: 56px; height: auto; padding: 96px 24px 96px; background: radial-gradient(ellipse 300px 200px at 50% 55%, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 100%), var(--navy); }
   .band::before, .band::after { height: 60px; }
   .band__text { font-size: 16px; line-height: 30px; letter-spacing: .06em; }
-  .band__text br { display: none; }
   .band .cta { margin-top: 28px; }
   .band--2 { margin-top: 48px; padding: 96px 24px 96px; }
   .band--2 .band__text { line-height: 30px; }
@@ -275,24 +283,26 @@ b { font-weight: 700; }
   .sec--three { padding-top: 48px; }
   .sec--three .h3 { margin-top: 24px; }
   .sec--three .body { margin-top: 14px; }
-  .three { flex-direction: column; align-items: center; gap: 16px; margin-top: 28px; }
-  .three li { width: 100%; max-width: 327px; height: auto; padding: 0 22px 22px; }
-  .three__head { height: 68px; }
-  .three__num { font-size: 32px; }
-  .three__name { font-size: 18px; margin-left: 16px; padding-left: 16px; }
-  .three__title { height: 72px; font-size: 18px; line-height: 24px; }
-  .three__shot { width: 100%; height: auto; }
+  /* 3つのこと: スマホは番号・見出し（左）とスクショの窓（右）の横並び1枚に（洋一さん 9/19） */
+  .three { flex-direction: column; align-items: center; gap: 14px; margin-top: 28px; }
+  .three li { width: 100%; max-width: 327px; height: 176px; padding: 16px 14px 16px 18px; display: grid; grid-template-columns: 1fr 104px; grid-template-rows: auto 1fr; column-gap: 12px; }
+  .three__head { grid-column: 1; height: 34px; border-bottom: 0; }
+  .three__num { font-size: 26px; }
+  .three__name { height: 28px; font-size: 16px; margin-left: 12px; padding-left: 12px; letter-spacing: .08em; }
+  .three__title { grid-column: 1; height: auto; justify-content: flex-start; align-items: flex-start; padding-top: 8px; text-align: left; font-size: 16px; line-height: 25px; letter-spacing: 0; }
+  .three__shot { grid-column: 2; grid-row: 1 / 3; width: 104px; height: 144px; margin: 0; object-fit: cover; object-position: top; border-radius: 6px; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%); mask-image: linear-gradient(180deg, #000 70%, transparent 100%); border: 0; }
 
   .sec--recommend { padding: 56px 24px 64px; }
   .sec--recommend .h3 { margin-top: 24px; }
   .sec--recommend .body { margin-top: 14px; }
-  .signs, .signs--row2 { flex-direction: column; align-items: center; gap: 12px; }
+  .signs, .signs--row2 { flex-direction: column; align-items: center; gap: 10px; }
   .signs { margin-top: 28px; }
-  .signs--row2 { margin-top: 12px; }
-  .signs li { width: 100%; max-width: 327px; height: auto; padding: 26px 16px 24px; }
-  .signs li img { height: 52px; }
-  .signs li p { margin-top: 12px; font-size: 16px; line-height: 27px; }
-  .recommend__body { margin-top: 32px; font-size: 14.5px; line-height: 27px; }
+  .signs--row2 { margin-top: 10px; }
+  /* 兆しカード: スマホはアイコン左・文右の横長にして、同じ形の縦積みで間延びしないようにする（洋一さん 9/19） */
+  .signs li { width: 100%; max-width: 327px; height: auto; padding: 16px 16px 16px 18px; display: flex; align-items: center; gap: 16px; text-align: left; }
+  .signs li img { flex: 0 0 52px; width: 52px; height: 44px; margin: 0; }
+  .signs li p { margin: 0; font-size: 15.5px; line-height: 25px; letter-spacing: .02em; white-space: nowrap; }
+  .recommend__body { margin-top: 32px; font-size: 15px; line-height: 28px; text-align: center; }
   .recommend__body p + p { margin-top: 20px; }
 
   .sec--steps { padding: 56px 24px 64px; }
@@ -307,8 +317,7 @@ b { font-weight: 700; }
 
   .closing { padding: 72px 24px 48px; background: radial-gradient(ellipse 320px 300px at 50% 30%, rgba(120,124,140,.55) 0%, rgba(120,124,140,0) 100%), radial-gradient(ellipse 300px 160px at 50% 90%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 100%), var(--navy-2); }
   .closing__lines { font-size: 19px; line-height: 36px; letter-spacing: .02em; }
-  .sp-br { display: inline; }
-  .band--2 .band__text br:not(.sp-br) { display: inline; }
+  .closing__step, .closing__ask, .closing__sub { letter-spacing: .03em; }
   .closing__lines--2 { margin-top: 40px; }
   .closing__arrow { height: 56px; margin-top: 48px; }
   .closing__box { width: 100%; max-width: 327px; height: auto; margin-top: 44px; padding: 32px 16px 36px; }
