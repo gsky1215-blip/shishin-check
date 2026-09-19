@@ -103,12 +103,37 @@
 
   var total = 16;
   function answered() { return document.querySelectorAll('.q input:checked').length; }
+
+  // 状態の再計算（モックと同じ）: 最初の未回答＝active、回答済み＝answered（変更は可）、それ以降の未回答＝upcoming（ロック）
+  var allQ = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  function isDone(q) { return !!q.querySelector('input:checked'); }
+  function recomputeStates() {
+    var first = null;
+    for (var i = 0; i < allQ.length; i++) { if (!isDone(allQ[i])) { first = allQ[i]; break; } }
+    allQ.forEach(function (q) {
+      q.classList.remove('is-active', 'is-answered', 'is-upcoming');
+      if (q === first) q.classList.add('is-active');
+      else if (isDone(q)) q.classList.add('is-answered');
+      else q.classList.add('is-upcoming');
+    });
+    return first;
+  }
+  recomputeStates();
   function updateProgress() {
     var n = answered(); var pct = Math.round(n / total * 100);
     document.getElementById('progress-fill').style.width = pct + '%';
     document.getElementById('progress-pct').textContent = pct + '%';
   }
-  document.getElementById('quiz').addEventListener('change', updateProgress);
+  document.getElementById('quiz').addEventListener('change', function (e) {
+    updateProgress();
+    var q = e.target && e.target.closest ? e.target.closest('.q') : null;
+    var wasActive = q && q.classList.contains('is-active');
+    var next = recomputeStates();
+    // いま答えた設問が active だったときだけ、次の設問へスクロール（同じページ内のとき）
+    if (wasActive && next && next.closest('.quiz__page') === q.closest('.quiz__page')) {
+      setTimeout(function () { next.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 140);
+    }
+  });
 
   // ページ送り（未回答があれば最初の未回答へスクロールして知らせる）
   function showPage(n) {
