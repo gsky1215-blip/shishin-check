@@ -282,8 +282,9 @@ br.pc { display: inline; }
   .gods__card { width: 100%; max-width: 327px; padding: 28px 24px 0; }
   .gods__img { width: 200px; height: 190px; }
   .gods__title { margin-top: 24px; font-size: 19px; }
-  .gods__desc { margin-top: 10px; font-size: 14px; line-height: 26px; white-space: normal; }
-  .gods__caveat { margin-top: 12px; padding: 12px 0 26px; font-size: 14px; line-height: 26px; white-space: normal; }
+  /* 四神の説明: 初めて四神が出る場面なので一番読ませる文。太く大きく（洋一さん 9/19） */
+  .gods__desc { margin-top: 12px; font-size: 16px; font-weight: 600; line-height: 29px; letter-spacing: .02em; color: var(--ink-2); white-space: normal; }
+  .gods__caveat { margin-top: 14px; padding: 14px 0 26px; font-size: 14.5px; font-weight: 500; line-height: 26px; white-space: normal; }
   .gods__card--suzaku .gods__caveat { padding-bottom: 26px; }
 
   /* 玄武のカードと帯の間の白は要らない（洋一さん 9/19） */
