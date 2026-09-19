@@ -1,0 +1,150 @@
+/* ==========================================================================
+   四神組織診断 設問ページ（16問）── PC（1920基準・カード幅 910）／SP（375）
+   デザイン: ラヴィゴット村田さん XD（2026-07-23）。回答UIは大小の円5個（緑→灰→紫）。
+   ========================================================================== */
+
+:root {
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --sans:  "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --ink: #2E2E2E; --ink-2: #131311;
+  --btn: #3F62A8;
+  --c1: #3E6B5C; --c2: #9FBFB2; --c3: #BFBFC4; --c4: #B4A8CF; --c5: #5E4A85;
+  --card-w: 995px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.9; text-spacing-trim: space-all; background: linear-gradient(90deg, #e9e9f8 0%, #f2f2fa 26%, #f9f8fa 47%, #fbf7f7 60%, #faf1f1 76%, #f8e6e6 100%); }
+img { max-width: 100%; display: block; }
+h1, h2, h3, p, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+button { font: inherit; cursor: pointer; }
+
+.page { position: relative; min-height: 100vh; padding-bottom: 240px; }
+
+/* ---------- ヘッダー ---------- */
+.site-header__logo {
+  position: absolute; top: 28px; left: 50%; transform: translateX(-535px);
+  font-size: 16px; line-height: 22px; letter-spacing: .1em; color: #8d8d8f;
+}
+
+/* ---------- 上部 ---------- */
+.intro { position: relative; height: 585px; }
+.intro__inner { position: relative; width: 1010px; height: 100%; margin: 0 auto; }
+.intro__text { position: absolute; left: 0; top: 150px; width: 460px; }
+.intro__title { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 60px; letter-spacing: .06em; color: var(--ink-2); }
+.intro__lead { margin-top: 42px; font-size: 15px; font-weight: 400; line-height: 30px; letter-spacing: .02em; color: var(--ink); }
+.pills { margin-top: 42px; display: flex; gap: 12px; flex-wrap: wrap; }
+.pills li { position: relative; height: 50px; padding: 0 30px 0 58px; border: 1px solid #555; border-radius: 25px; background: #fff; font-size: 17px; font-weight: 500; line-height: 48px; letter-spacing: .04em; color: var(--ink-2); }
+.pills li::before { content: ""; position: absolute; left: 28px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M2 3.5h9M2 3.5v12.5h13V8' fill='none' stroke='%234B73B7' stroke-width='1.6'/><path d='M5.5 8.5l3.2 3.2L16.5 3.5' fill='none' stroke='%234B73B7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat; background-size: contain; }
+.intro__art { position: absolute; left: 430px; top: 80px; }
+/* 四神のひし形（LPと同じ部品: 白タイル4枚＋X字の線＋四神の絵） */
+/* 400px 版: LP の 520px 版を 0.77 倍。中心を (200,212) に置く */
+.diamond { position: relative; width: 400px; height: 424px; }
+.diamond > * { position: absolute; left: 200px; top: 212px; }
+.dia__tile { width: 135px; height: 135px; margin: -67.5px 0 0 -67.5px; background: #faf6f7; transform: rotate(45deg); }
+.dia__tile--n { margin-top: -163.5px; } .dia__tile--e { margin-left: 28.5px; } .dia__tile--s { margin-top: 28.5px; } .dia__tile--w { margin-left: -163.5px; }
+.dia__x { width: 370px; height: 2px; margin: -1px 0 0 -185px; background: rgba(255,255,255,.95); }
+.dia__x--a { transform: rotate(45deg); } .dia__x--b { transform: rotate(-45deg); }
+.dia__gods { width: 400px; height: 424px; margin: -222px 0 0 -197px; max-width: none; clip-path: polygon(197px 32px, 387px 222px, 197px 412px, 8px 222px); }
+.dia__shade { width: 135px; height: 135px; margin: -67.5px 0 0 -163.5px; transform: rotate(45deg); z-index: 2; mix-blend-mode: multiply; pointer-events: none; background: radial-gradient(circle at 62% 50%, #ffffff 0%, #f6f6f6 35%, #e4e3e4 70%, #cfcccf 100%); }
+
+/* ---------- 進捗 ---------- */
+.progress { position: absolute; left: 50%; top: 528px; width: 1010px; transform: translateX(-50%); display: flex; align-items: center; gap: 24px; }
+.progress__track { flex: 0 0 905px; height: 8px; border-radius: 4px; background: #cfcfd3; overflow: hidden; }
+.progress__fill { height: 100%; border-radius: 4px; background: var(--btn); transition: width .3s; }
+.progress__pct { flex: 0 0 auto; font-size: 17px; font-weight: 700; letter-spacing: .02em; color: var(--ink-2); }
+
+/* ---------- 設問カード ---------- */
+.quiz { width: var(--card-w); margin: 0 auto; }
+.quiz__page { display: none; background: rgba(255,255,255,.72); box-shadow: 0 2px 14px rgba(60,70,110,.06); padding: 38px 90px 50px 100px; }
+.quiz__page.is-active { display: block; }
+.q { padding: 0 0 21px; border-bottom: 1px solid #8a8a8a; margin-bottom: 62px; }
+.q:last-of-type { border-bottom: 1px solid #8a8a8a; margin-bottom: 40px; }
+.q.is-missing { animation: qflash 1.6s; }
+@keyframes qflash { 0%, 100% { background: transparent; } 20% { background: rgba(94,74,133,.10); } }
+.q__num { display: inline-block; height: 40px; padding: 0 16px; background: #DDE3F1; font-size: 17px; font-weight: 700; line-height: 40px; letter-spacing: .06em; color: var(--ink-2); }
+.q__text { margin-top: 22px; text-align: center; font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 40px; letter-spacing: .06em; color: var(--ink-2); }
+
+/* 5段階の丸 */
+.scale { display: flex; justify-content: center; gap: 47px; margin-top: 59px; padding-bottom: 76px; }
+.scale__item { display: block; position: relative; cursor: pointer; width: 78px; height: 78px; }
+.scale__item .scale__circle { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.scale__item .scale__label { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 28px; }
+.scale__item input { position: absolute; opacity: 0; width: 0; height: 0; }
+.scale__circle { display: block; border-radius: 50%; border: 2px solid; background: #fff; transition: background .15s, transform .15s; }
+.scale__item--1 .scale__circle { width: 78px; height: 78px; border-color: var(--c1); }
+.scale__item--2 .scale__circle { width: 66px; height: 66px; border-color: var(--c2); }
+.scale__item--3 .scale__circle { width: 62px; height: 62px; border-color: var(--c3); }
+.scale__item--4 .scale__circle { width: 66px; height: 66px; border-color: var(--c4); }
+.scale__item--5 .scale__circle { width: 78px; height: 78px; border-color: var(--c5); }
+.scale__label { font-size: 16px; font-weight: 700; line-height: 24px; letter-spacing: .02em; text-align: center; color: var(--ink); white-space: nowrap; }
+.scale__item--1 .scale__label { color: var(--c1); }
+.scale__item--3 .scale__label { color: #6E6E73; font-weight: 500; }
+.scale__item--5 .scale__label { color: var(--c5); }
+/* 選択時: 塗りつぶし＋白いチェック */
+.scale__item input:checked + .scale__circle { background-color: currentColor; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 8' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>"); background-repeat: no-repeat; background-position: center; background-size: 55%; }
+.scale__item--1 { color: var(--c1); } .scale__item--2 { color: var(--c2); } .scale__item--3 { color: var(--c3); } .scale__item--4 { color: var(--c4); } .scale__item--5 { color: var(--c5); }
+.scale__item:hover .scale__circle { transform: translate(-50%, -50%) scale(1.06); }
+
+/* ---------- ページ送り ---------- */
+.nav { display: flex; justify-content: center; gap: 24px; margin-top: 0; }
+.btn { position: relative; height: 80px; border: 0; border-radius: 6px; font-size: 20px; font-weight: 700; letter-spacing: .06em; }
+/* デザイン: 「次へ」「戻る」は白、「診断結果を見る」だけ青 */
+.btn--next { flex: 0 0 425px; background: #fff; color: var(--ink-2); box-shadow: 0 3px 12px rgba(0,0,0,.12); }
+.btn--submit { flex: 0 0 425px; background: linear-gradient(180deg, #4f73af 0%, #33548d 100%); color: #fff; box-shadow: 0 4px 10px rgba(30,50,100,.30), inset 0 1px 0 rgba(255,255,255,.18); }
+.btn--back { flex: 0 0 352px; background: #fff; color: var(--ink-2); box-shadow: 0 3px 12px rgba(0,0,0,.12); }
+.btn i { position: absolute; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-style: solid; }
+.btn--next i { right: 24px; border-width: 9px 0 9px 11px; border-color: transparent transparent transparent #2E2E2E; }
+.btn--submit i { right: 24px; border-width: 9px 0 9px 11px; border-color: transparent transparent transparent #fff; }
+.btn--back i { left: 24px; border-width: 9px 11px 9px 0; border-color: transparent #2E2E2E transparent transparent; }
+.nav .btn:only-child { flex: 0 0 425px; }
+
+/* ---------- フッター ---------- */
+.copyright { margin-top: 60px; text-align: center; font-family: Arial, var(--sans); font-size: 16px; color: #707070; }
+
+/* ==========================================================================
+   スマホ（〜767px）
+   ========================================================================== */
+@media (max-width: 767px) {
+  .page { padding-bottom: 60px; }
+  .site-header__logo { left: 24px; transform: none; top: 24px; font-size: 14px; }
+  .intro { height: auto; padding: 84px 24px 0; }
+  .intro__inner { width: auto; height: auto; }
+  .intro__text { position: static; width: auto; }
+  .intro__title { font-size: 32px; line-height: 46px; text-align: center; }
+  .intro__lead { margin-top: 18px; font-size: 14px; line-height: 26px; text-align: center; }
+  .intro__lead br { display: none; }
+  .pills { margin-top: 20px; justify-content: center; gap: 10px; }
+  .pills li { height: 42px; padding: 0 18px 0 42px; font-size: 14px; line-height: 40px; } .pills li::before { left: 16px; width: 16px; height: 16px; }
+  .intro__art { position: static; display: flex; justify-content: center; margin: 20px 0 0; height: 300px; overflow: hidden; }
+  .diamond { transform: scale(.7); transform-origin: top center; }
+
+  .progress { position: static; width: auto; transform: none; margin: 20px 24px 0; gap: 14px; }
+  .progress__track { flex: 1 1 auto; }
+  .progress__pct { font-size: 15px; }
+
+  .quiz { width: auto; margin: 24px 12px 0; }
+  .quiz__page { padding: 26px 18px 34px; }
+  .q { padding-bottom: 18px; margin-bottom: 30px; }
+  .q__num { height: 34px; padding: 0 12px; font-size: 14px; line-height: 34px; }
+  .q__text { margin-top: 16px; font-size: 18px; line-height: 30px; letter-spacing: .02em; text-align: left; }
+  .q__text br { display: none; }
+
+  .scale { gap: 4px; margin-top: 28px; padding-bottom: 50px; }
+  .scale__item { width: 62px; height: 62px; }
+  .scale__item .scale__label { margin-top: 14px; }
+  .scale__item--1 .scale__circle, .scale__item--5 .scale__circle { width: 56px; height: 56px; }
+  .scale__item--2 .scale__circle, .scale__item--4 .scale__circle { width: 48px; height: 48px; }
+  .scale__item--3 .scale__circle { width: 44px; height: 44px; }
+  .scale__label { font-size: 11px; line-height: 16px; }
+
+  .nav { gap: 12px; margin-top: 8px; }
+  .btn { height: 64px; padding: 0 30px 0 22px; font-size: 15px; letter-spacing: 0; }
+  .btn--next, .btn--submit { flex: 1.6 1 0; } .btn--back { flex: 1 1 0; padding: 0 22px 0 30px; }
+  .btn--next i, .btn--submit i { right: 12px; } .btn--back i { left: 12px; }
+  .nav .btn:only-child { flex: 1 1 0; }
+}
+@media (max-width: 340px) {
+  .scale { gap: 0; }
+  .scale__item { width: 58px; }
+}
