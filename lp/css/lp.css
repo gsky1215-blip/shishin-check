@@ -137,7 +137,7 @@ br.pc { display: inline; }
 .band__text { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 37px; letter-spacing: .1em; }
 .band .cta { margin-top: 47px; }
 .band .cta__note { margin-top: 17px; color: #fff; font-weight: 500; }
-.band--2 { margin-top: 79px; height: 644px; padding-top: 194px;
+.band--2 { margin-top: 0; height: 644px; padding-top: 194px;
   background:
     radial-gradient(ellipse 480px 190px at 50% 45%, rgba(255,255,255,.20) 0%, rgba(255,255,255,.11) 40%, rgba(255,255,255,.04) 70%, rgba(255,255,255,0) 100%),
     radial-gradient(circle at 50% 62%, rgba(255,255,255,0) 0 520px, rgba(255,255,255,.03) 590px 680px, rgba(255,255,255,0) 750px 820px, rgba(255,255,255,.028) 890px 980px, rgba(255,255,255,0) 1050px),
@@ -147,7 +147,7 @@ br.pc { display: inline; }
 .band--2 .cta { margin-top: 28px; }
 
 /* ---------- 診断で見える3つのこと ---------- */
-.sec--three { padding-top: 61px; }
+.sec--three { padding-top: 61px; padding-bottom: 79px; }
 .sec--three .h3 { margin-top: 42px; }
 .sec--three .body { margin-top: 20px; }
 .three__note { margin-top: 36px; font-size: 13px; font-weight: 500; letter-spacing: .12em; color: #7a7f8c; }
