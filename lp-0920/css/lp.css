@@ -10,7 +10,8 @@
   --blue: #3f62a8;
   --navy: #333847; --navy-2: #2e3240;
   /* 村田さん実測（1920幅）: 左端は#f8f7f9→200pxで#e9e9f8、中央#faf8fa、右は1500pxまで#faf1f1、右端#f8e5e5。桃色は右の2割だけ */
-  --grad: linear-gradient(90deg, #f8f7f9 0%, #e9e9f8 10%, #efeff9 21%, #f4f4fb 31%, #f8f7fb 42%, #faf8fa 50%, #fbf8f8 57%, #fbf5f5 68%, #faf1f1 78%, #f7e9e9 88%, #f8e5e5 100%);
+  /* 正本（1845幅）の実測: 左端から青 #e9e9f8、400pxで #f4f4fa、中央 #faf8f9、1200pxで #faf2f2、1500pxで #f3e4e4、右端 #f7e5e5。青も桃も端から広く入る */
+  --grad: linear-gradient(90deg, #e9e9f8 0%, #ececf9 5%, #efeff9 11%, #f4f4fa 22%, #f8f7fa 34%, #faf8f9 46%, #fbf6f6 56%, #faf2f2 65%, #f6ebeb 73%, #f3e4e4 81%, #f5e4e4 90%, #f7e5e5 100%);
   --mark: #c3d5f2; /* 洋一さん指示 9/18: 灰色寄りから青寄りへ */
 }
 * { box-sizing: border-box; }
@@ -124,7 +125,9 @@ br.pc { display: inline; }
     radial-gradient(ellipse 430px 165px at 50% 46%, rgba(255,255,255,.34) 0%, rgba(255,255,255,.14) 50%, rgba(255,255,255,0) 100%),
     /* 同心円はCTAを中心に外へ広がる（村田さん正本と同じ向き） */
     radial-gradient(circle at 50% 60%, rgba(255,255,255,0) 0 520px, rgba(255,255,255,.03) 590px 680px, rgba(255,255,255,0) 750px 820px, rgba(255,255,255,.028) 890px 980px, rgba(255,255,255,0) 1050px),
-    radial-gradient(circle 1100px at -8% 130%, rgba(0,0,0,0) 0 900px, rgba(0,0,0,.12) 905px 1100px),
+    /* 両脇の大きな暗い楕円（正本: 地より5〜6段暗く、縁がわずかに明るい） */
+    radial-gradient(ellipse 520px 720px at 6% 60%, rgba(0,0,0,.16) 0 88%, rgba(255,255,255,.06) 90% 93%, rgba(0,0,0,0) 96%),
+    radial-gradient(ellipse 520px 720px at 94% 60%, rgba(0,0,0,.16) 0 88%, rgba(255,255,255,.06) 90% 93%, rgba(0,0,0,0) 96%),
     var(--navy); }
 .band::before, .band::after { content: ""; position: absolute; left: 0; right: 0; }
 /* 上端: 村田さん実測に合わせた曲線（最初はゆっくり、最後に一気に紺へ）。上の節の地色 #ececf9 から始める */
