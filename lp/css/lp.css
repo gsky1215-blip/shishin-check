@@ -159,13 +159,14 @@ br.pc { display: inline; }
 .sec--recommend { background: #eef2f9; padding: 94px 0 168px; }
 .sec--recommend .h3 { margin-top: 39px; }
 .sec--recommend .body { margin-top: 20px; }
-.signs { display: flex; justify-content: center; gap: 14px; margin-top: 36px; }
-.signs--row2 { gap: 18px; margin-top: 19px; }
-.signs li { width: 317px; height: 226px; padding-top: 38px; border: 1px solid #c9cdd8; border-radius: 3px; background: #fff; }
-.signs li img { height: 64px; width: 64px; margin: 0 auto; object-fit: contain; }
-.signs li p { margin-top: 10px; font-size: 19px; font-weight: 700; line-height: 32px; letter-spacing: .04em; color: var(--ink-2); }
+/* 兆し5つ（PC）: 3枚＋2枚の箱をやめ、幅800の横長の行を5つ縦に並べる。読み流して当てはめる項目なので（GPT評価・洋一さん 9/20） */
+.signs { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 800px; margin: 40px auto 0; }
+.signs li { width: 100%; height: 84px; padding: 0 28px 0 28px; display: flex; align-items: center; gap: 24px; border: 1px solid #c9cdd8; border-radius: 3px; background: #fff; text-align: left; }
+.signs li img { flex: 0 0 36px; width: 36px; height: 36px; margin: 0; object-fit: contain; }
+.signs li p { margin: 0; font-size: 18px; font-weight: 700; line-height: 30px; letter-spacing: .04em; color: var(--ink-2); }
+.signs li p br { display: none; }
 .c-blue { color: var(--blue); }
-.recommend__body { margin-top: 40px; font-size: 16.5px; font-weight: 400; line-height: 38px; letter-spacing: .16em; color: var(--ink); }
+.recommend__body { margin-top: 44px; font-size: 16.5px; font-weight: 400; line-height: 38px; letter-spacing: .16em; color: var(--ink); }
 .recommend__body p + p { margin-top: 38px; }
 
 /* ---------- 診断はかんたん3ステップ ---------- */
@@ -325,16 +326,16 @@ br.pc { display: inline; }
   .sec--recommend { padding: 64px 24px 72px; }
   .sec--recommend .h3 { margin-top: 28px; }
   .sec--recommend .body { margin-top: 20px; }
-  .signs, .signs--row2 { flex-direction: column; align-items: center; gap: 10px; }
-  .signs { margin-top: 36px; }
-  .signs--row2 { margin-top: 10px; }
+  .signs { width: 100%; gap: 10px; margin-top: 36px; }
   /* 兆しカード: スマホはアイコン左・文右の横長にして、同じ形の縦積みで間延びしないようにする（洋一さん 9/19） */
-  .signs li { width: 100%; max-width: 327px; height: auto; padding: 16px 16px 16px 18px; display: flex; align-items: center; gap: 16px; text-align: left; }
-  .signs li img { flex: 0 0 44px; width: 44px; height: 44px; margin: 0; }
-  .signs li p { margin: 0; font-size: 15.5px; line-height: 25px; letter-spacing: .02em; white-space: nowrap; }
+  .signs li { max-width: 327px; height: auto; padding: 16px 16px 16px 18px; gap: 16px; }
+  .signs li img { flex: 0 0 40px; width: 40px; height: 40px; }
+  .signs li p { font-size: 15.5px; line-height: 25px; letter-spacing: .02em; white-space: nowrap; }
+  .signs li p br { display: inline; }
   /* 締めの4段落: 一番読ませたい所なので大きく太く。最後の段落はさらに一段（洋一さん 9/19） */
   .recommend__body { margin-top: 44px; font-size: 17px; font-weight: 600; line-height: 31px; text-align: center; color: var(--ink-2); }
   .recommend__body p + p { margin-top: 24px; }
+  .recommend__body p:first-child { font-size: 15px; font-weight: 500; line-height: 27px; color: var(--ink); }
   .recommend__body p:last-child { font-size: 18px; font-weight: 700; line-height: 33px; }
 
   .sec--steps { padding: 64px 24px 72px; }
