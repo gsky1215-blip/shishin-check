@@ -111,12 +111,13 @@ br.pc { display: inline; }
 .gods__card--genbu .gods__img { width: 207px; height: 199px; overflow: hidden; }
 .gods__card--genbu .gods__img img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 45%; }
 .gods__card--byakko .gods__title, .gods__card--genbu .gods__title { margin-top: 41px; }
-.gods__desc { margin-top: 15px; font-size: 15.5px; font-weight: 400; line-height: 31px; letter-spacing: .02em; color: var(--ink); white-space: nowrap; }
-.gods__caveat { margin-top: 15px; padding-top: 15px; padding-bottom: 42px; border-top: 1px solid #6f6f74; font-size: 15.5px; font-weight: 400; line-height: 31px; letter-spacing: .02em; color: var(--ink); white-space: nowrap; }
+.gods__desc { margin-top: 15px; font-size: 15.5px; font-weight: 500; line-height: 27px; letter-spacing: .02em; color: var(--ink); white-space: nowrap; }
+.gods__caveat { margin-top: 15px; padding-top: 15px; padding-bottom: 42px; border-top: 1px solid #6f6f74; font-size: 15.5px; font-weight: 500; line-height: 27px; letter-spacing: .02em; color: var(--ink); white-space: nowrap; }
 .gods__card--suzaku .gods__caveat { padding-bottom: 27px; }
 
 /* ---------- 濃紺の帯 ---------- */
 .band { position: relative; margin-top: 115px; padding: 173px 0 0; height: 676px; text-align: center; color: #fff;
+  /* 村田さん実測: 上端は生成り→紺へ約130pxでなだらか、下端は紺→生成りへ約130px。地は #333847 で、文字の後ろの光は弱い。両脇の輪はうっすら */
   /* 村田さん正本の実測: 地 #333847、文字の後ろだけ中心で約+80明るい楕円の光。両脇の輪は明暗差1〜2%でほぼ見えない */
   background:
     radial-gradient(ellipse 430px 165px at 50% 46%, rgba(255,255,255,.34) 0%, rgba(255,255,255,.14) 50%, rgba(255,255,255,0) 100%),
@@ -124,18 +125,18 @@ br.pc { display: inline; }
     radial-gradient(circle at 50% 60%, rgba(255,255,255,0) 0 520px, rgba(255,255,255,.03) 590px 680px, rgba(255,255,255,0) 750px 820px, rgba(255,255,255,.028) 890px 980px, rgba(255,255,255,0) 1050px),
     var(--navy); }
 .band::before, .band::after { content: ""; position: absolute; left: 0; right: 0; }
-.band::before { top: 0; height: 125px; background: linear-gradient(180deg, #f6f4f5 0%, rgba(246,244,245,.88) 25%, rgba(246,244,245,.62) 50%, rgba(246,244,245,.32) 75%, rgba(246,244,245,0) 100%); }
-.band::after { bottom: 0; height: 160px; background: linear-gradient(0deg, #faf8f9 0%, rgba(250,248,249,.88) 25%, rgba(250,248,249,.62) 50%, rgba(250,248,249,.32) 75%, rgba(250,248,249,0) 100%); }
+.band::before { top: 0; height: 130px; background: linear-gradient(180deg, #ececf9 0%, rgba(236,236,249,.96) 22%, rgba(236,236,249,.78) 42%, rgba(236,236,249,.5) 62%, rgba(236,236,249,.2) 82%, rgba(236,236,249,0) 100%); }
+.band::after { bottom: 0; height: 130px; background: linear-gradient(0deg, #ececf9 0%, rgba(236,236,249,.96) 22%, rgba(236,236,249,.78) 42%, rgba(236,236,249,.5) 62%, rgba(236,236,249,.2) 82%, rgba(236,236,249,0) 100%); }
 .band > * { position: relative; z-index: 1; }
 .band__text { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 37px; letter-spacing: .1em; }
 .band .cta { margin-top: 47px; }
 .band .cta__note { margin-top: 17px; color: #fff; font-weight: 500; }
 .band--2 { margin-top: 79px; height: 644px; padding-top: 194px;
   background:
-    radial-gradient(ellipse 520px 210px at 50% 45%, rgba(255,255,255,.30) 0%, rgba(255,255,255,.18) 35%, rgba(255,255,255,.07) 65%, rgba(255,255,255,0) 100%),
+    radial-gradient(ellipse 480px 190px at 50% 45%, rgba(255,255,255,.20) 0%, rgba(255,255,255,.11) 40%, rgba(255,255,255,.04) 70%, rgba(255,255,255,0) 100%),
     radial-gradient(circle at 50% 62%, rgba(255,255,255,0) 0 520px, rgba(255,255,255,.03) 590px 680px, rgba(255,255,255,0) 750px 820px, rgba(255,255,255,.028) 890px 980px, rgba(255,255,255,0) 1050px),
     var(--navy); }
-.band--2::after { background: linear-gradient(0deg, #eef2f9 0%, rgba(238,242,249,.88) 25%, rgba(238,242,249,.62) 50%, rgba(238,242,249,.32) 75%, rgba(238,242,249,0) 100%); }
+.band--2::after { background: linear-gradient(0deg, #eef2f9 0%, rgba(238,242,249,.96) 22%, rgba(238,242,249,.78) 42%, rgba(238,242,249,.5) 62%, rgba(238,242,249,.2) 82%, rgba(238,242,249,0) 100%); }
 .band--2 .band__text { line-height: 42px; }
 .band--2 .cta { margin-top: 28px; }
 
@@ -146,14 +147,14 @@ br.pc { display: inline; }
 .three__note { margin-top: 36px; font-size: 13px; font-weight: 500; letter-spacing: .12em; color: #7a7f8c; }
 /* 3つのこと（PC）: 3列のまま、カードを低くして窓を小さく。窓の下端はぼかして「切れた画面」に見せない（洋一さん 9/20） */
 .three { display: flex; justify-content: center; gap: 28px; margin-top: 14px; }
-.three li { width: 344px; padding: 0 26px 22px; border-radius: 6px; background: #fff; box-shadow: 0 2px 10px rgba(60, 70, 110, .08); text-align: left; }
+.three li { width: 344px; padding: 0 26px 30px; border-radius: 6px; background: #fff; box-shadow: 0 2px 10px rgba(60, 70, 110, .08); text-align: left; }
 .three__head { display: flex; align-items: center; height: 58px; border-bottom: 1px solid #8a90a8; }
 .three__num { font-family: var(--sans); font-size: 32px; font-weight: 400; line-height: 1; letter-spacing: .06em; color: var(--ink-2); }
 .three__name { display: flex; align-items: center; height: 40px; margin-left: 22px; padding-left: 22px; border-left: 1px solid #8a90a8; font-size: 20px; font-weight: 700; line-height: 30px; letter-spacing: .12em; color: var(--ink-2); }
-.three__title { display: flex; align-items: center; justify-content: center; height: 70px; text-align: center; font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: .04em; color: var(--ink-2); }
+.three__title { display: flex; align-items: center; justify-content: center; height: 78px; text-align: center; font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: .04em; color: var(--ink-2); }
 /* 3枚のスクショは完成した Part1 から実際に撮ったもの（洋一さん指示 9/18）。375幅×500 を2倍で撮影 */
 /* 窓の3枚: Part1 の実物を同じ高さで。01 は丸を小さくしてタイプ名まで収めた組み（_work/shot1）。02・03 は続きがあるので下端 44px だけぼかす */
-.three__shot { width: 292px; height: 436px; margin: 0 auto; object-fit: cover; object-position: top; border-radius: 6px; }
+.three__shot { width: 240px; height: 358px; margin: 0 auto; object-fit: cover; object-position: top; border-radius: 6px; }
 .three li:not(:first-child) .three__shot { -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 44px), transparent 100%); mask-image: linear-gradient(180deg, #000 calc(100% - 44px), transparent 100%); }
 /* 02 は白い画面を白いカードに置くので、上辺に薄い線を入れて画像の縁を出す（GPT指摘・洋一さん 9/20） */
 .three li:nth-child(2) .three__shot { border-top: 1px solid #d5d9e3; border-left: 1px solid #e6e8ee; border-right: 1px solid #e6e8ee; border-radius: 4px 4px 0 0; }
@@ -293,8 +294,8 @@ br.pc { display: inline; }
   .gods__img { width: 200px; height: 190px; }
   .gods__title { margin-top: 24px; font-size: 19px; }
   /* 四神の説明: 初めて四神が出る場面なので一番読ませる文。太く大きく（洋一さん 9/19） */
-  .gods__desc { margin-top: 12px; font-size: 16px; font-weight: 600; line-height: 29px; letter-spacing: .02em; color: var(--ink-2); white-space: normal; }
-  .gods__caveat { margin-top: 14px; padding: 14px 0 26px; font-size: 14.5px; font-weight: 500; line-height: 26px; white-space: normal; }
+  .gods__desc { margin-top: 12px; font-size: 16px; font-weight: 600; line-height: 27px; letter-spacing: .02em; color: var(--ink-2); white-space: normal; }
+  .gods__caveat { margin-top: 14px; padding: 14px 0 26px; font-size: 14.5px; font-weight: 500; line-height: 25px; white-space: normal; }
   .gods__card--suzaku .gods__caveat { padding-bottom: 26px; }
 
   /* 玄武のカードと帯の間の白は要らない（洋一さん 9/19） */
