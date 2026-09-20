@@ -9,7 +9,8 @@
   --ink: #2e2e2e; --ink-2: #131311;
   --blue: #3f62a8;
   --navy: #333847; --navy-2: #2e3240;
-  --grad: linear-gradient(90deg, #e9e9f8 0%, #f2f2fa 26%, #f9f8fa 47%, #fbf7f7 60%, #faf1f1 76%, #f8e6e6 100%);
+  /* 村田さん実測（1920幅）: 左端は#f8f7f9→200pxで#e9e9f8、中央#faf8fa、右は1500pxまで#faf1f1、右端#f8e5e5。桃色は右の2割だけ */
+  --grad: linear-gradient(90deg, #f8f7f9 0%, #e9e9f8 10%, #efeff9 21%, #f4f4fb 31%, #f8f7fb 42%, #faf8fa 50%, #fbf8f8 57%, #fbf5f5 68%, #faf1f1 78%, #f7e9e9 88%, #f8e5e5 100%);
   --mark: #c3d5f2; /* 洋一さん指示 9/18: 灰色寄りから青寄りへ */
 }
 * { box-sizing: border-box; }
@@ -89,7 +90,7 @@ br.pc { display: inline; }
 .lead--after mark { font-weight: 700; }
 
 /* ---------- 組織を動かす4つの力 ---------- */
-.sec--forces { padding-top: 110px; }
+.sec--forces { padding-top: 110px; padding-bottom: 115px; }
 .sec--forces .h3 { margin-top: 39px; }
 .sec--forces .body { margin-top: 20px; }
 .c-kakushin { color: #2c2c7e; } .c-kyoso { color: #b72e2e; } .c-seika { color: #7a6f9b; } .c-kozo { color: #314737; }
@@ -116,17 +117,19 @@ br.pc { display: inline; }
 .gods__card--suzaku .gods__caveat { padding-bottom: 27px; }
 
 /* ---------- 濃紺の帯 ---------- */
-.band { position: relative; margin-top: 115px; padding: 173px 0 0; height: 676px; text-align: center; color: #fff;
+.band { position: relative; margin-top: 0; padding: 173px 0 0; height: 676px; text-align: center; color: #fff;
   /* 村田さん実測: 上端は生成り→紺へ約130pxでなだらか、下端は紺→生成りへ約130px。地は #333847 で、文字の後ろの光は弱い。両脇の輪はうっすら */
   /* 村田さん正本の実測: 地 #333847、文字の後ろだけ中心で約+80明るい楕円の光。両脇の輪は明暗差1〜2%でほぼ見えない */
   background:
     radial-gradient(ellipse 430px 165px at 50% 46%, rgba(255,255,255,.34) 0%, rgba(255,255,255,.14) 50%, rgba(255,255,255,0) 100%),
     /* 同心円はCTAを中心に外へ広がる（村田さん正本と同じ向き） */
     radial-gradient(circle at 50% 60%, rgba(255,255,255,0) 0 520px, rgba(255,255,255,.03) 590px 680px, rgba(255,255,255,0) 750px 820px, rgba(255,255,255,.028) 890px 980px, rgba(255,255,255,0) 1050px),
+    radial-gradient(circle 1100px at -8% 130%, rgba(0,0,0,0) 0 900px, rgba(0,0,0,.12) 905px 1100px),
     var(--navy); }
 .band::before, .band::after { content: ""; position: absolute; left: 0; right: 0; }
-.band::before { top: 0; height: 130px; background: linear-gradient(180deg, #ececf9 0%, rgba(236,236,249,.96) 22%, rgba(236,236,249,.78) 42%, rgba(236,236,249,.5) 62%, rgba(236,236,249,.2) 82%, rgba(236,236,249,0) 100%); }
-.band::after { bottom: 0; height: 130px; background: linear-gradient(0deg, #ececf9 0%, rgba(236,236,249,.96) 22%, rgba(236,236,249,.78) 42%, rgba(236,236,249,.5) 62%, rgba(236,236,249,.2) 82%, rgba(236,236,249,0) 100%); }
+/* 上端: 村田さん実測に合わせた曲線（最初はゆっくり、最後に一気に紺へ）。上の節の地色 #ececf9 から始める */
+.band::before { top: 0; height: 125px; background: var(--grad); -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.99) 16%, rgba(0,0,0,.95) 32%, rgba(0,0,0,.85) 48%, rgba(0,0,0,.68) 62%, rgba(0,0,0,.5) 74%, rgba(0,0,0,.3) 86%, rgba(0,0,0,.1) 95%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.99) 16%, rgba(0,0,0,.95) 32%, rgba(0,0,0,.85) 48%, rgba(0,0,0,.68) 62%, rgba(0,0,0,.5) 74%, rgba(0,0,0,.3) 86%, rgba(0,0,0,.1) 95%, transparent 100%); }
+.band::after { bottom: 0; height: 125px; background: var(--grad); -webkit-mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,.99) 16%, rgba(0,0,0,.95) 32%, rgba(0,0,0,.85) 48%, rgba(0,0,0,.68) 62%, rgba(0,0,0,.5) 74%, rgba(0,0,0,.3) 86%, rgba(0,0,0,.1) 95%, transparent 100%); mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,.99) 16%, rgba(0,0,0,.95) 32%, rgba(0,0,0,.85) 48%, rgba(0,0,0,.68) 62%, rgba(0,0,0,.5) 74%, rgba(0,0,0,.3) 86%, rgba(0,0,0,.1) 95%, transparent 100%); }
 .band > * { position: relative; z-index: 1; }
 .band__text { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 37px; letter-spacing: .1em; }
 .band .cta { margin-top: 47px; }
@@ -136,7 +139,7 @@ br.pc { display: inline; }
     radial-gradient(ellipse 480px 190px at 50% 45%, rgba(255,255,255,.20) 0%, rgba(255,255,255,.11) 40%, rgba(255,255,255,.04) 70%, rgba(255,255,255,0) 100%),
     radial-gradient(circle at 50% 62%, rgba(255,255,255,0) 0 520px, rgba(255,255,255,.03) 590px 680px, rgba(255,255,255,0) 750px 820px, rgba(255,255,255,.028) 890px 980px, rgba(255,255,255,0) 1050px),
     var(--navy); }
-.band--2::after { background: linear-gradient(0deg, #eef2f9 0%, rgba(238,242,249,.96) 22%, rgba(238,242,249,.78) 42%, rgba(238,242,249,.5) 62%, rgba(238,242,249,.2) 82%, rgba(238,242,249,0) 100%); }
+.band--2::after { background: #eef2f9; }
 .band--2 .band__text { line-height: 42px; }
 .band--2 .cta { margin-top: 28px; }
 
@@ -167,10 +170,12 @@ br.pc { display: inline; }
 .sec--recommend .h3 { margin-top: 39px; }
 .sec--recommend .body { margin-top: 20px; }
 /* 兆し5つ（PC）: 3枚＋2枚の箱をやめ、幅800の横長の行を5つ縦に並べる。読み流して当てはめる項目なので（GPT評価・洋一さん 9/20） */
-.signs { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 800px; margin: 40px auto 0; }
-.signs li { width: 100%; height: 84px; padding: 0 28px 0 28px; display: flex; align-items: center; gap: 24px; border: 1px solid #c9cdd8; border-radius: 3px; background: #fff; text-align: left; }
-.signs li img { flex: 0 0 36px; width: 36px; height: 36px; margin: 0; object-fit: contain; }
-.signs li p { margin: 0; font-size: 18px; font-weight: 700; line-height: 30px; letter-spacing: .04em; color: var(--ink-2); }
+/* 兆し5つ（PC）: 1枚の白い面に5行、細い線で区切る。箱5つに見せない（GPT評価・洋一さん 9/20） */
+.signs { display: flex; flex-direction: column; width: 640px; margin: 40px auto 0; border: 1px solid #c9cdd8; border-radius: 4px; background: #fff; overflow: hidden; }
+.signs li { width: 100%; height: 62px; padding: 0 26px; display: flex; align-items: center; gap: 20px; text-align: left; }
+.signs li + li { border-top: 1px solid #e3e6ee; }
+.signs li img { flex: 0 0 30px; width: 30px; height: 30px; margin: 0; object-fit: contain; }
+.signs li p { margin: 0; font-size: 17px; font-weight: 700; line-height: 28px; letter-spacing: .04em; color: var(--ink-2); }
 .signs li p br { display: none; }
 .c-blue { color: var(--blue); }
 .recommend__body { margin-top: 44px; font-size: 16.5px; font-weight: 400; line-height: 38px; letter-spacing: .16em; color: var(--ink); }
@@ -300,7 +305,7 @@ br.pc { display: inline; }
 
   /* 玄武のカードと帯の間の白は要らない（洋一さん 9/19） */
   .band { margin-top: 0; height: auto; padding: 56px 24px 72px; background: radial-gradient(ellipse 300px 200px at 50% 55%, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 100%), var(--navy); }
-  .band::before { height: 0; } .band::after { height: 60px; }
+  .band::before { height: 56px; } .band::after { height: 56px; }
   .sec--forces { padding-bottom: 40px; }
   .band__text { font-size: 16px; line-height: 30px; letter-spacing: .04em; }
   /* 帯1（SP）: 問い3つを区切って並べ、答えを明朝で大きく。文章の帯にしない（洋一さん 9/19） */
