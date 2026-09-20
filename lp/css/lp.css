@@ -181,8 +181,8 @@ br.pc { display: inline; }
 .signs li p { margin: 0; font-size: 17px; font-weight: 700; line-height: 28px; letter-spacing: .04em; color: var(--ink-2); }
 .signs li p br { display: none; }
 .c-blue { color: var(--blue); }
-.recommend__body { margin-top: 44px; font-size: 16.5px; font-weight: 400; line-height: 38px; letter-spacing: .16em; color: var(--ink); }
-.recommend__body p + p { margin-top: 38px; }
+.recommend__body { margin-top: 40px; font-size: 16.5px; font-weight: 400; line-height: 36px; letter-spacing: .1em; color: var(--ink); }
+.recommend__body p + p { margin-top: 28px; }
 
 /* ---------- 診断はかんたん3ステップ ---------- */
 .sec--steps { padding: 116px 0 127px; }
@@ -350,7 +350,6 @@ br.pc { display: inline; }
   /* 締めの4段落: 一番読ませたい所なので大きく太く。最後の段落はさらに一段（洋一さん 9/19） */
   .recommend__body { margin-top: 44px; font-size: 17px; font-weight: 600; line-height: 31px; text-align: center; color: var(--ink-2); }
   .recommend__body p + p { margin-top: 24px; }
-  .recommend__body p:first-child { font-size: 15px; font-weight: 500; line-height: 27px; color: var(--ink); }
   .recommend__body p:last-child { font-size: 18px; font-weight: 700; line-height: 33px; }
 
   .sec--steps { padding: 64px 24px 72px; }
