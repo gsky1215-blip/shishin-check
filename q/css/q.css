@@ -105,6 +105,11 @@ button { font: inherit; cursor: pointer; }
 /* ---------- フッター ---------- */
 .copyright { margin-top: 60px; text-align: center; font-family: Arial, var(--sans); font-size: 16px; color: #707070; }
 
+/* 窓が狭いときは全体を縮める（1920基準のまま詰め込まない） */
+@media (min-width: 1100px) and (max-width: 1439px) { .page { zoom: .9; } }
+@media (min-width: 900px) and (max-width: 1099px) { .page { zoom: .75; } }
+@media (min-width: 768px) and (max-width: 899px) { .page { zoom: .68; } }
+
 /* ==========================================================================
    スマホ（〜767px）
    ========================================================================== */
