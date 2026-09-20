@@ -481,3 +481,6 @@ em { font-style: normal; }
 .shadow-band-bg .shadow-card { margin: 0 12px; }
 .shadow-intro { padding-bottom: 60px; }
 .shadow-card + .next, .shadow-band-bg + .next { padding-top: 56px; }
+
+/* PCの広い窓では、スマホの列をそのまま1.3倍に広げる（村田さんのデザインはスマホ版のみ。洋一さん 9/21） */
+@media (min-width: 900px) { .page { zoom: 1.3; } }
