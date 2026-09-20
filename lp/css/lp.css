@@ -83,7 +83,7 @@ br.pc { display: inline; }
 .symptoms li { width: 231px; height: 177px; border: 1px solid #959594; border-radius: 3px; background: #fff; text-align: center; }
 .symptoms__top { height: 118px; border-bottom: 1px solid #959594; padding-top: 17px; }
 .symptoms__top p { font-size: 15.5px; font-weight: 500; line-height: 30px; letter-spacing: .04em; color: #555; }
-.symptoms__top img { width: 73px; height: 62px; margin: 6px auto 0; object-fit: contain; }
+.symptoms__top img { width: 62px; height: 62px; margin: 4px auto 0; object-fit: contain; }
 .symptoms__but { display: flex; align-items: center; justify-content: center; height: 57px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--ink-2); }
 .lead--after { margin-top: 26px; line-height: 42px; font-size: 18px; font-weight: 500; letter-spacing: .16em; }
 .lead--after mark { font-weight: 700; }
@@ -159,7 +159,7 @@ br.pc { display: inline; }
 .signs { display: flex; justify-content: center; gap: 14px; margin-top: 36px; }
 .signs--row2 { gap: 18px; margin-top: 19px; }
 .signs li { width: 317px; height: 226px; padding-top: 38px; border: 1px solid #8f8f8f; border-radius: 3px; background: #fff; }
-.signs li img { height: 68px; width: 83px; margin: 0 auto; object-fit: contain; }
+.signs li img { height: 64px; width: 64px; margin: 0 auto; object-fit: contain; }
 .signs li p { margin-top: 10px; font-size: 19px; font-weight: 700; line-height: 32px; letter-spacing: .04em; color: var(--ink-2); }
 .c-blue { color: var(--blue); }
 .recommend__body { margin-top: 40px; font-size: 16.5px; font-weight: 400; line-height: 38px; letter-spacing: .16em; color: var(--ink); }
@@ -327,7 +327,7 @@ br.pc { display: inline; }
   .signs--row2 { margin-top: 10px; }
   /* 兆しカード: スマホはアイコン左・文右の横長にして、同じ形の縦積みで間延びしないようにする（洋一さん 9/19） */
   .signs li { width: 100%; max-width: 327px; height: auto; padding: 16px 16px 16px 18px; display: flex; align-items: center; gap: 16px; text-align: left; }
-  .signs li img { flex: 0 0 52px; width: 52px; height: 44px; margin: 0; }
+  .signs li img { flex: 0 0 44px; width: 44px; height: 44px; margin: 0; }
   .signs li p { margin: 0; font-size: 15.5px; line-height: 25px; letter-spacing: .02em; white-space: nowrap; }
   /* 締めの4段落: 一番読ませたい所なので大きく太く。最後の段落はさらに一段（洋一さん 9/19） */
   .recommend__body { margin-top: 44px; font-size: 17px; font-weight: 600; line-height: 31px; text-align: center; color: var(--ink-2); }
