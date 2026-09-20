@@ -49,7 +49,8 @@ button { font: inherit; cursor: pointer; }
 /* ---------- 進捗 ---------- */
 .progress { position: absolute; left: 50%; top: 528px; width: 1010px; transform: translateX(-50%); display: flex; align-items: center; gap: 24px; }
 .progress__track { flex: 0 0 905px; height: 8px; border-radius: 4px; background: #cfcfd3; overflow: hidden; }
-.progress__fill { height: 100%; border-radius: 4px; background: var(--btn); transition: width .3s; }
+/* 進捗バーは四神の4色（青龍の紺→朱雀の赤→白虎の紫→玄武の緑）。V4モックと同じ配色（洋一さん 9/21） */
+.progress__fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #2a5298 0%, #c8432a 38%, #8a6aaa 68%, #2a7a4a 100%); transition: width .3s; }
 .progress__pct { flex: 0 0 auto; font-size: 17px; font-weight: 700; letter-spacing: .02em; color: var(--ink-2); }
 
 /* ---------- 設問カード ---------- */
@@ -122,7 +123,6 @@ button { font: inherit; cursor: pointer; }
   .intro__text { position: static; width: auto; }
   .intro__title { font-size: 32px; line-height: 46px; text-align: center; }
   .intro__lead { margin-top: 18px; font-size: 14px; line-height: 26px; text-align: center; }
-  .intro__lead br { display: none; }
   .pills { margin-top: 20px; justify-content: center; gap: 10px; }
   .pills li { height: 42px; padding: 0 18px 0 42px; font-size: 14px; line-height: 40px; } .pills li::before { left: 16px; width: 16px; height: 16px; }
   .intro__art { position: static; display: flex; justify-content: center; margin: 20px 0 0; height: 300px; overflow: hidden; }
