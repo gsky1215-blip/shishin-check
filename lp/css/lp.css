@@ -155,6 +155,8 @@ br.pc { display: inline; }
 /* 窓の3枚: Part1 の実物を同じ高さで。01 は丸を小さくしてタイプ名まで収めた組み（_work/shot1）。02・03 は続きがあるので下端 44px だけぼかす */
 .three__shot { width: 292px; height: 436px; margin: 0 auto; object-fit: cover; object-position: top; border-radius: 6px; }
 .three li:not(:first-child) .three__shot { -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 44px), transparent 100%); mask-image: linear-gradient(180deg, #000 calc(100% - 44px), transparent 100%); }
+/* 02 は白い画面を白いカードに置くので、上辺に薄い線を入れて画像の縁を出す（GPT指摘・洋一さん 9/20） */
+.three li:nth-child(2) .three__shot { border-top: 1px solid #d5d9e3; border-left: 1px solid #e6e8ee; border-right: 1px solid #e6e8ee; border-radius: 4px 4px 0 0; }
 .three { align-items: stretch; }
 .three li { display: flex; flex-direction: column; }
 .three li .three__shot { margin-top: 0; }
