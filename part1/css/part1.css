@@ -808,3 +808,10 @@ em { font-style: normal; }
 
 /* 強み①②／弱み①②は対で同じ高さに揃える（9/18の指示に戻す。2026-09-21 洋一さん「箱は揃えた方がいい」） */
 @media (max-width: 899px) { .sw-pair { grid-auto-rows: 1fr; } }
+
+/* 強み①②／弱み①②の箱: 対で高さを揃えるが、短いほうに足す余白は最大1行分（26px）まで（2026-09-21 確定）。
+   4つの利き神で実測: 差は最大2行（玄武）、他は0〜1行。極端に違う組は出ない */
+@media (max-width: 899px) {
+  .sw-pair { grid-auto-rows: auto; }
+  .sw--pad { padding-bottom: calc(18px + var(--pad, 0px)); }
+}
