@@ -633,5 +633,12 @@ em { font-style: normal; }
   .site-footer__dl { display: table; margin: 0 auto; }
   .copyright { padding: 26px var(--side) 40px; }
 }
+/* PCの本文はモック（V4）と同じ軽さ: 太さ400・15.5px・行間2.0・墨色。見出し・決め台詞・強調は変えない（洋一さん 9/21） */
+@media (min-width: 900px) {
+  .hero__desc, .card__lead, .shadow-explain__center, .shadow-explain__p, .question__p, .next__p, .next__center, .action-list__body span { font-weight: 400; font-size: 15.5px; line-height: 31px; color: #1F1B18; }
+  .shadow-explain__p--strong, .next__center { font-weight: 700; }
+  .checklist li { color: #1F1B18; }
+  .action-list__body strong { color: #1F1B18; }
+}
 /* 窓が狭いとき（900〜1099px）は幅1010の列が入らないので、LPと同じく全体を0.9倍にする */
 @media (min-width: 900px) and (max-width: 1099px) { .page { zoom: .9; } }
