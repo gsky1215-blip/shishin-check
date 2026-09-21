@@ -370,8 +370,8 @@ em { font-style: normal; }
 .cycle__img b { bottom: 2px; min-width: 0; height: 20px; padding: 0 6px; font-size: 13px; line-height: 20px; border-radius: 3px; background: rgba(255,255,255,.88); box-shadow: none; }
 .cycle__cap { margin-top: 6px; font-size: 13.5px; line-height: 18px; }
 .cycle__node--seiryu { left: 112.5px; top: 12px; }
-.cycle__node--suzaku { left: 230.5px; top: 130px; }
-.cycle__node--genbu  { left: -5.5px; top: 130px; }
+.cycle__node--suzaku { left: 225px; top: 130px; }
+.cycle__node--genbu  { left: 0; top: 130px; }
 .cycle__node--byakko { left: 112.5px; top: 248px; }
 
 /* READING 02 の地は白に戻す（2026-09-21）。景色を変えるのは意味が転換する「発見」の帯だけ。タグは枠を薄く低くしてボタンに見せない */
