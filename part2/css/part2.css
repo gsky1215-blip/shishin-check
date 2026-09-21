@@ -294,3 +294,6 @@ em { font-style: normal; }
 .profile { margin-top: 20px; padding: 12px 14px 14px; }
 .profile__text { margin-top: 12px; }
 .band { box-shadow: inset 0 0 8px 1px rgba(235,235,240,.45); }
+
+/* 水色の背景が本文の途中で切れていた（本文16px化で丈が伸びたため）。節の丈に合わせ、下端50pxで白へ */
+.sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #ffffff 100%); }
