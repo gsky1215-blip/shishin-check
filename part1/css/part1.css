@@ -482,5 +482,122 @@ em { font-style: normal; }
 .shadow-intro { padding-bottom: 60px; }
 .shadow-card + .next, .shadow-band-bg + .next { padding-top: 56px; }
 
-/* PCの広い窓では、スマホの列をそのまま1.3倍に広げる（村田さんのデザインはスマホ版のみ。洋一さん 9/21） */
-@media (min-width: 900px) { .page { zoom: 1.3; } }
+/* ==========================================================================
+   PC（900px〜）── 村田さんのデザインはスマホ版のみなので、LP・質問ページのPC版と同じ作法で組む
+   （幅1010の列を中央に置き、背景は画面いっぱい。文字の大きさ・色・部品はスマホ版のまま、並びだけ横に広げる）
+   洋一さん 9/21「Part1はPC用に最適化しないとダメ」
+   ========================================================================== */
+@media (min-width: 900px) {
+  :root { --col: 1010px; --gutter: 0px; --side: calc(50% - 505px); }
+  body { background: #fff; }
+  .page { max-width: none; box-shadow: none; }
+
+  /* ヘッダー: ロゴだけ（LPと同じ位置・大きさ）。メニューはPCでは出さない */
+  .site-header { top: 28px; padding: 0 var(--side); height: 30px; }
+  .site-header__logo { height: 30px; }
+  .site-header__logo img { height: 30px; }
+  .site-header__menu { display: none; }
+
+  /* 1. 結果FV: 見出しは中央、その下は左に青龍の丸・右に文字 */
+  .hero {
+    padding: 110px var(--side) 70px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    column-gap: 80px;
+    grid-template-areas:
+      "title title"
+      "sub   sub"
+      "fig   label"
+      "fig   name"
+      "fig   type"
+      "fig   kw"
+      "fig   desc";
+    align-content: start;
+    text-align: left;
+  }
+  .hero__title { grid-area: title; text-align: center; }
+  .hero__subtitle { grid-area: sub; text-align: center; }
+  .hero__figure { grid-area: fig; width: 400px; height: 400px; margin: 60px 0 0; align-self: start; }
+  .hero__label { grid-area: label; margin-top: 76px; }
+  .hero__name { grid-area: name; margin-top: 4px; font-size: 64px; text-indent: 0; }
+  .hero__type { grid-area: type; margin-top: 30px; }
+  .hero__keywords { grid-area: kw; justify-content: flex-start; margin-top: 20px; }
+  .hero__desc { grid-area: desc; margin-top: 28px; max-width: 520px; font-size: 17px; line-height: 32px; }
+
+  /* 2. 四神構成比: 4本を2列に */
+  .composition { padding: 30px var(--side) 56px; }
+  .composition__card { padding: 26px 40px 30px; }
+  .composition__list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; row-gap: 14px; margin-top: 18px; }
+  .composition__row + .composition__row { margin-top: 0; }
+
+  /* 3〜5. 生成りの面の上のカード */
+  .traits, .actions, .strengths { padding-left: var(--side); padding-right: var(--side); }
+  .traits { padding-top: 60px; }
+  .actions, .strengths { padding-top: 40px; }
+  .strengths { padding-bottom: 0; }
+  .card { padding: 56px 130px 48px; }
+  .card--headed { padding: 0 0 48px; }
+  .card--headed .card__title { padding: 40px 18px 36px; margin-bottom: 36px; }
+  .card--headed > *:not(.card__title) { margin-left: 90px; margin-right: 90px; }
+  .card__lead { font-size: 17px; line-height: 32px; }
+  .checklist li { font-size: 16px; line-height: 26px; }
+
+  /* 4. 具体的な行動: 2列 */
+  .action-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 60px; }
+  .action-list li { flex: 0 0 380px; }
+  .action-list li + li { margin-top: 0; }
+
+  /* 5. 強み・弱み: ①②を横に */
+  .sw-pair { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .sw { padding: 20px 16px 22px; }
+  .sw-bridge { margin: 40px 0 32px; font-size: 22px; }
+  .sw-bridge br { display: none; }
+
+  /* 6. 問い: 中央に置く */
+  .question { padding: 76px var(--side) 66px; }
+  .question__lead { font-size: 20px; margin-bottom: 26px; }
+  .question__p { font-size: 17px; line-height: 30px; }
+  .question__big { margin-top: 40px; font-size: 32px; line-height: 44px; }
+  .question__big br { display: none; }
+
+  /* 7. 影神の宣言: 背景は画面いっぱい、文字は幅760に */
+  .shadow-intro { padding: 80px calc(50% - 380px) 64px; }
+  .shadow-intro__h { font-size: 28px; }
+  .shadow-intro__h--2 { font-size: 27px; margin-top: 48px; margin-left: 0; margin-right: 0; }
+  .shadow-intro__p { font-size: 17px; }
+
+  /* 8〜9. 影神カード: 幅1010、黒い帯は横長 */
+  .shadow-band-bg { padding: 48px var(--side) 56px; }
+  .shadow-band-bg .shadow-card, .page > .shadow-card { margin: 0; }
+  .shadow-result { padding: 30px 40px 30px 40px; gap: 22px; }
+  .shadow-result__icon { width: 52px; height: 52px; font-size: 26px; }
+  .shadow-result__label { font-size: 18px; }
+  .shadow-result__name { font-size: 22px; }
+  .shadow-result__sub { font-size: 14px; }
+  .shadow-result__img { width: 84px; height: 84px; }
+  .shadow-explain { padding: 40px 90px 52px; }
+  .shadow-explain__center, .shadow-explain__p { font-size: 17px; line-height: 32px; }
+  .shadow-explain__center { text-align: center; }
+  .shadow-explain__center br { display: inline; }
+  .box-list { padding: 26px 30px 24px; }
+  .box-list li { font-size: 17px; line-height: 27px; }
+  .tag-list { flex-direction: row; flex-wrap: wrap; gap: 12px 12px; }
+  .btn-line { width: 560px; margin-left: auto; margin-right: auto; font-size: 20px; min-height: 84px; }
+  .btn-line br { display: none; }
+
+  /* 10. このページで分かるのは: 幅830を中央に */
+  .next { padding: 70px calc(50% - 415px) 64px; }
+  .next__h { font-size: 30px; text-align: center; margin-bottom: 30px; }
+  .next__p { font-size: 17px; line-height: 30px; }
+  .next__lead { margin-top: 36px; font-size: 18px; }
+  .next__center { margin: 40px 0 30px; font-size: 17px; }
+  .next__center br { display: none; }
+  .next__note br { display: none; }
+
+  /* フッター */
+  .site-footer { padding: 48px var(--side) 50px; }
+  .site-footer__dl { display: table; margin: 0 auto; }
+  .copyright { padding: 26px var(--side) 40px; }
+}
+/* 窓が狭いとき（900〜1099px）は幅1010の列が入らないので、LPと同じく全体を0.9倍にする */
+@media (min-width: 900px) and (max-width: 1099px) { .page { zoom: .9; } }
