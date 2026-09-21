@@ -759,3 +759,26 @@ em { font-style: normal; }
 @media (min-width: 900px) {
   .hero__desc, .card__lead, .shadow-explain__center, .shadow-explain__p, .question__p, .next__p, .next__center, .action-list__body span { font-size: 17px; line-height: 33px; }
 }
+
+/* 2026-09-21 洋一さん（スマホ）: 強み弱みの箇条書きを16に、紺の場面の改行を組み直し、白虎カードは絵を上段に置いて一言を1行に */
+@media (max-width: 899px) {
+  .sw .checklist li { font-size: 16px; line-height: 26px; }
+  .shadow-intro__p--body .sp-br { display: inline; }
+  .shadow-intro__p--body { text-align: center; }
+  .shadow-result { flex-wrap: wrap; align-items: flex-start; }
+  .shadow-result__icon { order: 2; }
+  .shadow-result__text { order: 3; flex: 1 1 0; }
+  .shadow-result__img { order: 1; flex: 0 0 100%; width: 100%; height: auto; display: flex; justify-content: flex-end; background: none; border-radius: 0; margin-bottom: -6px; }
+  .shadow-result__img img { width: 60px; height: 60px; border-radius: 8px; }
+  .shadow-result__sub { white-space: nowrap; }
+}
+@media (min-width: 900px) { .shadow-intro__p--body .sp-br { display: none; } }
+/* 絵は右上に浮かせる（上の2行の横に収まり、一言は絵の下で1行に） */
+@media (max-width: 899px) {
+  .shadow-result { position: relative; flex-wrap: nowrap; align-items: center; padding: 24px 22px 24px 22px; }
+  .shadow-result__icon { order: 0; }
+  .shadow-result__text { order: 0; flex: 1 1 auto; }
+  .shadow-result__img { position: absolute; top: 18px; right: 18px; order: 0; flex: none; width: 60px; height: 60px; margin: 0; display: block; border-radius: 8px; background: rgba(255,255,255,.06); }
+  .shadow-result__label, .shadow-result__pre, .shadow-result__name { padding-right: 70px; }
+  .shadow-result__sub { padding-right: 0; }
+}
