@@ -815,3 +815,11 @@ em { font-style: normal; }
   .sw-pair { grid-auto-rows: auto; }
   .sw--pad { padding-bottom: calc(18px + var(--pad, 0px)); }
 }
+
+/* 四神構成の利き神の行の地色は神に関わらず is-kiki で（12パターン生成用。2026-09-22） */
+@media (min-width: 900px) { .composition__row--seiryu { background: none; } .composition__row.is-kiki { background: #EEF3FB; } }
+.composition__row--seiryu { background: none; }
+.composition__row.is-kiki { background: #EEF3FB; }
+/* タイプ名は折り返しを許す（朱雀「ヒューマンドライブ型組織」が長い） */
+@media (max-width: 899px) { .hero__type { white-space: normal; line-height: 1.6; } }
+@media (max-width: 899px) { .shadow-result__sub { white-space: normal; } }
