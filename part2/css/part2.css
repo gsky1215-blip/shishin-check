@@ -275,3 +275,11 @@ em { font-style: normal; }
 .body { font-size: 16px; line-height: 31px; }
 .lead { font-size: 16px; line-height: 31px; }
 .chips li { font-size: 16px; }
+
+/* 終盤の並び替え（2026-09-21 GPTレビュー→洋一さん）: 参加者特典をボタンの上に、ボタンは「セミナーの日程・内容を見る」、「入口にすぎません」→「入口です」 */
+.bonus { margin-top: 26px; padding: 16px 18px 17px; border: 1px solid #C9D6EE; border-radius: 6px; background: #fff; text-align: center; }
+.bonus__label { display: inline-block; padding: 0 12px; height: 24px; line-height: 24px; border-radius: 12px; background: var(--navy); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; }
+.bonus__text { margin-top: 10px; font-size: 15px; font-weight: 500; line-height: 27px; letter-spacing: .02em; color: var(--ink); }
+.bonus__text strong { font-size: 16px; color: var(--navy); }
+.cta { padding-top: 0; display: flex; align-items: center; justify-content: center; }
+.cta { padding-right: 44px; padding-left: 16px; }
