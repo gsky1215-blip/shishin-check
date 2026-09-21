@@ -802,3 +802,6 @@ em { font-style: normal; }
   .sw__title { font-size: 16px; letter-spacing: 0; padding-left: 3.4em; text-indent: -3.4em; }
   .sw__label { width: 3.4em; font-size: 15px; }
 }
+
+/* 文字は小さくしない（2026-09-21 洋一さん）。行末の落ちは文言側の話 */
+@media (max-width: 899px) { .sw .checklist li { font-size: 16px; line-height: 26px; } .sw__title { font-size: 16.5px; } .sw__label { font-size: 15.5px; } }
