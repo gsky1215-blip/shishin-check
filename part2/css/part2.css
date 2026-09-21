@@ -306,15 +306,7 @@ em { font-style: normal; }
 .frame + .body { margin-top: 22px; }
 .sec--next { background: linear-gradient(180deg, #E9EFF9 0%, #ECF1F9 30%, #E4EAF5 60%, #C8D4E9 100%); }
 
-/* 循環図を作り直し（2026-09-21 洋一さん指摘: 絵に焼き込まれた名前とラベルが二重、説明文が矢印に重なる）。
-   輪でなく2×2の巡り。矢印は円と円の隙間だけを通り、説明文と交わらない。絵は名前の入っていないもの */
-.cycle { width: 345px; height: 304px; margin: 24px auto 0; }
-.cycle__arrows { width: 345px; height: 304px; }
-.cycle__node { width: 150px; }
-.cycle__node--seiryu { left: 0; top: 0; }
-.cycle__node--suzaku { left: 195px; top: 0; }
-.cycle__node--byakko { left: 195px; top: 172px; }
-.cycle__node--genbu  { left: 0; top: 172px; }
+/* 循環図（2026-09-21）: 輪はそのまま。絵は名前の入っていないものに差し替え（ラベルの二重を解消）。説明文は地の色の札に乗せ、矢印は札の後ろを通す（文字と線が重ならない） */
 .cycle__img img { object-fit: cover; object-position: 50% 35%; background: #fff; }
 .cycle__img b { bottom: -6px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
 .cycle__cap { margin-top: 12px; }
@@ -343,3 +335,5 @@ em { font-style: normal; }
 .box__head { background: #F8F8FA; }
 .chips { margin-left: -14px; margin-right: -14px; gap: 8px 6px; }
 .chips li { padding: 0 9px; letter-spacing: 0; }
+/* 説明文は地の色の札に乗せ、矢印は札の後ろを通す（文字と線が重ならない）。配置は村田さんの輪のまま */
+.cycle__cap { position: relative; z-index: 1; display: inline-block; padding: 2px 5px; border-radius: 4px; background: var(--paper); }
