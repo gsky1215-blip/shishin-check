@@ -410,3 +410,31 @@ em { font-style: normal; }
 /* READING 02 の5枚: 縦の余白だけ広げて、独立した1つの視覚ブロックに（2026-09-21 洋一さん）。本文→1段目 14→34、段の間 8→20、2段目→本文 25→46 */
 .chips { margin-top: 34px; row-gap: 20px; }
 .chips + .body { margin-top: 46px; }
+
+/* ══ 2026-09-21 洋一さん指示 ══
+   1. CASE 03 の A/B/C: 囲みを外し、横罫線と余白で区切る。ラベルの色分け・文字の大きさ・内容はそのまま */
+.rank { border: 0; padding: 0; background: none; }
+.rank + .rank { margin-top: 22px; padding-top: 22px; border-top: 1px solid #E3E3E3; }
+.rank__head { border-bottom: 0; padding-bottom: 8px; }
+.rank .checks { margin-top: 4px; padding-left: 52px; }
+.ba__body--ranks { padding: 22px 18px 24px; }
+
+/* 2. CASE 04 は CASE 03 より一段軽く（第二例＝横展開）。見出しを一回り小さく、カードの上下余白と節の間隔を詰める。文字サイズと内容はそのまま */
+.sec--case4 { padding-top: 40px; padding-bottom: 30px; }
+.sec--case4 .h2--big { font-size: 26px; line-height: 42px; }
+.sec--case4 .rule { margin-top: 14px; }
+.sec--case4 .rule + .ba { margin-top: 30px; }
+.sec--case4 .ba__head { padding: 10px 10px 9px; }
+.sec--case4 .ba__title { font-size: 17px; line-height: 26px; }
+.sec--case4 .ba--before .ba__body { padding-top: 18px; padding-bottom: 6px; }
+.sec--case4 .ba--before + .ba--after { margin-top: 22px; }
+.sec--case4 .ba--after .ba__body { padding: 18px 22px 18px; }
+.sec--case4 .vs { margin-top: 22px; padding: 22px 16px 18px; }
+.sec--case4 .vs + .body { margin-top: 26px; }
+.sec--case4 .body + .ba--third { margin-top: 22px; }
+.sec--case4 .ba--third .ba__head { padding: 14px 10px 12px; }
+.sec--case4 .ba--third .ba__body { padding: 16px 22px 18px; }
+/* 統合のメッセージ（青龍だけなら…）は軽くしない。むしろ上の余白を広く取って立てる */
+.sec--case4 .ba--third + .stmt { margin-top: 56px; }
+.sec--case4 .ba--third + .stmt .stmt__text { font-size: 22px; line-height: 40px; letter-spacing: .03em; }
+.sec--case4 .ba--third + .stmt .stmt__text { font-size: 21px; line-height: 38px; letter-spacing: .01em; }
