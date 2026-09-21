@@ -536,6 +536,7 @@ em { font-style: normal; }
   .composition { padding: 40px calc(50% - 350px) 60px; }
   .composition__card { padding: 30px 40px 32px; border: 1px solid #DEDEDE; border-radius: 10px; box-shadow: 0 2px 12px rgba(60,70,110,.06); }
   .composition__title { font-size: 21px; padding-bottom: 0; border-bottom: 0; }
+  .composition__sub .sp-br { display: none; }
   .composition__sub { display: block; margin-top: 6px; padding-bottom: 16px; border-bottom: 1px solid #E3E3E3; text-align: center; font-size: 14px; font-weight: 500; line-height: 24px; letter-spacing: .02em; color: #8A8F9A; }
   .composition__list { margin-top: 20px; }
   .composition__row { padding: 8px 12px 12px; border-radius: 8px; }
