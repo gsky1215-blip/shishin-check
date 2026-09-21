@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>四神診断 結果Part1 白虎×青龍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../part1/css/part1.css?v=202609220854">
+</head>
+<body>
+<!--
+  四神組織診断 診断結果 Part1（WEB即時表示）
+  デザイン: ラヴィゴット村田さん 最終版（2026-09-03 確定）を HTML/CSS 化したもの。
+  文言: 2026-09-07 統一の現行データ（青龍×白虎の例）。
+  実装側への引き渡し用: 診断ロジックで差し替える箇所には data-slot を付けている（README.md 参照）。
+-->
+<div class="page" data-dominant="seiryu" data-shadow="byakko">
+
+  <!-- ═══ ヘッダー ═══ -->
+  <header class="site-header">
+    <div class="site-header__logo" data-slot="logo"><img src="../../part1/img/logo.png" alt="B.essence"></div>
+    <button class="site-header__menu" type="button" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- ═══ 1. 結果FV（利き神） ═══ -->
+  <section class="hero" id="hero">
+    <h1 class="hero__title">四神診断</h1>
+    <p class="hero__subtitle">－組織タイプ診断結果－</p>
+    <div class="hero__figure">
+      <img src="../../part1/img/byakko.jpg" alt="白虎" data-slot="dominant.image">
+    </div>
+    <p class="hero__label">あなたの利き神タイプ</p>
+    <p class="hero__name" data-slot="dominant.name">白虎</p>
+    <p class="hero__type"><span data-slot="dominant.name">白虎</span>タイプ ― <span data-slot="dominant.typeName">プロフェッショナル型組織</span></p>
+    <ul class="hero__keywords" data-slot="dominant.keywords">
+      <li class="is-primary">成果</li>
+      <li>信念</li>
+      <li>集中</li>
+      <li>速さ</li>
+    </ul>
+    <p class="hero__desc" data-slot="dominant.summary">勝てる領域を見極め、決めたことをやり切る組織。その集中が変化を生む力と結びついたとき、止まっていた組織に新しい流れが生まれます。</p>
+  </section>
+
+  <!-- ═══ 2. 四神構成比 ═══ -->
+  <section class="composition" id="composition">
+    <div class="composition__card">
+      <h2 class="composition__title">御社の四神構成</h2>
+      <p class="composition__sub pc-only">4つの力のうち、<br class="sp-br">最も強く表れているのは<span data-slot="dominant.name">白虎</span>です。</p>
+      <ul class="composition__list" data-slot="composition">
+        <li class="composition__row composition__row--byakko is-kiki" data-slot="composition.byakko" data-pct="40">
+          <div class="composition__head"><span class="composition__icon pc-only">虎</span><span class="composition__name"><span class="composition__dash">- </span>白虎</span><span class="composition__force pc-only">成果の力</span><span class="composition__tag pc-only">利き神</span><span class="composition__pct">40%</span></div>
+          <div class="composition__track"><div class="composition__bar" style="width:40%"></div></div>
+        </li>
+        <li class="composition__row composition__row--suzaku" data-slot="composition.suzaku" data-pct="30">
+          <div class="composition__head"><span class="composition__icon pc-only">雀</span><span class="composition__name"><span class="composition__dash">- </span>朱雀</span><span class="composition__force pc-only">共創の力</span><span class="composition__pct">30%</span></div>
+          <div class="composition__track"><div class="composition__bar" style="width:30%"></div></div>
+        </li>
+        <li class="composition__row composition__row--genbu" data-slot="composition.genbu" data-pct="18">
+          <div class="composition__head"><span class="composition__icon pc-only">武</span><span class="composition__name"><span class="composition__dash">- </span>玄武</span><span class="composition__force pc-only">構造の力</span><span class="composition__pct">18%</span></div>
+          <div class="composition__track"><div class="composition__bar" style="width:18%"></div></div>
+        </li>
+        <li class="composition__row composition__row--seiryu" data-slot="composition.seiryu" data-pct="12">
+          <div class="composition__head"><span class="composition__icon pc-only">龍</span><span class="composition__name"><span class="composition__dash">- </span>青龍</span><span class="composition__force pc-only">革新の力</span><span class="composition__pct">12%</span></div>
+          <div class="composition__track"><div class="composition__bar" style="width:12%"></div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ 3. 利き神タイプとは ═══ -->
+  <section class="traits" id="traits">
+    <div class="card card--plain">
+      <h2 class="card__title card__title--two-line"><span data-slot="dominant.name">白虎</span>タイプとは<br><em>こんな組織</em>です</h2>
+      <p class="card__lead" data-slot="dominant.description">白虎型組織は、勝てる領域に集中し、決めたことをやり切る実行力を原動力に動く組織です。安易に手を広げず、決めた一点を深く掘り下げ、常に「勝てる形」を追い求めます。その集中力と実行力が、競争や成果づくりの場面で大きな力になります。</p>
+      <ul class="checklist checklist--blue" data-slot="dominant.traits">
+        <li>勝てる領域を見極め、一点突破で成果を積み上げる</li>
+<li>数字と現場をつなぎ、決めたことをやり切る文化がある</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ 4. 具体的な行動 ═══ -->
+  <section class="actions" id="actions">
+    <div class="card card--headed">
+      <h2 class="card__title"><span data-slot="dominant.name">白虎</span>の<em>具体的な行動</em></h2>
+      <ol class="action-list" data-slot="dominant.actions">
+        <li><span class="action-list__num">01</span><div class="action-list__body"><strong>勝てる領域に絞り込む</strong><span>どこで勝つかを決め、集中する</span></div></li>
+        <li><span class="action-list__num">02</span><div class="action-list__body"><strong>KPIや数字を基準に勝ち筋を設計する</strong><span>感覚ではなく、勝てる形を設計</span></div></li>
+        <li><span class="action-list__num">03</span><div class="action-list__body"><strong>現場で鍛えながら改善を回す</strong><span>実行と改善が同時に動く</span></div></li>
+        <li><span class="action-list__num">04</span><div class="action-list__body"><strong>決めたことを最後までやり切る</strong><span>完遂が文化をつくる</span></div></li>
+        <li><span class="action-list__num">05</span><div class="action-list__body"><strong>少数精鋭の高基準チームをつくる</strong><span>質の高さが競争力になる</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══ 5. 強みと弱み ═══ -->
+  <section class="strengths" id="strengths">
+    <div class="card card--headed">
+      <h2 class="card__title"><span data-slot="dominant.name">白虎</span>の<em class="is-blue">強み</em>と<em class="is-red">弱み</em></h2>
+
+      <div class="sw-pair" data-slot="dominant.strengths">
+      <div class="sw sw--strength">
+        <h3 class="sw__title"><span class="sw__label">強み①</span>勝てる領域に集中できる実行力</h3>
+        <ul class="checklist checklist--blue">
+          <li>どこで勝つかを見極め、一点突破で成果を出す</li>
+<li>数字・現場・戦略をつなぐ実戦合理がある</li>
+<li>決めたことをやり切る文化が根付いている</li>
+        </ul>
+      </div>
+      <div class="sw sw--strength">
+        <h3 class="sw__title"><span class="sw__label">強み②</span>高基準のチームをつくる力</h3>
+        <ul class="checklist checklist--blue">
+          <li>少数精鋭で高い水準を保てる</li>
+<li>成果が積み上がり、組織の自信と信頼につながる</li>
+<li>改善と実行のサイクルが速い</li>
+        </ul>
+      </div>
+
+      </div>
+
+      <p class="sw-bridge"><span data-slot="dominant.name">白虎</span>の強みは、出すぎると<br><mark>弱みに変わります。</mark></p>
+
+      <div class="sw-pair" data-slot="dominant.weaknesses">
+      <div class="sw sw--weakness">
+        <h3 class="sw__title"><span class="sw__label">弱み①</span>集中しすぎて視野が狭くなる</h3>
+        <ul class="checklist checklist--red">
+          <li>周辺の機会や外部の変化を見落としやすい</li>
+<li>一度決めたやり方を変えにくく、変化に遅れる</li>
+        </ul>
+      </div>
+      <div class="sw sw--weakness">
+        <h3 class="sw__title"><span class="sw__label">弱み②</span>高い基準が、疲弊と張り詰めた空気を生む</h3>
+        <ul class="checklist checklist--red">
+          <li>水準についてこられない人が出やすい</li>
+<li>弱音を出しにくく、息が抜けない</li>
+        </ul>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="connector" aria-hidden="true"></div>
+
+  <!-- ═══ 6. 問い ＋ 放置のコスト ═══ -->
+  <section class="question" id="question">
+    <p class="question__lead">いくつ、心当たりがありましたか。</p>
+    <p class="question__p">このまま、<strong>白虎の強さ</strong>だけで<br>押し切ると、どうなるか。</p>
+    <p class="question__p question__p--loose" data-slot="dominant.riskLines">数字は伸びる。<br>基準も保たれる。<br>けれど現場は張り詰め、そしてある日、優秀な人から燃え尽きていきます。</p>
+    <p class="question__p"><strong><span data-slot="dominant.name">白虎</span>型</strong>の会社が壁に当たるのは、<br>負けたときではありません。</p>
+    <p class="question__big">勝ち続けている、<br>その最中です。</p>
+  </section>
+
+  <!-- ═══ 7. 影神の宣言（紺のグラデーション） ═══ -->
+  <section class="shadow-intro" id="shadow-intro">
+    <h2 class="shadow-intro__h">利き神を知るだけでは、<br>組織は変わりません。</h2>
+    <p class="shadow-intro__p">利き神の強みは理解した。<br>では次に何が必要か。<br>本当に重要なのは、<strong>影神の理解</strong>です。</p>
+    <h2 class="shadow-intro__h shadow-intro__h--2">御社には、<em class="shadow-intro__hl">まだ十分に<br>使えていない力</em>があります。</h2>
+    <p class="shadow-intro__p shadow-intro__p--body">四神診断では、<br class="sp-br">4つの力のうち最も少ない特性を<br class="sp-br"><strong>「影神（シャドウ）」</strong>と呼びます。<br>影神は、単なる弱点ではありません。<br>今の強みだけでは越えられない壁を<br class="sp-br">越えるために必要な力です。</p>
+  </section>
+
+  <!-- ═══ 8+9. 今回の診断結果（影神）＋説明: 1枚のカード（黒い頭＋白い胴体。元モックの形） ═══ -->
+  <div class="shadow-band-bg">
+  <div class="shadow-card">
+  <section class="shadow-result" id="shadow-result">
+    <div class="shadow-result__icon" aria-hidden="true"><span data-slot="shadow.kanji">龍</span></div>
+    <div class="shadow-result__text">
+      <p class="shadow-result__label"><span class="shadow-result__pre pc-only">今回の診断結果<span class="shadow-result__sep">｜</span></span>影神（第4位）</p>
+      <p class="shadow-result__name"><span class="shadow-result__dash">──</span> <span data-slot="shadow.name">青龍</span></p>
+      <p class="shadow-result__sub" data-slot="shadow.tagline">白虎の勝ち筋を、新しい挑戦に変える存在</p>
+    </div>
+    <div class="shadow-result__img"><img src="../../part1/img/seiryu.jpg" alt="青龍" data-slot="shadow.image"></div>
+  </section>
+
+  <!-- ═══ 9. 影神の説明 ＋ 中間CTA ═══ -->
+  <section class="shadow-explain" id="shadow-explain">
+    <p class="shadow-explain__center" data-slot="shadow.intro">白虎型組織の強みは、<br>勝てる領域に力を集中し、成果が出るまでやり切れることです。<br>一方で、その力が強く出るほど ──</p>
+    <ul class="box-list box-list--dark" data-slot="shadow.symptoms">
+      <li>今の稼ぎは強いのに、次の芽を育てていない</li>
+<li>「金にならない」と、新しい挑戦を切ってしまう</li>
+<li>刈り取るものが、少しずつ先細っていく</li>
+    </ul>
+    <p class="shadow-explain__p" data-slot="shadow.role">そこで必要になるのが、今回の影神である青龍です。青龍は、白虎の集中を乱す力ではありません。</p>
+    <p class="shadow-explain__p shadow-explain__p--strong" data-slot="shadow.roleStrong">まだ存在しない未来を直感し、動きながら形にしていく、変化と越境と突破の力です。</p>
+    <ul class="tag-list" data-slot="shadow.qualities">
+      <li>まず動いて道をつくる</li>
+<li>境界の外へ踏み出す</li>
+<li>停滞に新しい流れを入れる</li>
+    </ul>
+    <p class="shadow-explain__p" data-slot="shadow.openLoop">白虎型組織が次に成長するためには、青龍を取り込む必要があります。<br>では、白虎の強みを失わずに、どうやって青龍を取り込めばよいのでしょうか。</p>
+    <div class="connector connector--short" aria-hidden="true"></div>
+    <a class="btn-line" href="#" data-slot="cta.url"><span><span class="nw"><span data-slot="shadow.name">青龍</span>を取り込む『次の一手』を</span><br>LINEで受け取る</span><i class="btn-line__arrow" aria-hidden="true"></i></a>
+  </section>
+
+  </div>
+  </div>
+
+  <!-- ═══ 10. このページで分かるのは現状まで ═══ -->
+  <section class="next" id="next">
+    <h2 class="next__h">このページで分かるのは、<br>御社の「現状」までです。</h2>
+    <p class="next__p">今回の診断で分かるのは、御社の組織がどの方向に偏っているか、どこに強みがあり、どの力が不足しやすいか──その「現状の構造」です。</p>
+    <p class="next__p" data-slot="next.teaser">青龍が入ると、御社の景色はこう変わります──<br>止まっていた組織に、新しい挑戦が生まれ始める。その道筋の描き方が、この先です。</p>
+    <p class="next__lead">ここから先で、次のことが分かります。</p>
+    <ul class="box-list box-list--blue" data-slot="next.items">
+      <li><span data-slot="dominant.name">白虎</span>の強みを失わずに、<span data-slot="shadow.name">青龍</span>を取り込む順番</li>
+      <li><span data-slot="dominant.name">白虎</span><span data-slot="composition.dominantPct">40%</span>・<span data-slot="shadow.name">青龍</span><span data-slot="composition.shadowPct">12%</span>という構成比が示す、御社の最初の一手</li>
+      <li>4つの力が噛み合う「完全組織」とは何か</li>
+    </ul>
+    <p class="next__center">これらは、LINE登録後<br>すぐにお読みいただけます。<br>御社のタイプ（<span data-slot="dominant.name">白虎</span> × <span data-slot="shadow.name">青龍</span>）に<br>応じた内容です。</p>
+    <a class="btn-line" href="#" data-slot="cta.url"><span>診断結果の続きを<br>LINEで受け取る</span><i class="btn-line__arrow" aria-hidden="true"></i></a>
+    <p class="next__note">登録は無料です。<br class="sp-br">いつでも解除できます</p>
+  </section>
+
+  <!-- ═══ フッター ═══ -->
+  <footer class="site-footer">
+    <h2 class="site-footer__h">運営会社</h2>
+    <dl class="site-footer__dl">
+      <div><dt>会社名：</dt><dd>B.essence株式会社</dd></div>
+      <div><dt>住　所：</dt><dd>東京都港区北青山1丁目3番1号<br>アールキューブ青山3階</dd></div>
+    </dl>
+    <a class="site-footer__link" href="#" data-slot="privacy.url">プライバシーポリシー</a>
+  </footer>
+  <p class="copyright">&copy; B.essence. All Rights Reserved.</p>
+
+</div>
+<script>
+(function(){function fit(){if(window.innerWidth>=900)return;document.querySelectorAll(".sw-pair").forEach(function(pair){var b=[].slice.call(pair.querySelectorAll(".sw"));b.forEach(function(e){e.classList.remove("sw--pad");e.style.removeProperty("--pad")});var h=b.map(function(e){return e.getBoundingClientRect().height});var m=Math.max.apply(null,h);b.forEach(function(e,i){var add=Math.min(m-h[i],26);if(add>0){e.classList.add("sw--pad");e.style.setProperty("--pad",add+"px")}})})}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}window.addEventListener("load",fit);window.addEventListener("resize",fit)})();
+</script>
+</body>
+</html>
