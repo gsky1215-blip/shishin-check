@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/part1.css?v=202609212155">
+<link rel="stylesheet" href="css/part1.css?v=202609212219">
 </head>
 <body>
 <!--
@@ -227,5 +227,8 @@
   <p class="copyright">&copy; B.essence. All Rights Reserved.</p>
 
 </div>
+<script>
+(function(){function fit(){if(window.innerWidth>=900)return;document.querySelectorAll(".sw-pair").forEach(function(pair){var b=[].slice.call(pair.querySelectorAll(".sw"));b.forEach(function(e){e.classList.remove("sw--pad");e.style.removeProperty("--pad")});var h=b.map(function(e){return e.getBoundingClientRect().height});var m=Math.max.apply(null,h);b.forEach(function(e,i){var add=Math.min(m-h[i],26);if(add>0){e.classList.add("sw--pad");e.style.setProperty("--pad",add+"px")}})})}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}window.addEventListener("load",fit);window.addEventListener("resize",fit)})();
+</script>
 </body>
 </html>
