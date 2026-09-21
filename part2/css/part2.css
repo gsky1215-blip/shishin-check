@@ -310,3 +310,26 @@ em { font-style: normal; }
 .frame { margin: 34px 7px 0; padding: 12px 10px; font-size: 23px; line-height: 36px; }
 .frame + .body { margin-top: 22px; }
 .sec--next { background: linear-gradient(180deg, #E9EFF9 0%, #ECF1F9 30%, #E4EAF5 60%, #C8D4E9 100%); }
+
+/* 循環図を作り直し（2026-09-21 洋一さん指摘: 絵に焼き込まれた名前とラベルが二重、説明文が矢印に重なる）。
+   輪でなく2×2の巡り。矢印は円と円の隙間だけを通り、説明文と交わらない。絵は名前の入っていないもの */
+.cycle { width: 345px; height: 304px; margin: 24px auto 0; }
+.cycle__arrows { width: 345px; height: 304px; }
+.cycle__node { width: 150px; }
+.cycle__node--seiryu { left: 0; top: 0; }
+.cycle__node--suzaku { left: 195px; top: 0; }
+.cycle__node--byakko { left: 195px; top: 172px; }
+.cycle__node--genbu  { left: 0; top: 172px; }
+.cycle__img img { object-fit: cover; object-position: 50% 35%; background: #fff; }
+.cycle__img b { bottom: -6px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.cycle__cap { margin-top: 12px; }
+
+/* 矛盾の対: 矢印を線画（SVG）にして、札の間に確実に収める */
+.pair__card { flex: 1 1 0; min-width: 0; }
+.pair__arrow { flex: 0 0 34px; height: 14px; margin: 0 6px; background: none; }
+.pair__arrow::before, .pair__arrow::after { content: none; }
+
+/* 自分の目で1画面ずつ見て直した分（2026-09-21）: 冒頭の本文の行末1文字落ち、症状の箱の折り返し、「青龍42%・白虎12%」を途中で折らない */
+.sec--hero .body { letter-spacing: .02em; }
+.box .checks { padding: 14px 16px 18px; }
+.nw { white-space: nowrap; }
