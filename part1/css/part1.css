@@ -568,16 +568,16 @@ em { font-style: normal; }
   /* 4. 具体的な行動: 縦1列。番号を薄い青で大きく、右に見出しと補足 */
   .action-list li { gap: 18px; }
   .action-list li + li { margin-top: 24px; }
-  .action-list__num { width: 34px; font-size: 24px; line-height: 27px; padding-top: 0; }
+  .action-list__num { width: 34px; font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 27px; padding-top: 0; color: rgba(75,115,183,.62); letter-spacing: 0; }
   .action-list__body strong br { display: none; }
 
   /* 5. 強み・弱み: ①②を横に。面の色で差をつけ、枠は角丸 */
-  .strengths .card--headed > *:not(.card__title) { margin-left: 40px; margin-right: 40px; }
-  .sw-pair { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .strengths .card--headed > *:not(.card__title) { margin-left: 24px; margin-right: 24px; }
+  .sw-pair { grid-template-columns: 1fr 1fr; gap: 12px; }
   .sw { padding: 18px 14px 20px; border-radius: 8px; }
   .sw--strength { background: #EEF3FB; border-color: #D5DFF0; }
   .sw--weakness { background: #FBF1EE; border-color: #E8C9C2; }
-  .sw__title { font-size: 17px; line-height: 26px; }
+  .sw__title { font-size: 16px; line-height: 25px; }
   .checklist li { font-size: 15px; line-height: 25px; }
   .sw-bridge { margin: 36px 0 28px; font-family: var(--serif); font-weight: 600; font-size: 22px; letter-spacing: .04em; }
   .sw-bridge br { display: none; }
@@ -586,12 +586,12 @@ em { font-style: normal; }
   .question { padding: 76px var(--side2) 66px; }
   .question__lead { font-size: 20px; margin-bottom: 26px; }
   .question__p { font-size: 16px; line-height: 30px; }
-  .question__big { margin-top: 40px; font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 50px; letter-spacing: .1em; }
+  .question__big { margin-top: 40px; font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 44px; letter-spacing: .1em; }
   .question__big br { display: none; }
 
   /* 7. 影神の宣言: 深い紺で章を切り替える。決め台詞は明朝、キーワードは金 */
-  .shadow-intro { padding: 84px calc(50% - 390px) 68px; background: linear-gradient(180deg, #4E5F92 0%, #3B4B7E 40%, #2F3E70 100%); }
-  .shadow-intro::before { display: none; }
+  .shadow-intro { padding: 84px calc(50% - 390px) 68px; background: linear-gradient(180deg, #6B7BA4 0%, #4A5A8C 45%, #2F3E70 100%); }
+  .shadow-intro::before { height: 64px; }
   .shadow-intro__h { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.6; letter-spacing: .08em; }
   .shadow-intro__h--2 { font-size: 28px; margin-top: 52px; margin-left: 0; margin-right: 0; }
   .shadow-intro__p { font-size: 16px; line-height: 32px; color: rgba(255,255,255,.9); }
@@ -603,15 +603,18 @@ em { font-style: normal; }
   .shadow-band-bg .shadow-card, .page > .shadow-card { margin: 0; }
   .shadow-result { padding: 26px 30px; gap: 18px; }
   .shadow-result__icon { width: 48px; height: 48px; font-size: 24px; }
-  .shadow-result__label { font-size: 17px; }
-  .shadow-result__name { font-size: 20px; }
+  .shadow-result__label { font-size: 15px; font-weight: 500; letter-spacing: .08em; color: rgba(255,255,255,.85); }
+  .shadow-result__pre { display: inline; color: #F0C060; }
+  .shadow-result__name { margin-top: 2px; font-size: 24px; letter-spacing: .08em; }
   .shadow-result__sub { font-size: 13px; }
   .shadow-result__img { width: 76px; height: 76px; }
-  .shadow-explain { padding: 36px 90px 48px; }
+  .shadow-explain { padding: 36px 70px 48px; }
   .shadow-explain__center { text-align: center; }
   .shadow-explain__center br { display: inline; }
-  .box-list { padding: 24px 26px 22px; }
-  .tag-list { flex-direction: row; flex-wrap: wrap; gap: 10px 10px; }
+  .box-list { padding: 22px 26px 20px; background: #FAF8F3; border: 1px solid #E6E1D6; border-radius: 8px; }
+  .next .box-list { background: #fff; border-color: #DEDEDE; }
+  .tag-list { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
+  .tag-list li { padding: 8px 12px; font-size: 15px; white-space: nowrap; }
   .btn-line { width: 520px; margin-left: auto; margin-right: auto; font-size: 19px; min-height: 80px; }
   .btn-line br { display: none; }
 
@@ -621,7 +624,8 @@ em { font-style: normal; }
   .next__p { font-size: 16px; line-height: 30px; }
   .next__lead { margin-top: 36px; font-size: 17px; }
   .next__center { margin: 36px 0 28px; font-size: 16px; }
-  .next__note br { display: none; }
+  .next__note { color: #8A8F9A; font-size: 13.5px; }
+  .next__note .sp-br { display: none; }
 
   /* フッター */
   .site-footer { padding: 48px var(--side) 50px; }
