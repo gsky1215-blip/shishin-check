@@ -455,3 +455,4 @@ em { font-style: normal; }
 .profile__text { font-size: 16px; line-height: 31px; }
 .bonus__text { font-size: 16px; line-height: 28px; }
 .body { letter-spacing: .03em; }
+.sec--hero .body + .body { margin-top: 18px; }
