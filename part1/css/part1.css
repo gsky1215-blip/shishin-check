@@ -784,3 +784,21 @@ em { font-style: normal; }
 }
 @media (max-width: 899px) { .shadow-result__img { width: 68px; height: 68px; top: 16px; right: 16px; } .shadow-result__label, .shadow-result__pre, .shadow-result__name { padding-right: 78px; } }
 @media (max-width: 899px) { .shadow-result__img img { width: 68px; height: 68px; } }
+/* 強み弱みの箱: 16pxにしたら行末に1〜2文字だけ残る行が6つ出た → 箱の余白を詰めて1行17字を確保、字間0 */
+@media (max-width: 899px) {
+  .strengths .card--headed > *:not(.card__title) { margin-left: 8px; margin-right: 8px; }
+  .sw { padding: 16px 10px 18px 12px; }
+  .sw .checklist li { font-size: 15.5px; letter-spacing: 0; padding-left: 26px; }
+  .sw__title { font-size: 16.5px; letter-spacing: 0; }
+}
+@media (max-width: 899px) { .sw .sp-br { display: inline; } }
+@media (min-width: 900px) { .sw .sp-br { display: none; } }
+/* 強み弱みの箱は文言が12パターンで変わるので、手の改行でなく「1行に入る字数」で対処: 余白を詰めて15pxで1行19字 */
+@media (max-width: 899px) {
+  .strengths .card--headed > *:not(.card__title) { margin-left: 6px; margin-right: 6px; }
+  .sw { padding: 14px 8px 16px 10px; }
+  .sw .checklist li { font-size: 15px; line-height: 25px; letter-spacing: 0; padding-left: 24px; }
+  .sw .checklist li::before { width: 16px; height: 16px; background-size: 16px 16px; }
+  .sw__title { font-size: 16px; letter-spacing: 0; padding-left: 3.4em; text-indent: -3.4em; }
+  .sw__label { width: 3.4em; font-size: 15px; }
+}
