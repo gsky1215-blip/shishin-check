@@ -608,13 +608,14 @@ em { font-style: normal; }
   .shadow-result__name { margin-top: 2px; font-size: 24px; letter-spacing: .08em; }
   .shadow-result__sub { font-size: 13px; }
   .shadow-result__img { width: 76px; height: 76px; }
-  .shadow-explain { padding: 36px 70px 48px; }
+  .shadow-explain { padding: 36px 60px 48px; }
   .shadow-explain__center { text-align: center; }
   .shadow-explain__center br { display: inline; }
+  .shadow-explain__center br:nth-of-type(-n+2) { display: none; } /* PCは2行に */
   .box-list { padding: 22px 26px 20px; background: #FAF8F3; border: 1px solid #E6E1D6; border-radius: 8px; }
   .next .box-list { background: #fff; border-color: #DEDEDE; }
   .tag-list { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
-  .tag-list li { padding: 8px 12px; font-size: 15px; white-space: nowrap; }
+  .tag-list li { padding: 12px 16px; font-size: 15px; white-space: nowrap; background: #F5F4F0; border: 1px solid #E6E3DC; border-radius: 6px; }
   .btn-line { width: 520px; margin-left: auto; margin-right: auto; font-size: 19px; min-height: 80px; }
   .btn-line br { display: none; }
 
