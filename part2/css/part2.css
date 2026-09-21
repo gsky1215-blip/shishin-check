@@ -298,11 +298,6 @@ em { font-style: normal; }
 /* 水色の背景が本文の途中で切れていた（本文16px化で丈が伸びたため）。節の丈に合わせ、下端50pxで白へ */
 .sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #ffffff 100%); }
 
-/* READING 02 の5枚の札を2列に（2・2・1、最後は中央）。縦に5枚は間延びしていた（2026-09-21） */
-.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 10px; }
-.chips li { flex: 0 0 calc(50% - 5px); height: 44px; line-height: 44px; }
-.chips li + li { margin-top: 0; }
-
 /* 2026-09-21 実寸で見て直した3点: 症状カードの頭を軽く（カードでなく症状の列挙に）、「必ず矛盾があります」を大きく立てる、NEXTの背景の切り替えをはっきり */
 .box { border-color: #E6E3DC; box-shadow: none; }
 .box__head { height: 52px; line-height: 52px; font-size: 16px; background: #F7F6F2; }
@@ -333,3 +328,8 @@ em { font-style: normal; }
 .sec--hero .body { letter-spacing: .02em; }
 .box .checks { padding: 14px 16px 18px; }
 .nw { white-space: nowrap; }
+
+/* READING 02 の5つ: 文字幅のタグを中央揃えで流す（3＋2）。縦5枚は間延び、2列は5つで1つ余る（洋一さん 9/21） */
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 6px; margin: 14px -10px 0; }
+.chips li { flex: 0 0 auto; height: 34px; line-height: 34px; padding: 0 10px; font-size: 14px; letter-spacing: .02em; }
+.chips li + li { margin-top: 0; }
