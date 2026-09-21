@@ -466,3 +466,7 @@ em { font-style: normal; }
 
 /* 文字は小さくしない（2026-09-21 洋一さん） */
 .checks li { font-size: 16px; }
+
+/* 四神構成: 利き神・影神の行の地色は神に関わらずクラスで（12パターン生成用。2026-09-22） */
+.comp__row--seiryu { background: none; } .comp__row--byakko { background: none; }
+.comp__row.is-kiki { background: #EEF3FB; } .comp__row.is-kage { background: #FBF7EE; }
