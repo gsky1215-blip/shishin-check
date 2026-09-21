@@ -333,3 +333,13 @@ em { font-style: normal; }
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 6px; margin: 14px -10px 0; }
 .chips li { flex: 0 0 auto; height: 34px; line-height: 34px; padding: 0 10px; font-size: 14px; letter-spacing: .02em; }
 .chips li + li { margin-top: 0; }
+
+/* READING 02 の地を、白でなく薄い寒色寄りのグレー（#F4F4F6）に。四神のどの色にも寄らない共通の地。
+   白いカード（症状の箱・タグ）と地を分けて、章の切り替えを見せる（2026-09-21） */
+.sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #F4F4F6 100%); }
+.sec--wall { background: linear-gradient(180deg, #F4F4F6 calc(100% - 50px), var(--paper) 100%); }
+.chips li { background: #fff; border: 1px solid #E1E2E7; }
+.box { background: #fff; border-color: #E1E2E7; }
+.box__head { background: #F8F8FA; }
+.chips { margin-left: -14px; margin-right: -14px; gap: 8px 6px; }
+.chips li { padding: 0 9px; letter-spacing: 0; }
