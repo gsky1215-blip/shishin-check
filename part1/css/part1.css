@@ -412,6 +412,9 @@ em { font-style: normal; }
 .site-footer__link { display: inline-block; margin-top: 30px; color: #270EFF; text-decoration: underline; font-size: 16px; font-weight: 500; line-height: 1.5; }
 .copyright { background: #fff; padding: 24px var(--gutter) 40px; text-align: center; font-family: "DIN 2014", "Barlow", var(--sans); font-size: 14px; line-height: 1.5; color: #707070; letter-spacing: .02em; }
 
+/* PCだけに出す部品（四神構成の絵・力の名前・利き神タグ・補助文）。スマホでは出さない */
+.pc-only { display: none; }
+
 /* 320px（小さいスマホ）の逃げ */
 @media (max-width: 340px) {
   :root { --gutter: 22px; }
@@ -482,13 +485,17 @@ em { font-style: normal; }
 .shadow-intro { padding-bottom: 60px; }
 .shadow-card + .next, .shadow-band-bg + .next { padding-top: 56px; }
 
+
 /* ==========================================================================
-   PC（900px〜）── 村田さんのデザインはスマホ版のみなので、LP・質問ページのPC版と同じ作法で組む
-   （幅1010の列を中央に置き、背景は画面いっぱい。文字の大きさ・色・部品はスマホ版のまま、並びだけ横に広げる）
-   洋一さん 9/21「Part1はPC用に最適化しないとダメ」
+   PC（900px〜）── 村田さんのデザインはスマホ版のみ。PCは「中央1本で静かに読ませる診断書」として組む
+   ・上の青龍の部分だけ左右に置き、最初の画面で結果（名前・タグ・要約）まで完結させる
+   ・その下は全部、幅720の1本の列。文字の大きさ・部品はスマホ版のまま
+   ・決め台詞（認識を切り替える一文）は明朝、本文・ラベルはゴシック
+   ・影神への転換は深い紺＋金の強調で章の切り替えを出す
+   洋一さん 9/21、GPT評価を踏まえて改訂
    ========================================================================== */
 @media (min-width: 900px) {
-  :root { --col: 1010px; --gutter: 0px; --side: calc(50% - 505px); }
+  :root { --col: 1010px; --gutter: 0px; --side: calc(50% - 505px); --col2: 780px; --side2: calc(50% - 390px); }
   body { background: #fff; }
   .page { max-width: none; box-shadow: none; }
 
@@ -498,9 +505,10 @@ em { font-style: normal; }
   .site-header__logo img { height: 30px; }
   .site-header__menu { display: none; }
 
-  /* 1. 結果FV: 見出しは中央、その下は左に青龍の丸・右に文字 */
+  /* 1. 結果FV: 見出しは中央。下は左に青龍の丸・右に結果。最初の画面で完結させる */
   .hero {
-    padding: 110px var(--side) 70px;
+    min-height: 860px;
+    padding: 110px var(--side) 90px;
     display: grid;
     grid-template-columns: 400px 1fr;
     column-gap: 80px;
@@ -517,81 +525,102 @@ em { font-style: normal; }
   }
   .hero__title { grid-area: title; text-align: center; }
   .hero__subtitle { grid-area: sub; text-align: center; }
-  .hero__figure { grid-area: fig; width: 400px; height: 400px; margin: 60px 0 0; align-self: start; }
-  .hero__label { grid-area: label; margin-top: 76px; }
+  .hero__figure { grid-area: fig; width: 400px; height: 400px; margin: 70px 0 0; align-self: start; }
+  .hero__label { grid-area: label; margin-top: 86px; }
   .hero__name { grid-area: name; margin-top: 4px; font-size: 64px; text-indent: 0; }
   .hero__type { grid-area: type; margin-top: 30px; }
   .hero__keywords { grid-area: kw; justify-content: flex-start; margin-top: 20px; }
   .hero__desc { grid-area: desc; margin-top: 28px; max-width: 520px; font-size: 17px; line-height: 32px; }
 
-  /* 2. 四神構成比: 4本を2列に */
-  .composition { padding: 30px var(--side) 56px; }
-  .composition__card { padding: 26px 40px 30px; }
-  .composition__list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; row-gap: 14px; margin-top: 18px; }
-  .composition__row + .composition__row { margin-top: 0; }
+  /* 2. 四神構成比: 「なぜ青龍なのか」の最初の根拠を見せるカード。帳票にしない（洋一さん 9/21、GPT評価） */
+  .composition { padding: 40px calc(50% - 350px) 60px; }
+  .composition__card { padding: 30px 40px 32px; border: 1px solid #DEDEDE; border-radius: 10px; box-shadow: 0 2px 12px rgba(60,70,110,.06); }
+  .composition__title { font-size: 21px; padding-bottom: 0; border-bottom: 0; }
+  .composition__sub { display: block; margin-top: 6px; padding-bottom: 16px; border-bottom: 1px solid #E3E3E3; text-align: center; font-size: 14px; font-weight: 500; line-height: 24px; letter-spacing: .02em; color: #8A8F9A; }
+  .composition__list { margin-top: 20px; }
+  .composition__row { padding: 8px 12px 12px; border-radius: 8px; }
+  .composition__row + .composition__row { margin-top: 6px; }
+  .composition__row--seiryu { background: #EEF3FB; }
+  .composition__head { align-items: center; gap: 10px; font-size: 17px; line-height: 40px; }
+  .composition__dash { display: none; }
+  /* 一文字の印（白虎カードの「虎」と同じ作法。玄武は名前の構造「色＋獣」に合わせて獣の字「武」） */
+  .composition__icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 9px; font-family: var(--serif); font-size: 19px; font-weight: 600; }
+  .composition__icon--seiryu { background: rgba(44,44,126,.10); color: var(--navy); }
+  .composition__icon--suzaku { background: rgba(183,46,46,.10); color: var(--red); }
+  .composition__icon--genbu { background: rgba(49,71,55,.10); color: var(--green); }
+  .composition__icon--byakko { background: rgba(200,146,42,.14); color: var(--gold); }
+  .composition__force { display: inline; font-size: 13px; font-weight: 500; letter-spacing: .04em; color: #5F6572; }
+  .composition__tag { display: inline-block; margin-left: 2px; padding: 0 8px; height: 22px; line-height: 22px; border-radius: 11px; background: var(--navy); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+  .composition__pct { margin-left: auto; font-size: 17px; font-weight: 700; }
+  .composition__track { margin-top: 4px; height: 6px; }
 
-  /* 3〜5. 生成りの面の上のカード */
-  .traits, .actions, .strengths { padding-left: var(--side); padding-right: var(--side); }
+  /* 3〜5. 生成りの面の上のカード: 幅720 */
+  .traits, .actions, .strengths { padding-left: var(--side2); padding-right: var(--side2); }
   .traits { padding-top: 60px; }
   .actions, .strengths { padding-top: 40px; }
   .strengths { padding-bottom: 0; }
-  .card { padding: 56px 130px 48px; }
-  .card--headed { padding: 0 0 48px; }
-  .card--headed .card__title { padding: 40px 18px 36px; margin-bottom: 36px; }
-  .card--headed > *:not(.card__title) { margin-left: 90px; margin-right: 90px; }
-  .card__lead { font-size: 17px; line-height: 32px; }
-  .checklist li { font-size: 16px; line-height: 26px; }
+  .card { padding: 52px 56px 44px; }
+  .card--headed { padding: 0 0 44px; }
+  .card--headed .card__title { padding: 36px 18px 32px; margin-bottom: 32px; }
+  .card--headed > *:not(.card__title) { margin-left: 56px; margin-right: 56px; }
+  .card__lead { font-size: 16px; line-height: 31px; }
 
-  /* 4. 具体的な行動: 2列 */
-  .action-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 60px; }
-  .action-list li { flex: 0 0 380px; }
-  .action-list li + li { margin-top: 0; }
+  /* 4. 具体的な行動: 縦1列。番号を薄い青で大きく、右に見出しと補足 */
+  .action-list li { gap: 18px; }
+  .action-list li + li { margin-top: 24px; }
+  .action-list__num { width: 34px; font-size: 24px; line-height: 27px; padding-top: 0; }
+  .action-list__body strong br { display: none; }
 
-  /* 5. 強み・弱み: ①②を横に */
-  .sw-pair { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .sw { padding: 20px 16px 22px; }
-  .sw-bridge { margin: 40px 0 32px; font-size: 22px; }
+  /* 5. 強み・弱み: ①②を横に。面の色で差をつけ、枠は角丸 */
+  .strengths .card--headed > *:not(.card__title) { margin-left: 40px; margin-right: 40px; }
+  .sw-pair { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .sw { padding: 18px 14px 20px; border-radius: 8px; }
+  .sw--strength { background: #EEF3FB; border-color: #D5DFF0; }
+  .sw--weakness { background: #FBF1EE; border-color: #E8C9C2; }
+  .sw__title { font-size: 17px; line-height: 26px; }
+  .checklist li { font-size: 15px; line-height: 25px; }
+  .sw-bridge { margin: 36px 0 28px; font-family: var(--serif); font-weight: 600; font-size: 22px; letter-spacing: .04em; }
   .sw-bridge br { display: none; }
 
-  /* 6. 問い: 中央に置く */
-  .question { padding: 76px var(--side) 66px; }
+  /* 6. 問い: 決め台詞は明朝 */
+  .question { padding: 76px var(--side2) 66px; }
   .question__lead { font-size: 20px; margin-bottom: 26px; }
-  .question__p { font-size: 17px; line-height: 30px; }
-  .question__big { margin-top: 40px; font-size: 32px; line-height: 44px; }
+  .question__p { font-size: 16px; line-height: 30px; }
+  .question__big { margin-top: 40px; font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 50px; letter-spacing: .1em; }
   .question__big br { display: none; }
 
-  /* 7. 影神の宣言: 背景は画面いっぱい、文字は幅760に */
-  .shadow-intro { padding: 80px calc(50% - 380px) 64px; }
-  .shadow-intro__h { font-size: 28px; }
-  .shadow-intro__h--2 { font-size: 27px; margin-top: 48px; margin-left: 0; margin-right: 0; }
-  .shadow-intro__p { font-size: 17px; }
+  /* 7. 影神の宣言: 深い紺で章を切り替える。決め台詞は明朝、キーワードは金 */
+  .shadow-intro { padding: 84px calc(50% - 390px) 68px; background: linear-gradient(180deg, #4E5F92 0%, #3B4B7E 40%, #2F3E70 100%); }
+  .shadow-intro::before { display: none; }
+  .shadow-intro__h { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.6; letter-spacing: .08em; }
+  .shadow-intro__h--2 { font-size: 28px; margin-top: 52px; margin-left: 0; margin-right: 0; }
+  .shadow-intro__p { font-size: 16px; line-height: 32px; color: rgba(255,255,255,.9); }
+  .shadow-intro__p strong, .shadow-intro__hl { color: #F0C060; }
+  .shadow-intro__p--body { margin-top: 26px; }
 
-  /* 8〜9. 影神カード: 幅1010、黒い帯は横長 */
-  .shadow-band-bg { padding: 48px var(--side) 56px; }
+  /* 8〜9. 影神カード: 幅720 */
+  .shadow-band-bg { padding: 48px var(--side2) 56px; }
   .shadow-band-bg .shadow-card, .page > .shadow-card { margin: 0; }
-  .shadow-result { padding: 30px 40px 30px 40px; gap: 22px; }
-  .shadow-result__icon { width: 52px; height: 52px; font-size: 26px; }
-  .shadow-result__label { font-size: 18px; }
-  .shadow-result__name { font-size: 22px; }
-  .shadow-result__sub { font-size: 14px; }
-  .shadow-result__img { width: 84px; height: 84px; }
-  .shadow-explain { padding: 40px 90px 52px; }
-  .shadow-explain__center, .shadow-explain__p { font-size: 17px; line-height: 32px; }
+  .shadow-result { padding: 26px 30px; gap: 18px; }
+  .shadow-result__icon { width: 48px; height: 48px; font-size: 24px; }
+  .shadow-result__label { font-size: 17px; }
+  .shadow-result__name { font-size: 20px; }
+  .shadow-result__sub { font-size: 13px; }
+  .shadow-result__img { width: 76px; height: 76px; }
+  .shadow-explain { padding: 36px 90px 48px; }
   .shadow-explain__center { text-align: center; }
   .shadow-explain__center br { display: inline; }
-  .box-list { padding: 26px 30px 24px; }
-  .box-list li { font-size: 17px; line-height: 27px; }
-  .tag-list { flex-direction: row; flex-wrap: wrap; gap: 12px 12px; }
-  .btn-line { width: 560px; margin-left: auto; margin-right: auto; font-size: 20px; min-height: 84px; }
+  .box-list { padding: 24px 26px 22px; }
+  .tag-list { flex-direction: row; flex-wrap: wrap; gap: 10px 10px; }
+  .btn-line { width: 520px; margin-left: auto; margin-right: auto; font-size: 19px; min-height: 80px; }
   .btn-line br { display: none; }
 
-  /* 10. このページで分かるのは: 幅830を中央に */
-  .next { padding: 70px calc(50% - 415px) 64px; }
+  /* 10. このページで分かるのは: 幅720。見出しは明朝のまま中央に */
+  .next { padding: 70px calc(50% - 300px) 64px; }
   .next__h { font-size: 30px; text-align: center; margin-bottom: 30px; }
-  .next__p { font-size: 17px; line-height: 30px; }
-  .next__lead { margin-top: 36px; font-size: 18px; }
-  .next__center { margin: 40px 0 30px; font-size: 17px; }
-  .next__center br { display: none; }
+  .next__p { font-size: 16px; line-height: 30px; }
+  .next__lead { margin-top: 36px; font-size: 17px; }
+  .next__center { margin: 36px 0 28px; font-size: 16px; }
   .next__note br { display: none; }
 
   /* フッター */
