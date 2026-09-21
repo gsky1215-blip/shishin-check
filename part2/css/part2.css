@@ -406,3 +406,7 @@ em { font-style: normal; }
 .sec--case4 .stmt + .bridge { margin-top: 40px; }
 .sec--wall { padding-bottom: 76px; }
 .sec--case4 .ba--third + .stmt .stmt__text { font-size: 21px; line-height: 38px; letter-spacing: .02em; }
+
+/* READING 02 の5枚: 縦の余白だけ広げて、独立した1つの視覚ブロックに（2026-09-21 洋一さん）。本文→1段目 14→34、段の間 8→20、2段目→本文 25→46 */
+.chips { margin-top: 34px; row-gap: 20px; }
+.chips + .body { margin-top: 46px; }
