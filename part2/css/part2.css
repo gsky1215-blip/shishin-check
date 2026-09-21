@@ -348,3 +348,17 @@ em { font-style: normal; }
 .ba__head { padding: 12px 10px 10px; }
 .ba--third .ba__head { padding: 20px 10px 18px; }
 .bridge { color: var(--ink-2); font-weight: 600; }
+
+/* CASE共通の3段のリズム（2026-09-21）: ①導入＝地の上の本文 → ②具体＝白いカード → ③発見＝画面幅いっぱいの帯（.stmt）。
+   ③は「このCASEの答え」として独立させる。帯の色は四神のどの色にも寄らない濃いめの生成り。上に短い紺の線 */
+.stmt { position: relative; margin: 44px calc(var(--gutter) * -1) 0; padding: 40px var(--gutter) 38px; border: 0; background: #E6E2D9; }
+.stmt::before { content: ""; position: absolute; left: 50%; top: 0; width: 44px; height: 3px; margin-left: -22px; background: var(--navy); }
+.stmt + .body { margin-top: 32px; }
+.stmt__text { font-size: 22px; line-height: 38px; }
+.sec--wall .stmt { background: #E4E5EA; margin-bottom: -71px; padding-bottom: 60px; }
+.sec--wall { background: #F4F4F6; }
+.sec--case .ba + .stmt, .sec--case .body + .stmt, .sec--case4 .ba--third + .stmt { margin-top: 40px; padding: 40px var(--gutter) 38px; border-bottom: 0; }
+.sec--case3 .stmt { padding: 40px var(--gutter) 38px; }
+.sec--case4 .ba--third + .stmt .stmt__text { font-size: 21px; line-height: 38px; }
+.sec--case4 .stmt + .bridge { margin-top: 34px; padding-top: 0; border-top: 0; }
+.sec--case4 .ba--third + .stmt .stmt__text { font-size: 20px; letter-spacing: .01em; }
