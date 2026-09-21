@@ -373,3 +373,11 @@ em { font-style: normal; }
 .cycle__node--suzaku { left: 230.5px; top: 130px; }
 .cycle__node--genbu  { left: -5.5px; top: 130px; }
 .cycle__node--byakko { left: 112.5px; top: 248px; }
+
+/* READING 02 の地は白に戻す（2026-09-21）。景色を変えるのは意味が転換する「発見」の帯だけ。タグは枠を薄く低くしてボタンに見せない */
+.sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #ffffff 100%); }
+.sec--wall { background: #fff; }
+.sec--wall .stmt { background: #EEF0F4; }
+.chips li { height: 32px; line-height: 32px; background: #F7F7F8; border: 1px solid #ECECEF; font-weight: 600; }
+.box { border-color: #E6E6EA; }
+.box__head { background: #F6F6F8; }
