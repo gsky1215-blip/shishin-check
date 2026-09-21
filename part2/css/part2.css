@@ -297,3 +297,8 @@ em { font-style: normal; }
 
 /* 水色の背景が本文の途中で切れていた（本文16px化で丈が伸びたため）。節の丈に合わせ、下端50pxで白へ */
 .sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #ffffff 100%); }
+
+/* READING 02 の5枚の札を2列に（2・2・1、最後は中央）。縦に5枚は間延びしていた（2026-09-21） */
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 10px; }
+.chips li { flex: 0 0 calc(50% - 5px); height: 44px; line-height: 44px; }
+.chips li + li { margin-top: 0; }
