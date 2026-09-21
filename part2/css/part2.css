@@ -283,3 +283,14 @@ em { font-style: normal; }
 .bonus__text strong { font-size: 16px; color: var(--navy); }
 .cta { padding-top: 0; display: flex; align-items: center; justify-content: center; }
 .cta { padding-right: 44px; padding-left: 16px; }
+
+/* 2026-09-21 GPTデザインレビューから採用した3点（洋一さん）: A/B/Cカードを詰める、「矛盾が、力になる」の青を濃く太く、中川さんの箱を小さく */
+.rank { padding: 16px 16px 18px; }
+.rank + .rank { margin-top: 12px; }
+.rank__head { padding-bottom: 10px; }
+.rank .checks { margin-top: 8px; }
+.band { background: linear-gradient(180deg, #5B6E9C 0%, #3B4B7E 50%, #2F3E70 100%); }
+.band__copy { font-weight: 700; }
+.profile { margin-top: 20px; padding: 12px 14px 14px; }
+.profile__text { margin-top: 12px; }
+.band { box-shadow: inset 0 0 8px 1px rgba(235,235,240,.45); }
