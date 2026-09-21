@@ -302,3 +302,11 @@ em { font-style: normal; }
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 10px; }
 .chips li { flex: 0 0 calc(50% - 5px); height: 44px; line-height: 44px; }
 .chips li + li { margin-top: 0; }
+
+/* 2026-09-21 実寸で見て直した3点: 症状カードの頭を軽く（カードでなく症状の列挙に）、「必ず矛盾があります」を大きく立てる、NEXTの背景の切り替えをはっきり */
+.box { border-color: #E6E3DC; box-shadow: none; }
+.box__head { height: 52px; line-height: 52px; font-size: 16px; background: #F7F6F2; }
+.box .checks { padding: 14px 20px 18px; }
+.frame { margin: 34px 7px 0; padding: 12px 10px; font-size: 23px; line-height: 36px; }
+.frame + .body { margin-top: 22px; }
+.sec--next { background: linear-gradient(180deg, #E9EFF9 0%, #ECF1F9 30%, #E4EAF5 60%, #C8D4E9 100%); }
