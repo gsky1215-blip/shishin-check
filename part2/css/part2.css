@@ -438,3 +438,6 @@ em { font-style: normal; }
 .sec--case4 .ba--third + .stmt { margin-top: 56px; }
 .sec--case4 .ba--third + .stmt .stmt__text { font-size: 22px; line-height: 40px; letter-spacing: .03em; }
 .sec--case4 .ba--third + .stmt .stmt__text { font-size: 21px; line-height: 38px; letter-spacing: .01em; }
+/* 5つのタグは「白い箱＋線」でなく「淡いグレーの面」に（2026-09-21）。地 #F1F1F3、線はほぼ消す */
+.chips li { background: #F1F1F3; border: 1px solid #F1F1F3; }
+.chips li { padding: 0 12px; }
