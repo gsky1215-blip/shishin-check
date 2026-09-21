@@ -456,3 +456,10 @@ em { font-style: normal; }
 .bonus__text { font-size: 16px; line-height: 28px; }
 .body { letter-spacing: .03em; }
 .sec--hero .body + .body { margin-top: 18px; }
+/* チェック項目の箱: 文言が12パターンで変わるので、1行に入る字数を増やして落ちを減らす（余白を詰めて18字） */
+.ba__body { padding-left: 16px; padding-right: 14px; }
+.checks li { letter-spacing: 0; padding-left: 24px; }
+.ba__body--ranks { padding-left: 12px; padding-right: 12px; }
+.rank .checks { padding-left: 46px; }
+.sec--case .ba__body, .sec--case4 .ba--before .ba__body, .sec--case4 .ba--after .ba__body, .sec--case4 .ba--third .ba__body { padding-left: 14px; padding-right: 10px; }
+.checks li { font-size: 15.5px; }
