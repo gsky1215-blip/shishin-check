@@ -748,3 +748,14 @@ em { font-style: normal; }
 @media (max-width: 899px) {
   .shadow-explain__p[data-slot="shadow.openLoop"] { font-weight: 700; }
 }
+
+/* 本文を17pxに（2026-09-21 洋一さん「53歳以上には16pxは小さい」）。スマホ・PC共通。見出し・決め台詞は変えない */
+.hero__desc, .card__lead, .shadow-explain__center, .shadow-explain__p, .question__p, .next__p, .next__center, .shadow-intro__p { font-size: 17px; line-height: 32px; }
+.checklist li { font-size: 16.5px; line-height: 26px; }
+.action-list__body strong { font-size: 18px; }
+.action-list__body span { font-size: 16.5px; }
+.box-list li { font-size: 16.5px; line-height: 26px; }
+.tag-list li { font-size: 16px; }
+@media (min-width: 900px) {
+  .hero__desc, .card__lead, .shadow-explain__center, .shadow-explain__p, .question__p, .next__p, .next__center, .action-list__body span { font-size: 17px; line-height: 33px; }
+}
