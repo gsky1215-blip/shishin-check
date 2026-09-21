@@ -782,3 +782,5 @@ em { font-style: normal; }
   .shadow-result__label, .shadow-result__pre, .shadow-result__name { padding-right: 70px; }
   .shadow-result__sub { padding-right: 0; }
 }
+@media (max-width: 899px) { .shadow-result__img { width: 68px; height: 68px; top: 16px; right: 16px; } .shadow-result__label, .shadow-result__pre, .shadow-result__name { padding-right: 78px; } }
+@media (max-width: 899px) { .shadow-result__img img { width: 68px; height: 68px; } }
