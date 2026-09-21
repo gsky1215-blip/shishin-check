@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>四神診断 結果Part2 朱雀×玄武</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../part2/css/part2.css?v=202609220130">
+</head>
+<body>
+<!--
+  四神組織診断 診断結果 Part2（LINE登録後に開く読み解きページ）
+  デザイン: ラヴィゴット村田さん 2026-09-17 版（スマホ 375 幅）。PC では列を中央に置く。
+  文言は 青龍×白虎 の例。差し替え箇所は data-slot（README.md）。
+  鬼頭さん 9/18 の2点（転換カードの罫の太さ／矛盾冒頭の枠の地色）は :root の --vs-line と --frame-bg で調整できる。
+-->
+<div class="page">
+
+  <header class="site-header">
+    <div class="site-header__logo" data-slot="logo"><img src="../part2/img/logo.png" alt="B.essence"></div>
+    <button class="site-header__menu" type="button" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- ═══ READING 01 診断結果の読み解き ═══ -->
+  <section class="sec sec--hero">
+    <p class="kicker">READING <i></i> 01</p>
+    <h1 class="h2 h2--hero">診断結果の読み解き</h1>
+    <p class="hero__sub">御社の診断結果は、こうでした。</p>
+    <div class="dual">
+      <div class="dual__card dual__card--main"><span class="dual__label">利き神</span><span class="dual__name" data-slot="dominant.name">朱雀</span></div>
+      <div class="dual__card dual__card--shadow"><span class="dual__label">影神</span><span class="dual__name" data-slot="shadow.name">玄武</span></div>
+    </div>
+    <div class="comp" data-slot="composition">
+      <p class="comp__title">御社の四神構成</p>
+      <ul class="comp__list">
+        <li class="comp__row comp__row--suzaku is-kiki" data-pct="40"><span class="comp__label"><span class="comp__icon">雀</span><span class="comp__name">朱雀</span><span class="comp__force">共創の力</span><span class="comp__tag comp__tag--dominant">利き神</span><b>40%</b></span><span class="comp__bar"><i style="width:40%"></i></span></li>
+        <li class="comp__row comp__row--seiryu" data-pct="30"><span class="comp__label"><span class="comp__icon">龍</span><span class="comp__name">青龍</span><span class="comp__force">革新の力</span><b>30%</b></span><span class="comp__bar"><i style="width:30%"></i></span></li>
+        <li class="comp__row comp__row--byakko" data-pct="18"><span class="comp__label"><span class="comp__icon">虎</span><span class="comp__name">白虎</span><span class="comp__force">成果の力</span><b>18%</b></span><span class="comp__bar"><i style="width:18%"></i></span></li>
+        <li class="comp__row comp__row--genbu is-kage" data-pct="12"><span class="comp__label"><span class="comp__icon">武</span><span class="comp__name">玄武</span><span class="comp__force">構造の力</span><span class="comp__tag comp__tag--shadow">影神</span><b>12%</b></span><span class="comp__bar"><i style="width:12%"></i></span></li>
+      </ul>
+    </div>
+    <p class="body" data-slot="reading01.intro">朱雀は、人の想いに火をつけ、共感と関係性で人を動かそうとする力です。玄武は、次々に生まれる成果や動きを「続けられる形」に変え、再現性ある仕組みとして積み上げる力です。</p>
+    <p class="body">ここからは、この2つの力が御社の組織のどこで噛み合い、どこで詰まるのかを、読み解いていきます。</p>
+  </section>
+
+  <!-- ═══ READING 02 青龍型組織がぶつかる壁 ═══ -->
+  <section class="sec sec--wall">
+    <p class="kicker">READING <i></i> 02</p>
+    <h2 class="h2">朱雀型組織が<br>ぶつかる壁</h2>
+    <span class="rule"></span>
+    <p class="body">朱雀は、御社をここまで伸ばしてきた力です。</p>
+    <ul class="chips">
+      <li>あの人のために</li><li>このチームのために</li><li>お客様のために</li><li>信頼のために</li><li>みんなのために</li>
+    </ul>
+    <p class="body">人を信じ、関係性に賭ける。<br>だから、会社はここまで一体になってきました。</p>
+    <p class="body">その一方で、朱雀が強く出すぎると、人を大切にするほど、決めるべきことが決まらず、成果への線引きが甘くなります。</p>
+    <div class="box">
+      <p class="box__head">朱雀が強い会社で、起きていること</p>
+      <ul class="checks"><li>合意を待つうちに、厳しい判断が先延ばしになる</li><li>成果より、姿勢や頑張りが評価される</li><li>その場の空気で、結論が変わる</li><li>気づけば、成果より空気を守る組織になっている</li></ul>
+    </div>
+    <div class="stmt">
+      <p class="stmt__text">問題は、人を大切にすることではありません。<br><em>大切にすることと、甘くすることを、混同してしまうこと</em>です。</p>
+    </div>
+  </section>
+
+  <!-- ═══ CASE 03 案件・プロジェクト ═══ -->
+  <section class="sec sec--case sec--case3">
+    <p class="kicker kicker--case">CASE <i></i> 03<span class="kicker__sep">｜</span>やり方</p>
+    <h2 class="h2 h2--big">みんなのやり方を<br>尊重する。<br>だから、バラバラになる。</h2>
+    <span class="rule"></span>
+    <div class="ba ba--before"><div class="ba__head"><span class="ba__tag">BEFORE</span><span class="ba__title">朱雀が強く、玄武が弱いと</span></div><div class="ba__body"><ul class="checks"><li>巻き込むために、みんなの意見を尊重する</li><li>人それぞれのやり方を許してしまう</li><li>「このやり方は苦手」と言われると、通してしまう</li><li>やり方が人ごとにバラバラで連携できない</li><li>忙しい時に噛み合わず、現場が回らない</li></ul></div></div>
+    <p class="body">玄武は、意見を切り捨てる存在ではありません。ヒアリングはします。</p>
+    <div class="ba ba--after"><div class="ba__head"><span class="ba__tag">AFTER</span><span class="ba__title">玄武の視点が入ると</span></div><div class="ba__body"><ul class="checks"><li>聞いた上で、最後は「会社としての標準」を決める</li><li>例外を残しすぎず、誰でも同じ品質でできる型にする</li><li>トレーニング計画をつくり、無理なく型を身につける</li><li>忙しい時でも噛み合うオペレーションに整える</li></ul></div></div>
+    <p class="body">自由に見える現場ほど、実は裏のやり方が作り込まれている。</p>
+    <div class="stmt"><p class="stmt__text">朱雀はみんなの気持ちを大切にする。<br>玄武はみんなが同じ品質で動ける形をつくる。</p></div>
+    <p class="body">この2つが噛み合うと、“温かいけどバラバラ”が“温かくて、崩れない”に変わる。</p>
+    <p class="bridge">やり方だけではありません。人の育て方でも、同じことが起きます。</p>
+  </section>
+
+  <!-- ═══ CASE 04 採用 ═══ -->
+  <section class="sec sec--case sec--case4">
+    <p class="kicker kicker--case">CASE <i></i> 04<span class="kicker__sep">｜</span>人の育て方</p>
+    <h2 class="h2 h2--big">一人ひとりに合わせる。<br>だから、育ち方がバラつく。</h2>
+    <span class="rule"></span>
+    <div class="ba ba--before"><div class="ba__head"><span class="ba__tag">BEFORE</span><span class="ba__title">朱雀が強く、玄武が弱いと</span></div><div class="ba__body"><ul class="checks"><li>その人の個性や気持ちに合わせて育てる</li><li>「これは苦手」と言われれば、無理させない</li><li>育て方が担当や状況でバラバラ</li><li>何ができれば一人前か、基準がない</li><li>伸びる人と伸びない人の差が開く</li></ul></div></div>
+    <div class="ba ba--after"><div class="ba__head"><span class="ba__tag">AFTER</span><span class="ba__title">玄武の視点が入ると</span></div><div class="ba__body"><ul class="checks"><li>「一人前の型」を先に定義する</li><li>全員が通る標準カリキュラムをつくる</li><li>苦手な部分も、段階的なトレーニングで身につけられるようにする</li><li>時間をかけて、必要な水準まで育てていく</li></ul></div></div>
+    <div class="vs"><p class="vs__from">その人に合わせて育てる」だけでなく<br>ではなく、</p><p class="vs__to">会社の型で、確実に育て切る</p></div>
+    <p class="body">玄武で「育ち方のバラつき」は揃います。でも、その育成を成果につなげるには、もう一つ、白虎の力が必要です。</p>
+    <div class="ba ba--third"><div class="ba__head"><span class="ba__title">さらに白虎の視点が入ると</span></div><div class="ba__body"><ul class="checks"><li>育成のゴールを成果で定義する</li><li>数字で一人前を測る</li><li>現場で鍛えて成果につなげる</li><li>勝てる基準まで引き上げる</li></ul></div></div>
+    <div class="stmt"><p class="stmt__text">朱雀だけなら育ち方は人任せ。<br>玄武が入れば全員が型で育ち、白虎が入れば、その育成が成果につながる。</p></div>
+    <p class="bridge">案件でも、採用でも、同じことが起きていました。</p>
+  </section>
+
+  <!-- ═══ READING 05 矛盾 ═══ -->
+  <section class="sec sec--paradox">
+    <p class="kicker">READING <i></i> 05</p>
+    <p class="lead">挑戦は増やしたい。<br>でも、経営資源は<br>絞らなければならない。</p>
+    <p class="lead">人の可能性は信じたい。<br>でも、役割と成果基準は<br>明確にしなければならない。</p>
+    <p class="lead">どちらも正しい。だから、選べない。</p>
+    <p class="frame">組織には、<br>必ず矛盾があります。</p>
+    <p class="body body--center">そして多くの会社は、<br>どちらかを選び、もう片方を失います。<br>片方を強めると、もう片方が崩れる。</p>
+    <div class="pairs">
+      <div class="pair"><div class="pair__card"><b>仕組み</b><span>会社は整う</span></div><svg class="pair__arrow" viewBox="0 0 34 14" aria-hidden="true"><path d="M2 7H32M2 7l6-5M2 7l6 5M32 7l-6-5M32 7l-6 5" fill="none" stroke="#4B73B7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="pair__card"><b>自由</b><span>挑戦が生まれる</span></div></div>
+      <div class="pair"><div class="pair__card"><b>人</b><span>働きやすくなる</span></div><svg class="pair__arrow" viewBox="0 0 34 14" aria-hidden="true"><path d="M2 7H32M2 7l6-5M2 7l6 5M32 7l-6-5M32 7l-6 5" fill="none" stroke="#4B73B7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="pair__card"><b>成果</b><span>数字は伸びる</span></div></div>
+    </div>
+    <p class="pairs__close">片方を強めると、もう片方が崩れる</p>
+    <div class="band">
+      <p class="band__text">強い会社は、矛盾をなくした<br>会社ではありません。<br>それを、力に変えた会社です。</p>
+      <p class="band__copy">矛盾が、力になる。</p>
+      <p class="band__def">四神経営とは、<br>組織の矛盾を統合する<br>経営です。</p>
+    </div>
+  </section>
+
+  <!-- ═══ READING 06 完全組織 ═══ -->
+  <section class="sec sec--cycle">
+    <p class="kicker">READING <i></i> 06</p>
+    <h2 class="h2 h2--big">組織が強くなるのは、<br>4つの力が<br>噛み合ったときです。</h2>
+    <span class="rule"></span>
+    <div class="cycle" aria-label="青龍→朱雀→白虎→玄武→青龍の循環">
+      <svg class="cycle__arrows" viewBox="0 0 345 372" aria-hidden="true">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs>
+        <path d="M226 66 A118 118 0 0 1 274 111" fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#ah)"/>
+        <path d="M254 253 A118 118 0 0 1 220 277" fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#ah)"/>
+        <path d="M125 277 A118 118 0 0 1 91 253" fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#ah)"/>
+        <path d="M71 111 A118 118 0 0 1 119 66" fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#ah)"/>
+      </svg>
+      <div class="cycle__node cycle__node--seiryu"><span class="cycle__img"><img src="../part2/img/g_seiryu.png" alt=""><b>青龍</b></span><span class="cycle__cap">まだない未来を、<br>生み出す</span></div>
+      <div class="cycle__node cycle__node--suzaku"><span class="cycle__img"><img src="../part2/img/g_suzaku.png" alt=""><b>朱雀</b></span><span class="cycle__cap">構想を共有し、<br>人を巻き込む</span></div>
+      <div class="cycle__node cycle__node--byakko"><span class="cycle__img"><img src="../part2/img/g_byakko.png" alt=""><b>白虎</b></span><span class="cycle__cap">勝ち筋を見極め、<br>成果にする</span></div>
+      <div class="cycle__node cycle__node--genbu"><span class="cycle__img"><img src="../part2/img/g_genbu.png" alt=""><b>玄武</b></span><span class="cycle__cap">成果を再現できる<br>仕組みにする</span></div>
+    </div>
+    <p class="body">社長一人が描くだけでは、会社は変わりません。</p>
+    <p class="body">4つの力がそろって初めて──四神経営では、この状態を「完全組織」と呼びます。</p>
+  </section>
+
+  <!-- ═══ NEXT ═══ -->
+  <section class="sec sec--next">
+    <p class="kicker">NEXT</p>
+    <h2 class="h2 h2--big">ここから先は、<br>会社ごとに<br>答えが違います。</h2>
+    <span class="rule"></span>
+    <p class="body" data-slot="next.takeaway">ここまでで、御社の現在地は見えました。このページで持ち帰れるのは、<b>朱雀の強み（共感・一体感）を生かしながら、玄武の「型にする・再現する」力を取り入れ、誰かの熱意で始まった取り組みを、担当が変わっても続く仕組みにする</b>という見方です。</p>
+    <p class="body">ただ、組織は診断しただけでは変わりません。次に必要なのは、この見方を御社の答えに落とし込むこと──たとえば、こうした問いに答えていくことです。</p>
+    <ul class="questions" data-slot="next.questions"><li>どの業務を、人任せでなく会社の標準にするのか</li><li>誰が玄武の役割を担うのか</li><li>担当が代わると回らなくなる業務はどれか</li><li>「一人前の型」を、どう定義するか</li></ul>
+    <p class="body">これらは会社ごとに答えが違うため、このページでは決めきれません。<span class="nw">朱雀<span data-slot="composition.dominantPct">40%</span>・玄武<span data-slot="composition.shadowPct">12%</span></span>の御社なら、どこから手をつけるか。</p>
+    <p class="body">四神経営 実践セミナーは、この診断結果を手がかりに、御社ではどのような統合を目指すべきか、その方向性まで考える時間です。90分で、矛盾を統合し、4つの力が循環する「完全組織」のつくり方を、実際の企業事例を交えてお話しします。</p>
+    <div class="bonus"><p class="bonus__label">参加者特典</p><p class="bonus__text">今回の診断結果を<br>さらに詳しく読み解いた<br><strong>「御社専用・完全版診断レポート」</strong>をお渡しします。</p></div>
+    <a class="cta" href="#" data-slot="cta.url">セミナーの日程・内容を見る<i></i></a>
+    <div class="profile">
+      <div class="profile__head">
+        <img class="profile__photo" src="../part2/img/nakagawa.jpg" alt="中川 洋一">
+        <div class="profile__meta"><span class="profile__role">四神経営 開発・監修</span><span class="profile__name">中川 洋一</span><span class="profile__title">株式会社B.essence 代表取締役</span></div>
+      </div>
+      <p class="profile__text">この診断結果は、入口です。<br>セミナーでは、御社の強みと詰まりを<br>「次の一手」に変える<br>考え方をお伝えします。</p>
+    </div>
+  </section>
+
+  <footer class="site-footer"><p>&copy; B.essence. All Rights Reserved.</p></footer>
+</div>
+</body>
+</html>
