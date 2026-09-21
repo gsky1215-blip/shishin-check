@@ -497,7 +497,7 @@ em { font-style: normal; }
 @media (min-width: 900px) {
   :root { --col: 1010px; --gutter: 0px; --side: calc(50% - 505px); --col2: 780px; --side2: calc(50% - 390px); }
   body { background: #fff; }
-  .page { max-width: none; box-shadow: none; }
+  .page { max-width: none; box-shadow: none; background: var(--paper); } /* 節の間（つなぎの縦線）が白い帯に見えないよう、地を生成りに */
 
   /* ヘッダー: ロゴだけ（LPと同じ位置・大きさ）。メニューはPCでは出さない */
   .site-header { top: 28px; padding: 0 var(--side); height: 30px; }
