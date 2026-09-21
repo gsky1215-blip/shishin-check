@@ -684,3 +684,67 @@ em { font-style: normal; }
   .shadow-result__name { font-size: 20px; }
   .tag-list li { font-weight: 700; border-radius: 6px; }
 }
+
+/* B案 追加（9/21 GPT評価10点のうち9点。8＝途中CTAを弱める、は不採用） */
+@media (max-width: 899px) {
+  /* 1 行動の間を詰める */
+  .action-list li + li { margin-top: 18px; }
+  /* 2 強みの青を1段濃く（ラベルとチェック印。背景はそのまま） */
+  .sw--strength .sw__label { color: #5F8BD1; }
+  .checklist--blue li::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M2 3.5h9M2 3.5v12.5h13V8' fill='none' stroke='%235F8BD1' stroke-width='1.6'/><path d='M5.5 8.5l3.2 3.2L16.5 3.5' fill='none' stroke='%235F8BD1' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+  /* 3 転換の一文を立てる */
+  .sw-bridge { margin: 36px 0 30px; font-size: 22px; line-height: 36px; }
+  /* 4 問いの節の縦余白を詰める */
+  .question { padding: 58px var(--gutter) 48px; }
+  .question__lead { margin-bottom: 20px; }
+  .question__p + .question__p { margin-top: 24px; }
+  .question__big { margin-top: 30px; }
+  /* 5 紺の場面: 最初の3行の行間だけ詰める */
+  .shadow-intro__p { line-height: 30px; }
+  .shadow-intro__p--body { line-height: 30px; }
+  /* 6 白虎カードの上: 主役は「白虎」 */
+  .shadow-result__pre { font-size: 11px; color: rgba(240,192,96,.85); }
+  .shadow-result__label { font-size: 13px; color: rgba(255,255,255,.7); }
+  .shadow-result__name { margin-top: 2px; font-size: 24px; letter-spacing: .08em; }
+  .shadow-result__img { width: 72px; height: 72px; }
+  /* 7 タグはボタンでなく要点の整理に */
+  .tag-list li { border-radius: 3px; background: #F7F6F2; border: 1px solid #E6E3DC; }
+  /* 9 「このページで分かるのは」の余白を詰める */
+  .next { padding: 54px var(--gutter) 50px; }
+  .next__h { margin-bottom: 22px; }
+  .next__p + .next__p { margin-top: 24px; }
+  .next__lead { margin-top: 26px; }
+  /* 10 最後の3項目の箱を軽く */
+  .box-list { border: 1px solid #E6E1D6; background: #FAF8F3; border-radius: 8px; }
+  .box-list li { padding-left: 36px; }
+  .box-list li::before { width: 17px; height: 17px; background-size: 17px 17px; top: 3px; }
+  .next .box-list { background: #fff; border-color: #DEDEDE; }
+}
+
+/* B案 追加2（9/21 CCが1画面ずつ見て直した分） */
+@media (max-width: 899px) {
+  /* 節の間の「つなぎの縦線」が白い帯に見えないよう、地を生成りに */
+  .page { background: var(--paper); }
+  /* 見出しの帯が高すぎる（具体的な行動／強みと弱み） */
+  .card--headed .card__title { padding: 32px 18px 28px; margin-bottom: 22px; }
+  /* 強み①②／弱み①②: スマホは縦積みなので高さを揃えない（揃えると短い箱の下が空く） */
+  .sw-pair { grid-auto-rows: auto; }
+  /* 箱の中の行末に1文字だけ残らないよう、余白と文字を1段だけ調整 */
+  .strengths .card--headed > *:not(.card__title) { margin-left: 10px; margin-right: 10px; }
+  .sw { padding: 16px 10px 18px; }
+  .sw .checklist li { font-size: 14px; line-height: 24px; padding-left: 28px; }
+  .sw .checklist li::before { width: 17px; height: 17px; background-size: 17px 17px; }
+  /* 影神カードの箇条書きの箱: 余白を詰めて折り返しを減らす */
+  .box-list { padding: 20px 16px 18px; }
+  .box-list li { padding-left: 32px; font-size: 15px; line-height: 24px; }
+  .box-list li::before { left: 2px; top: 3px; }
+  /* 資質のタグ: 縦に積むので、ボタンでなく要点の見出しに見せる（左に金の線） */
+  .tag-list { gap: 8px; }
+  .tag-list li { padding: 8px 12px; border: 0; border-left: 3px solid #C8922A; border-radius: 0 3px 3px 0; background: #F7F6F2; }
+  /* CTA下の注記は薄く */
+  .next__note { color: #8A8F9A; font-size: 13.5px; line-height: 24px; }
+}
+
+@media (max-width: 899px) {
+  .shadow-explain__p[data-slot="shadow.openLoop"] { font-weight: 700; }
+}
