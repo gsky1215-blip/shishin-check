@@ -337,3 +337,14 @@ em { font-style: normal; }
 .chips li { padding: 0 9px; letter-spacing: 0; }
 /* 説明文は地の色の札に乗せ、矢印は札の後ろを通す（文字と線が重ならない）。配置は村田さんの輪のまま */
 .cycle__cap { position: relative; z-index: 1; display: inline-block; padding: 2px 5px; border-radius: 4px; background: var(--paper); }
+
+/* 2026-09-21 GPT評価から採用: ①特典の直後にボタン（プロフィールはボタンの下へ）、②CASEのカードの上下余白を詰める、③CASE群の締めの一文を強く */
+.cta { margin-top: 28px; }
+.profile { margin-top: 30px; }
+.ba__body { padding: 18px 22px 10px; }
+.ba--after .ba__body { padding: 20px 22px 22px; }
+.ba--third .ba__body { padding: 16px 22px 20px; }
+.ba__body--ranks { padding: 24px 15px 24px; }
+.ba__head { padding: 12px 10px 10px; }
+.ba--third .ba__head { padding: 20px 10px 18px; }
+.bridge { color: var(--ink-2); font-weight: 600; }
