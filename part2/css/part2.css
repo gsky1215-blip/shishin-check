@@ -381,3 +381,13 @@ em { font-style: normal; }
 .chips li { height: 32px; line-height: 32px; background: #F7F7F8; border: 1px solid #ECECEF; font-weight: 600; }
 .box { border-color: #E6E6EA; }
 .box__head { background: #F6F6F8; }
+
+/* READING 02 を Part1 の「◯◯タイプとは こんな組織です」の場面と同じ作りに（2026-09-21 洋一さん「暗く感じる」）:
+   生成りの地 ＋ 白いカード（薄い線・角丸10）＋ 青いチェック。タグは白 */
+.sec--wall { background: var(--paper); }
+.sec--wall .stmt { background: #E6E2D9; }
+.chips li { background: #fff; border: 1px solid #E5E0D8; }
+.box { background: #fff; border: 1px solid #DEDEDE; border-radius: 10px; }
+.box__head { background: #F6F6F6; border-bottom: 1px solid #E6E6E6; color: var(--ink); }
+.box .checks li::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M2 3.5h9M2 3.5v12.5h13V8' fill='none' stroke='%237EA4E5' stroke-width='1.6'/><path d='M5.5 8.5l3.2 3.2L16.5 3.5' fill='none' stroke='%237EA4E5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"); }
+.sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #F0EDE8 100%); }
