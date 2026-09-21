@@ -805,3 +805,6 @@ em { font-style: normal; }
 
 /* 文字は小さくしない（2026-09-21 洋一さん）。行末の落ちは文言側の話 */
 @media (max-width: 899px) { .sw .checklist li { font-size: 16px; line-height: 26px; } .sw__title { font-size: 16.5px; } .sw__label { font-size: 15.5px; } }
+
+/* 強み①②／弱み①②は対で同じ高さに揃える（9/18の指示に戻す。2026-09-21 洋一さん「箱は揃えた方がいい」） */
+@media (max-width: 899px) { .sw-pair { grid-auto-rows: 1fr; } }
