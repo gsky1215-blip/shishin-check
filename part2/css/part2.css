@@ -444,3 +444,14 @@ em { font-style: normal; }
 /* 幅が変わっても3＋2のまま（iPadで4＋1に割れた）: タグの幅を列の1/3に固定 */
 .chips { margin-left: 0; margin-right: 0; gap: 20px 8px; }
 .chips li { flex: 0 0 calc((100% - 16px) / 3); max-width: 116px; padding: 0; }
+
+/* 本文を17pxに（2026-09-21 洋一さん「53歳以上には16pxは小さい」）。見出し・決め台詞は変えない */
+.body { font-size: 17px; line-height: 32px; }
+.lead { font-size: 17px; line-height: 32px; }
+.checks li { font-size: 16px; line-height: 27px; }
+.ba__note { font-size: 16px; line-height: 29px; }
+.pair__card span { font-size: 15.5px; }
+.shadow-intro__p, .questions li { font-size: 17px; }
+.profile__text { font-size: 16px; line-height: 31px; }
+.bonus__text { font-size: 16px; line-height: 28px; }
+.body { letter-spacing: .03em; }
