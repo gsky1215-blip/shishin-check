@@ -396,3 +396,13 @@ em { font-style: normal; }
 .sec--wall .stmt { background: #EEF0F4; }
 .sec--hero { background: linear-gradient(180deg, #f8f8fa 0px, #f9f9fb 300px, #dfe4ee 600px, #cbd6e8 900px, #cdd7e9 calc(100% - 50px), #ffffff 100%); }
 .chips li { background: #FAFAFB; border: 1px solid #E6E6EA; }
+
+/* 発見の一文（.stmt）は帯にしない（2026-09-21 洋一さん）。同じ地の上で、余白・短い青の罫線・大きめの明朝・青の強調で山をつくる。READING 02 / CASE 03 / CASE 04 共通 */
+.stmt, .sec--wall .stmt, .sec--case3 .stmt, .sec--case .ba + .stmt, .sec--case .body + .stmt, .sec--case4 .ba--third + .stmt {
+  margin: 52px calc(var(--gutter) * -1 + 22px) 0; padding: 26px 0 0; background: none; border: 0; }
+.stmt::before { width: 36px; height: 2px; margin-left: -18px; background: var(--blue); }
+.stmt__text, .sec--case4 .ba--third + .stmt .stmt__text { font-size: 23px; line-height: 40px; letter-spacing: .05em; }
+.stmt + .body { margin-top: 36px; }
+.sec--case4 .stmt + .bridge { margin-top: 40px; }
+.sec--wall { padding-bottom: 76px; }
+.sec--case4 .ba--third + .stmt .stmt__text { font-size: 21px; line-height: 38px; letter-spacing: .02em; }
