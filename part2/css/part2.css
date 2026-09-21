@@ -335,8 +335,6 @@ em { font-style: normal; }
 .box__head { background: #F8F8FA; }
 .chips { margin-left: -14px; margin-right: -14px; gap: 8px 6px; }
 .chips li { padding: 0 9px; letter-spacing: 0; }
-/* 説明文は地の色の札に乗せ、矢印は札の後ろを通す（文字と線が重ならない）。配置は村田さんの輪のまま */
-.cycle__cap { position: relative; z-index: 1; display: inline-block; padding: 2px 5px; border-radius: 4px; background: var(--paper); }
 
 /* 2026-09-21 GPT評価から採用: ①特典の直後にボタン（プロフィールはボタンの下へ）、②CASEのカードの上下余白を詰める、③CASE群の締めの一文を強く */
 .cta { margin-top: 28px; }
@@ -362,3 +360,16 @@ em { font-style: normal; }
 .sec--case4 .ba--third + .stmt .stmt__text { font-size: 21px; line-height: 38px; }
 .sec--case4 .stmt + .bridge { margin-top: 34px; padding-top: 0; border-top: 0; }
 .sec--case4 .ba--third + .stmt .stmt__text { font-size: 20px; letter-spacing: .01em; }
+
+/* 循環図を村田さんの形に揃える（2026-09-21）: 円は80px、名前は円の中の下に小さく、説明文は円のすぐ下に札なしで。矢印は説明文を避けて隙間だけを通る短い弧 */
+.cycle { width: 345px; height: 372px; margin: 18px auto 0; }
+.cycle__arrows { width: 345px; height: 372px; top: 0; }
+.cycle__node { width: 120px; }
+.cycle__img { width: 80px; height: 80px; }
+.cycle__img img { width: 80px; height: 80px; object-position: 50% 40%; }
+.cycle__img b { bottom: 2px; min-width: 0; height: 20px; padding: 0 6px; font-size: 13px; line-height: 20px; border-radius: 3px; background: rgba(255,255,255,.88); box-shadow: none; }
+.cycle__cap { margin-top: 6px; font-size: 13.5px; line-height: 18px; }
+.cycle__node--seiryu { left: 112.5px; top: 12px; }
+.cycle__node--suzaku { left: 230.5px; top: 130px; }
+.cycle__node--genbu  { left: -5.5px; top: 130px; }
+.cycle__node--byakko { left: 112.5px; top: 248px; }
