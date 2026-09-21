@@ -270,3 +270,8 @@ em { font-style: normal; }
 .comp__tag--dominant { background: var(--navy); }
 .comp__tag--shadow { background: #1A1614; color: #F0C060; }
 .comp__bar { height: 6px; margin-top: 2px; }
+
+/* 本文をPart1と同じ16pxに（2026-09-21 洋一さん「本文の字が小さすぎる」。村田さんの指定は15px） */
+.body { font-size: 16px; line-height: 31px; }
+.lead { font-size: 16px; line-height: 31px; }
+.chips li { font-size: 16px; }
