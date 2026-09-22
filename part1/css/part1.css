@@ -834,3 +834,7 @@ em { font-style: normal; }
   .composition__row--genbu .composition__icon { background: rgba(49,71,55,.10); }
   .composition__row--byakko .composition__icon { background: rgba(200,146,42,.14); }
 }
+
+/* タイプ名はスマホでは必ず2行（「◯◯タイプ」／「〜型組織」）。長い名前が途中で折れないように（2026-09-22） */
+@media (max-width: 899px) { .hero__type { white-space: nowrap; line-height: 1.6; } .hero__type .sp-br { display: inline; } .hero__type-dash { display: none; } }
+@media (min-width: 900px) { .hero__type .sp-br { display: none; } }
