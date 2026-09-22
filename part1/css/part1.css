@@ -823,3 +823,14 @@ em { font-style: normal; }
 /* タイプ名は折り返しを許す（朱雀「ヒューマンドライブ型組織」が長い） */
 @media (max-width: 899px) { .hero__type { white-space: normal; line-height: 1.6; } }
 @media (max-width: 899px) { .shadow-result__sub { white-space: normal; } }
+
+/* 2026-09-22 洋一さん: キーワード4つを横1列に、四神構成の印に囲い（スマホ） */
+@media (max-width: 899px) {
+  .hero__keywords { gap: 8px 6px; flex-wrap: nowrap; }
+  .hero__keywords li { min-width: 0; padding: 0 12px; height: 36px; line-height: 34px; font-size: 15px; letter-spacing: .02em; white-space: nowrap; }
+  .composition__icon { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; font-family: var(--serif); font-size: 16px; font-weight: 600; }
+  .composition__row--seiryu .composition__icon { background: rgba(44,44,126,.10); }
+  .composition__row--suzaku .composition__icon { background: rgba(183,46,46,.10); }
+  .composition__row--genbu .composition__icon { background: rgba(49,71,55,.10); }
+  .composition__row--byakko .composition__icon { background: rgba(200,146,42,.14); }
+}
