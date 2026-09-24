@@ -1,210 +1,143 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<title>四神組織診断 ── 社長の感覚で伸ばしてきた会社が、次の成長でつまずく理由</title>
+<meta charset="utf-8">
+<title>四神経営 実践セミナー FV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/lp.css?v=202609202208">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#FDFCF9;font-family:"Noto Sans JP",sans-serif}
+
+:root{
+  --navy:#2C2C7E;
+  --navy-soft:#5A5A9B;
+  --orange:#DF6536;
+  --paper:#FDFCF9;
+}
+
+.fv{position:relative;width:375px;height:812px;overflow:hidden;
+    background:radial-gradient(120% 68% at 50% 26%, #FFFFFF 0%, #FDFCF9 46%, #F3F1EC 100%);
+    font-family:"Noto Serif JP",serif;color:var(--navy)}
+
+/* ---- 円環：四神が巡る ---- */
+.orbit{position:absolute;top:40px;left:50%;width:232px;height:232px;margin-left:-116px;
+       animation:spin 72s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.orbit__ring{position:absolute;inset:0;border-radius:50%;
+             border:1px solid rgba(90,90,155,.20)}
+.orbit__ring--in{inset:26px;border-color:rgba(223,101,54,.16)}
+
+.god{position:absolute;width:80px;height:80px;margin:-40px 0 0 -40px;
+     animation:counter 72s linear infinite}
+@keyframes counter{to{transform:rotate(-360deg)}}
+.god img{width:100%;height:100%;object-fit:contain;
+         filter:saturate(.92) contrast(1.04)}
+.god--1{top:0;left:50%}
+.god--2{top:50%;left:100%}
+.god--3{top:100%;left:50%}
+.god--4{top:50%;left:0}
+
+/* 光が4神を順に巡る */
+.glow{position:absolute;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;
+      background:radial-gradient(circle, rgba(223,101,54,.30) 0%, rgba(223,101,54,0) 68%);
+      opacity:0}
+.glow--1{top:0;left:50%;animation:pulse 8s ease-in-out infinite 0s}
+.glow--2{top:50%;left:100%;animation:pulse 8s ease-in-out infinite 2s}
+.glow--3{top:100%;left:50%;animation:pulse 8s ease-in-out infinite 4s}
+.glow--4{top:50%;left:0;animation:pulse 8s ease-in-out infinite 6s}
+@keyframes pulse{0%,72%,100%{opacity:0;transform:scale(.86)}12%,30%{opacity:1;transform:scale(1)}}
+
+/* 円環を巡る光の点 */
+.spark{position:absolute;top:40px;left:50%;width:232px;height:232px;margin-left:-116px;
+       animation:spin 8s linear infinite}
+.spark::before{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;
+       border-radius:50%;background:var(--orange);
+       box-shadow:0 0 12px 3px rgba(223,101,54,.45)}
+
+/* 白のかぶせ（下半分を落ち着かせる） */
+.veil{position:absolute;left:0;right:0;top:250px;height:110px;
+      background:linear-gradient(180deg,rgba(253,252,249,0) 0%,#FDFCF9 62%,#FDFCF9 100%)}
+
+/* ---- 文字 ---- */
+.body{position:absolute;left:30px;top:318px;width:300px}
+.lead{font-size:15px;line-height:2.1;letter-spacing:.04em;font-weight:400;color:var(--navy-soft);
+      opacity:0;animation:up .9s ease-out .25s forwards}
+.lead .hl{color:var(--navy);font-weight:500}
+.rule{width:32px;height:1px;background:var(--orange);margin:20px 0 20px;
+      transform-origin:left;transform:scaleX(0);animation:draw .7s ease-out 1s forwards}
+.big{font-size:46px;line-height:1.32;letter-spacing:.02em;font-weight:500;
+     opacity:0;animation:up 1s ease-out 1.15s forwards}
+.big .q{color:var(--orange);font-weight:600}
+.big .sm{font-size:33px}
+.sub{margin-top:28px;width:250px;font-family:"Noto Sans JP",sans-serif;font-size:11.5px;
+     line-height:2.1;letter-spacing:.02em;color:#4A4A6E;
+     opacity:0;animation:up .9s ease-out 1.7s forwards}
+.sub b{font-weight:500;color:var(--orange)}
+
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw{to{transform:scaleX(1)}}
+
+/* ---- 下部 ---- */
+.foot{position:absolute;left:30px;top:614px;opacity:0;animation:up .9s ease-out 2.1s forwards}
+.foot__name{font-size:19px;letter-spacing:.1em;font-weight:500}
+.foot__date{margin-top:9px;font-family:"Montserrat",sans-serif;font-size:27px;letter-spacing:.01em;
+            font-weight:400;line-height:1}
+.foot__date span{font-size:12px;margin-left:6px;color:var(--navy-soft)}
+.foot__meta{margin-top:8px;font-family:"Montserrat",sans-serif;font-size:9px;
+            letter-spacing:.16em;color:var(--navy-soft)}
+
+.cta{position:absolute;left:30px;right:30px;bottom:42px;height:54px;background:var(--orange);
+     border-radius:27px;display:flex;align-items:center;justify-content:center;
+     font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:500;color:#fff;
+     letter-spacing:.06em;text-decoration:none;
+     box-shadow:0 6px 18px rgba(223,101,54,.28);
+     opacity:0;animation:up .9s ease-out 2.4s forwards}
+.cta::after{content:"";width:6px;height:6px;border-top:1.4px solid #fff;border-right:1.4px solid #fff;
+     transform:rotate(45deg);margin-left:12px;margin-top:-1px}
+
+@media (prefers-reduced-motion: reduce){
+  .orbit,.spark,.god{animation:none}
+  .lead,.big,.sub,.foot,.cta{opacity:1;animation:none}
+  .rule{transform:scaleX(1);animation:none}
+  .glow{animation:none;opacity:.5}
+}
+</style>
 </head>
 <body>
-<!--
-  四神組織診断 診断前LP
-  デザイン: ラヴィゴット村田さん XD「20260710 先方OK」（PC 1920幅）。スマホは同じ順で1列に組み替える。
-  診断ページへのリンクは data-slot="cta" の a 要素（href を差し替える）。
--->
-<div class="page">
 
-  <!-- ═══ ファーストビュー ═══ -->
-  <div class="top">
-  <div class="deco deco--1" aria-hidden="true"></div>
-  <header class="fv">
-    <div class="fv__inner">
-      <div class="fv__logo" data-slot="logo"><img src="img/logo.png" alt="B.essence"></div>
-      <div class="fv__text">
-        <p class="fv__label">経営者のための組織診断</p>
-        <h1 class="fv__title">社長の感覚で伸ばしてきた会社が、<br>次の成長でつまずく理由は、<br>組織の"<em>偏り</em>"にあります。</h1>
-      <div class="fv__art" aria-hidden="true">
-        <i class="fv__tile fv__tile--n"></i><i class="fv__tile fv__tile--e"></i><i class="fv__tile fv__tile--s"></i><i class="fv__tile fv__tile--w"></i>
-        <i class="fv__x fv__x--a"></i><i class="fv__x fv__x--b"></i>
-        <img class="fv__gods" src="img/xd/fv_diamond.png" alt=""><i class="fv__shade"></i>
-      </div>
-        <p class="fv__lead">戦略も、人材も、仕組みもある。<br>それでも成果が噛み合わないのは、<br><span class="pc">組織の4つの力のバランスが崩れているからかもしれません。<br><b>四神組織診断</b>が、自社の強み・偏り・次に整えるべきテーマを可視化します。</span><span class="sp">組織の4つの力の偏りかもしれません。</span></p>
-        <div class="cta">
-          <a class="cta__btn" href="#" data-slot="cta"><span class="cta__sub">＼3分で完了 ｜ 16問で診断／</span><span class="cta__main">無料で組織を診断する</span><i></i></a>
-          <p class="cta__note">自社の強み・偏り・次の改善テーマがわかる</p>
-        </div>
-      </div>
-    </div>
-  </header>
+<div class="fv">
+  <div class="orbit">
+    <div class="orbit__ring"></div>
+    <div class="orbit__ring orbit__ring--in"></div>
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+    <div class="glow glow--3"></div>
+    <div class="glow glow--4"></div>
+    <div class="god god--1"><img src="img/g_seiryu.png" alt=""></div>
+    <div class="god god--2"><img src="img/g_suzaku.png" alt=""></div>
+    <div class="god god--3"><img src="img/g_byakko.png" alt=""></div>
+    <div class="god god--4"><img src="img/g_genbu.png" alt=""></div>
+  </div>
+  <div class="spark"></div>
+  <div class="veil"></div>
 
-  <!-- ═══ 次の成長で詰まる、本当の理由 ═══ -->
-  <section class="sec sec--reason">
-    <h2 class="h2">次の成長で詰まる、<br class="sp">本当の理由</h2>
-    <p class="lead">戦略でも、人材でも、仕組みでもない。<br>多くの会社が次のステージで<br class="sp">足踏みするのは、<br>組織の中で、特定の力が強く出すぎ、<br>別の力が育っていないからです。</p>
-    <ul class="symptoms">
-      <li><div class="symptoms__top"><p>売上は伸びている。</p><img src="img/ic2/chart.svg" alt=""></div><p class="symptoms__but">だが、新しい挑戦が<br>形にならない。</p></li>
-      <li><div class="symptoms__top"><p>人は増えた。</p><img src="img/ic2/people.svg" alt=""></div><p class="symptoms__but">だが、現場が自走しない。</p></li>
-      <li><div class="symptoms__top"><p>仕組みは整っている。</p><img src="img/ic2/system.svg" alt=""></div><p class="symptoms__but">だが、熱量が失われていく。</p></li>
-    </ul>
-    <p class="lead lead--after">こうした噛み合わなさは、<br class="sp"><mark>能力不足ではなく、</mark><br>組織が持つ<mark>4つの力の<br class="sp">バランスの偏り</mark>から生まれます。</p>
-  </section>
+  <div class="body">
+    <p class="lead">一時的に<span class="hl">伸びる</span>会社と、<br>業績を<span class="hl">上げ続ける</span>会社。</p>
+    <div class="rule"></div>
+    <p class="big">違いは<br><span class="q">「組織」</span><br><span class="sm">にある。</span></p>
   </div>
 
-  <!-- ═══ 組織を動かす4つの力 ═══ -->
-  <section class="sec sec--forces">
-    <div class="deco deco--2" aria-hidden="true"></div>
-    <h2 class="h2">組織を動かす4つの力</h2>
-    <p class="h3">あらゆる組織は、4つの力で動いている</p>
-    <p class="body">四神組織診断では、組織を動かす力を<br><span class="pc">「<b class="c-kakushin">革新</b>」「<b class="c-kyoso">共創</b>」「<b class="c-seika">成果</b>」「<b class="c-kozo">構造</b>」の4つに分けて見ていきます。<br>春・夏・秋・冬にそれぞれの役割があるように、<br>この4つの力にも優劣はありません。<br>大切なのは、どの力が良いか悪いかではなく、<br>どの力が<b>強く出すぎ</b>、どの力が<b>巡っていない</b>かです。</span><span class="sp">4つに分けて見ていきます。</span></p>
-    <ul class="names sp" aria-hidden="true"><li class="c-kakushin">革新</li><li class="c-kyoso">共創</li><li class="c-seika">成果</li><li class="c-kozo">構造</li></ul>
-    <p class="body sp">春・夏・秋・冬に<br>それぞれの役割があるように、<br>この4つの力にも優劣はありません。<br>大切なのは、<br>どの力が良いか悪いかではなく、<br>どの力が<b>強く出すぎ</b>、<br>どの力が<b>巡っていない</b>かです。</p>
-    <ul class="gods">
-      <li class="gods__card gods__card--seiryu">
-        <div class="gods__img"><img src="img/xd/g_seiryu.png" alt="青龍"></div>
-        <h3 class="gods__title">青龍<i></i>革新の力</h3>
-        <p class="gods__desc">新しい世界をつくり、<br class="sp">動きながら未来を<br>切り開くイノベーター型。</p>
-        <p class="gods__caveat">ただし、走りすぎると形にならない。</p>
-      </li>
-      <li class="gods__card gods__card--suzaku">
-        <div class="gods__img"><img src="img/xd/g_suzaku.png" alt="朱雀"></div>
-        <h3 class="gods__title">朱雀<i></i>共創の力</h3>
-        <p class="gods__desc">共感と関係性で人をつなぎ、<br class="sp">共に創るこ<br class="pc">とで成果を生む<br class="sp">ヒューマンドライブ型。</p>
-        <p class="gods__caveat">ただし、空気を読みすぎると<br class="sp">基準が曖昧<br class="pc">になる。</p>
-      </li>
-      <li class="gods__card gods__card--byakko">
-        <div class="gods__img"><img src="img/xd/g_byakko.png" alt="白虎"></div>
-        <h3 class="gods__title">白虎<i></i>成果の力</h3>
-        <p class="gods__desc">勝てる領域に集中し、<br class="sp">やり切る力で<br class="pc">成果を積み上げる<br class="sp">プロフェッショナル型。</p>
-        <p class="gods__caveat">ただし、絞りすぎると視野が狭くなる。</p>
-      </li>
-      <li class="gods__card gods__card--genbu">
-        <div class="gods__img"><img src="img/xd/g_genbu.png" alt="玄武"></div>
-        <h3 class="gods__title">玄武<i></i>構造の力</h3>
-        <p class="gods__desc">理と秩序を重んじ、<br class="sp">仕組みと再現性で<br class="pc">組織を支える<br class="sp">ストラクチャー型。</p>
-        <p class="gods__caveat">ただし、整えすぎると動きが遅くなる。</p>
-      </li>
-    </ul>
-  </section>
+  <div class="foot">
+    <p class="foot__name">四神経営　実践セミナー</p>
+    <p class="foot__date">2026.00.00<span>[Thu]</span></p>
+    <p class="foot__meta">ONLINE SEMINAR / 90 MIN.</p>
+  </div>
 
-  <!-- ═══ 帯1 ═══ -->
-  <section class="band band--1">
-    <p class="band__text pc">自社で最も強く出ているのは、どの力か。<br>その強みは、どこで偏りに変わっているのか。<br>次のステージへ進むために、取り入れるべき力はどれか。<br>16問の診断で、あなたの組織の「今」と「次」が見えてきます。</p>
-    <p class="band__text band__text--q sp">自社で最も強く出ているのは、<br>どの力か。</p>
-    <p class="band__text band__text--q sp">その強みは、<br>どこで偏りに変わっているのか。</p>
-    <p class="band__text band__text--q sp">次のステージへ進むために、<br>取り入れるべき力はどれか。</p>
-    <p class="band__text band__text--a sp">16問の診断で、あなたの組織の<br>「今」と「次」が見えてきます。</p>
-    <div class="cta cta--center">
-      <a class="cta__btn" href="#" data-slot="cta"><span class="cta__sub">＼3分で完了 ｜ 16問で診断／</span><span class="cta__main">無料で組織を診断する</span><i></i></a>
-      <p class="cta__note">自社の強み・偏り・次の改善テーマがわかる</p>
-    </div>
-  </section>
-
-  <!-- ═══ 診断で見える3つのこと ═══ -->
-  <section class="sec sec--three">
-    <h2 class="h2">診断で見える3つのこと</h2>
-    <p class="h3 h3--lines">診断で見えるのは、<br><mark>自社の勝ち筋</mark>と、<br class="sp">次に取り入れるべき<mark>力</mark>です。</p>
-    <p class="body">四神組織診断では、組織の現在地を<br class="sp">3つの視点から可視化します。<br>強みの源泉、伸びしろを妨げる偏り、<br class="sp">次に取り入れるべき力を明らかにし、<br>変化の一手を具体的に示します。</p>
-    <p class="three__note">診断結果の一例（青龍タイプの場合）</p>
-    <ul class="three">
-      <li>
-        <div class="three__text"><div class="three__head"><span class="three__num">01</span><span class="three__name">利き神</span></div>
-        <p class="three__title">自社の勝ち筋が見える</p></div>
-        <img class="three__shot" src="img/xd/shot1.png" alt="">
-      </li>
-      <li>
-        <div class="three__text"><div class="three__head"><span class="three__num">02</span><span class="three__name">偏りリスク</span></div>
-        <p class="three__title">強みが制約に変わる<br>ポイントが見える</p></div>
-        <img class="three__shot" src="img/xd/shot2.png" alt="">
-      </li>
-      <li>
-        <div class="three__text"><div class="three__head"><span class="three__num">03</span><span class="three__name">影神</span></div>
-        <p class="three__title">次に取り入れるべき<br>力が見える</p></div>
-        <img class="three__shot" src="img/xd/shot3.png" alt="">
-      </li>
-    </ul>
-  </section>
-
-  <!-- ═══ 帯2 ═══ -->
-  <section class="band band--2">
-    <p class="band__text pc">偏りが見えると、<br>次に整えるべき打ち手が見えてきます。</p>
-    <p class="band__a sp">偏りが見えると、<br>次に整えるべき打ち手が<br>見えてきます。</p>
-    <div class="cta cta--center">
-      <a class="cta__btn" href="#" data-slot="cta"><span class="cta__sub">＼3分で完了 ｜ 16問で診断／</span><span class="cta__main">無料で組織を診断する</span><i></i></a>
-    </div>
-  </section>
-
-  <!-- ═══ 診断をおすすめする会社 ═══ -->
-  <section class="sec sec--recommend">
-    <div class="deco deco--3" aria-hidden="true"></div><div class="deco deco--4" aria-hidden="true"></div>
-    <h2 class="h2">診断をおすすめする会社</h2>
-    <p class="h3 h3--lines">こんな兆しがあるなら、<br><mark>組織の偏り</mark>が<br class="sp">起きているかもしれません。</p>
-    <ul class="signs">
-      <li><img src="img/ic2/anchor.svg" alt=""><p>仕組みを整えたのに、<br><span class="c-blue">現場の動きが重くなった</span></p></li>
-      <li><img src="img/ic2/flame.svg" alt=""><p><span class="c-blue">熱量はある</span>のに、<br>数字に結びつかない</p></li>
-      <li><img src="img/ic2/bubble.svg" alt=""><p>社員は真面目だが、<br><span class="c-blue">自分で判断しない</span></p></li>
-      <li><img src="img/ic2/repeat.svg" alt=""><p>新しい発想が出ず、<br><span class="c-blue">前例踏襲</span>が続いている</p></li>
-      <li><img src="img/ic2/exit.svg" alt=""><p><span class="c-blue">良い人材ほど、</span><br>力を発揮する前に辞めていく</p></li>
-    </ul>
-    <div class="recommend__body">
-      <p>会社を伸ばしてきた強みが偏り、<br class="sp">別の力が巡らないことで、<br>組織の噛み合わなさは生まれます。<br>必要なのは、<br class="sp">強みを消すことではなく、<br>次に取り入れる<b>力を見立てる</b>ことです。</p>
-      <p><mark>ひとつでも当てはまる</mark>なら、<br>16問の診断で、<br class="sp">自社の偏りを一度見てみてください。</p>
-    </div>
-  </section>
-
-  <!-- ═══ 診断はかんたん3ステップ ═══ -->
-  <section class="sec sec--steps">
-    <h2 class="h2">診断はかんたん3ステップ</h2>
-    <p class="h3">3分で、自社の偏りを見える化できます。</p>
-    <p class="body">専門知識や事前準備は必要ありません。<br>16問に答えるだけで、<br class="sp">あなたの組織の強み・偏り・<br class="sp">次に取り入れるべき力が見えてきます。</p>
-    <ul class="pills">
-      <li>無料で利用可能</li>
-      <li>3分で完了</li>
-      <li>16問に答えるだけ</li>
-    </ul>
-    <ol class="steps">
-      <li><span class="steps__num">01</span><span class="steps__label">業種を選ぶ</span></li>
-      <li><span class="steps__num">02</span><span class="steps__label">16問に答える</span></li>
-      <li><span class="steps__num">03</span><span class="steps__label">結果を見る</span></li>
-    </ol>
-  </section>
-
-  <!-- ═══ クロージング ═══ -->
-  <section class="closing">
-    <p class="closing__lines">攻めるほど崩れる。<br>整えるほど冷える。<br>人を大切にすると、<br class="sp">成果がぼやける。</p>
-    <p class="closing__lines closing__lines--2">その対立を超えた先に待つのは、</p>
-    <div class="closing__arrow" aria-hidden="true"></div>
-    <div class="closing__box">
-      <p class="closing__box-title">完全組織</p>
-      <p class="closing__box-text">挑戦が、成果になる。<br>仕組みが、人を動かす。<br>人が、成果を生み出す。</p>
-    </div>
-    <p class="closing__step">診断は、<br class="sp">あなたの組織が<br class="sp">そこへ近づくための第一歩です。</p>
-    <p class="closing__ask">16問で、<br class="sp">自社の勝ち筋と偏りを<br class="sp">見てみませんか。</p>
-    <p class="closing__sub">四神組織診断で、<br class="sp">あなたの組織の「今」と「次」を、<br class="sp">3分で見える化します。</p>
-    <div class="cta cta--center">
-      <a class="cta__btn" href="#" data-slot="cta"><span class="cta__sub">＼3分で完了 ｜ 16問で診断／</span><span class="cta__main">無料で組織を診断する</span><i></i></a>
-      <p class="cta__note">自社の強み・偏り・次の改善テーマがわかる</p>
-    </div>
-  </section>
-
-  <!-- ═══ フッター ═══ -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <p class="footer__title">運営会社</p>
-      <!-- 洋一さん指示（9/18）: 電話番号・代表者名は載せない。全体を控えめに -->
-      <dl class="footer__list">
-      <div><dt>会社名</dt><dd>B.essence株式会社</dd></div>
-      <div><dt>住所</dt><dd>東京都港区北青山1丁目3番1号 アールキューブ青山3階</dd></div>
-      </dl>
-    </div>
-    <p class="footer__copy">&copy; B.essence. All Rights Reserved.</p>
-  </footer>
+  <a class="cta" href="#">セミナーに参加する</a>
 </div>
+
 </body>
 </html>
