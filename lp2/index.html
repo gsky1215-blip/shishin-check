@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>四神経営 実践セミナー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#1B2444}
+body{font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+
+:root{
+  --navy-0:#243154;
+  --navy-1:#1B2444;
+  --navy-2:#131A33;
+  --gold:#C8A24A;
+  --gold-lt:#E3C579;
+  --paper:#F4F2EC;
+}
+
+.fv{position:relative;width:100%;max-width:430px;margin:0 auto;height:100svh;min-height:680px;
+    overflow:hidden;background:var(--navy-1);color:var(--paper);font-family:"Noto Serif JP",serif}
+
+/* ゆっくり移ろう光 */
+.fv__light{position:absolute;inset:-20%;
+  background:
+    radial-gradient(52% 40% at 24% 18%, rgba(70,96,160,.55) 0%, rgba(70,96,160,0) 62%),
+    radial-gradient(46% 36% at 82% 44%, rgba(200,162,74,.16) 0%, rgba(200,162,74,0) 64%),
+    radial-gradient(64% 48% at 50% 96%, rgba(10,14,30,.85) 0%, rgba(10,14,30,0) 60%);
+  animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  100%{transform:translate3d(-3%,2%,0) scale(1.06)}
+}
+
+/* 細い罫の格子（ごく薄く） */
+.fv__grid{position:absolute;inset:0;opacity:.13;
+  background-image:linear-gradient(rgba(244,242,236,.5) 1px,transparent 1px);
+  background-size:100% 88px;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 26%,#000 62%,transparent 92%);
+          mask-image:linear-gradient(180deg,transparent 0%,#000 26%,#000 62%,transparent 92%)}
+
+.fv__inner{position:relative;height:100%;display:flex;flex-direction:column;
+           padding:0 30px;justify-content:center}
+
+.eyebrow{font-family:"Montserrat",sans-serif;font-size:9.5px;letter-spacing:.28em;
+         color:rgba(244,242,236,.52);font-weight:300;
+         opacity:0;animation:fade 1.4s ease-out .2s forwards}
+.eyebrow::after{content:"";display:block;width:26px;height:1px;background:var(--gold);
+         margin-top:13px;transform-origin:left;transform:scaleX(0);
+         animation:draw 1.1s cubic-bezier(.2,.7,.2,1) .9s forwards}
+
+.lead{margin-top:34px;font-size:15.5px;line-height:2.15;letter-spacing:.06em;font-weight:300;
+      color:rgba(244,242,236,.82);
+      opacity:0;animation:rise 1.5s cubic-bezier(.2,.7,.2,1) .7s forwards}
+
+.big{margin-top:30px;font-size:44px;line-height:1.46;letter-spacing:.04em;font-weight:300;
+     opacity:0;animation:rise 1.7s cubic-bezier(.2,.7,.2,1) 1.25s forwards}
+.big .g{color:var(--gold-lt);font-weight:400}
+.big .sm{font-size:31px}
+
+.note{margin-top:38px;font-family:"Noto Sans JP",sans-serif;font-size:11.5px;line-height:2.25;
+      letter-spacing:.05em;font-weight:300;color:rgba(244,242,236,.6);
+      opacity:0;animation:rise 1.4s cubic-bezier(.2,.7,.2,1) 1.9s forwards}
+
+.meta{position:absolute;left:30px;bottom:116px;
+      opacity:0;animation:rise 1.4s cubic-bezier(.2,.7,.2,1) 2.25s forwards}
+.meta__name{font-size:17px;letter-spacing:.16em;font-weight:400}
+.meta__date{margin-top:11px;font-family:"Montserrat",sans-serif;font-size:13px;
+            letter-spacing:.18em;font-weight:300;color:rgba(244,242,236,.66)}
+
+.cta{position:absolute;left:30px;right:30px;bottom:44px;height:56px;
+     border:1px solid rgba(200,162,74,.75);background:rgba(200,162,74,.06);
+     display:flex;align-items:center;justify-content:center;
+     font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:400;
+     letter-spacing:.14em;color:var(--gold-lt);text-decoration:none;
+     opacity:0;animation:rise 1.4s cubic-bezier(.2,.7,.2,1) 2.5s forwards}
+.cta::after{content:"";width:5px;height:5px;border-top:1px solid var(--gold-lt);
+     border-right:1px solid var(--gold-lt);transform:rotate(45deg);margin-left:14px;margin-top:-1px}
+
+@keyframes fade{to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw{to{transform:scaleX(1)}}
+
+@media (prefers-reduced-motion: reduce){
+  .fv__light{animation:none}
+  .eyebrow,.lead,.big,.note,.meta,.cta{opacity:1;animation:none}
+  .eyebrow::after{transform:scaleX(1);animation:none}
+}
+</style>
+</head>
+<body>
+
+<section class="fv">
+  <div class="fv__light"></div>
+  <div class="fv__grid"></div>
+
+  <div class="fv__inner">
+    <p class="eyebrow">SHISHIN MANAGEMENT SEMINAR</p>
+
+    <p class="lead">一時的に伸びる会社と、<br>業績を上げ続ける会社。</p>
+
+    <p class="big">違いは<br><span class="g">「組織」</span><br><span class="sm">にある。</span></p>
+
+    <p class="note">4つの力を循環させ、経営者だけに依存せず、<br>成果を生み出し続ける組織のつくり方を<br>90分で公開します。</p>
+  </div>
+
+  <div class="meta">
+    <p class="meta__name">四神経営　実践セミナー</p>
+    <p class="meta__date">2026.00.00 [Thu]　ONLINE / 90 MIN.</p>
+  </div>
+
+  <a class="cta" href="#">セミナーに参加する</a>
+</section>
+
+</body>
+</html>
